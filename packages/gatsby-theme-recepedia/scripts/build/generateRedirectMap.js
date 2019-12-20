@@ -223,8 +223,6 @@ const customRedirects = {
   '/receita/antepasto/173760-bruschettas-de-tomates-cremosas/':
     '/receita/pao/173760-bruschettas-de-tomates-cremosas/',
   '/search/bolinho%20de%20chuva': '/receita/sobremesa/181045-bolinho-de-chuva/',
-  '/receita/pizza/175505-pizza-de-liquidificador-de-escarola/':
-    '/receita/pizza/175505-pizza-de-liquidificador-de-escarola/',
   '/faq': '/sobre-recepedia/',
   '/receita/bife/36155-file-mignon-com-molho-agridoce-cremoso/':
     '/receita/carne/36155-file-mignon-com-molho-agridoce-cremoso/',
