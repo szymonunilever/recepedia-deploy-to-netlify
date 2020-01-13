@@ -1,6 +1,5 @@
 const directUrlsMap = {
   '/momentos/dia-dia': '/dia-a-dia/',
-  '/cozinha/espanhola': '/espanhola/',
   '/tipos-de-receita/bolo': '/categoria/bolos/',
   '/tipos-de-receita/peixe': '/categoria/peixes/',
   '/tipos-de-receita/carne': '/categoria/carnes/',
