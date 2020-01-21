@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const url = require('url');
+const fs = require('fs');
 const get = require('lodash/get');
 const path = require('path');
 const utils = require('./scripts/utils');
@@ -19,6 +20,7 @@ const constants = require('./scripts/constants');
 const getStaticLists = require('./scripts/build/getStaticLists');
 const getRedirectRules = require('./scripts/build/getRedirectRules');
 const generateRedirectMap = require('./scripts/build/generateRedirectMap');
+const generateProductsFeed = require('./scripts/build/generateProductsFeed');
 
 const urlPartialsByTypeMap = {
   Article: 'title',
@@ -434,7 +436,7 @@ exports.onCreateWebpackConfig = ({
 };
 
 // TODO: As soon as a number of post build jobs will be increased the following part should be refactored
-exports.onPostBuild = async ({ getNodes, getNodesByType }) => {
+exports.onPostBuild = async ({ getNodes, graphql, getNodesByType }) => {
   // To run ES update pass `updateES=true` as a build param
   // To run redirects map generation pass `redirects-map=true` as a build param
   const args = process.argv.slice(2);
@@ -442,17 +444,18 @@ exports.onPostBuild = async ({ getNodes, getNodesByType }) => {
     return;
   }
 
-  const isUpdateES = args.some(item => {
-    const arg = item.split('=');
-    return arg && arg.length && arg[0] === 'updateES' && arg[1] === 'true';
-  });
+  const checkParam = (argumentsList, paramName) =>
+    argumentsList.some(item => {
+      const argumentsList = item.split('=');
+      return (
+        argumentsList &&
+        argumentsList.length &&
+        argumentsList[0] === paramName &&
+        argumentsList[1] === 'true'
+      );
+    });
 
-  const isGenerateRedirectMap = args.some(item => {
-    const arg = item.split('=');
-    return arg && arg.length && arg[0] === 'redirects-map' && arg[1] === 'true';
-  });
-
-  if (isGenerateRedirectMap) {
+  if (checkParam(args, 'redirects-map')) {
     // eslint-disable-next-line no-console
     console.log('Generating redirects map');
 
@@ -482,7 +485,7 @@ exports.onPostBuild = async ({ getNodes, getNodesByType }) => {
     console.info('Execution time (hr): %ds %dms', trend[0], trend[1] / 1000000);
   }
 
-  if (isUpdateES) {
+  if (checkParam(args, 'updateES')) {
     // eslint-disable-next-line no-console
     console.log('updating ES');
     const hrstart = process.hrtime();
@@ -495,5 +498,15 @@ exports.onPostBuild = async ({ getNodes, getNodesByType }) => {
     const hrend = process.hrtime(hrstart);
     // eslint-disable-next-line no-console
     console.info('Execution time (hr): %ds %dms', hrend[0], hrend[1] / 1000000);
+  }
+
+  if (checkParam(args, 'generateProductsFeed')) {
+    const kritiqueProductsFeed = await generateProductsFeed(
+      graphql,
+      getNodesByType
+    );
+    console.log('Product feed generation');
+
+    fs.writeFileSync('public/productsFeed.xml', kritiqueProductsFeed);
   }
 };
