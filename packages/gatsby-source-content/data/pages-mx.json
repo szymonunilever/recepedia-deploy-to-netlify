@@ -1756,17 +1756,6 @@
                         }
                       },
                       {
-                        "id": 90001649,
-                        "value": "",
-                        "label": {
-                          "text": "Saludable",
-                          "image": {
-                            "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/meal-planner-content/meal-planner-images/question-1/1/healthy.png",
-                            "alt": "Saludable"
-                          }
-                        }
-                      },
-                      {
                         "id": 90001650,
                         "value": "11",
                         "label": {
