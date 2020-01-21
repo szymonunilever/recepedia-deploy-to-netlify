@@ -1,9 +1,10 @@
-import { RatingAndReviewsProvider } from '../../models';
+import { RatingAndReviewsProvider, RatingAndReviewsEntityType } from '../../models';
 
 export interface RatingProps {
   provider: RatingAndReviewsProvider;
   className?: string;
   linkTo?: string;
-  recipeId: number;
+  id: number | string;
+  entityType: RatingAndReviewsEntityType;
   averageRating?: number;
 }

@@ -1,8 +1,9 @@
-import { RatingAndReviewsProvider } from '../../models/ratings&reviews';
+import { RatingAndReviewsProvider, RatingAndReviewsEntityType } from "../../models";
 
 export interface ReviewsProps {
   provider: RatingAndReviewsProvider;
   className?: string;
   linkTo?: string;
-  recipeId: number;
+  id: number | string;
+  entityType: RatingAndReviewsEntityType
 }
