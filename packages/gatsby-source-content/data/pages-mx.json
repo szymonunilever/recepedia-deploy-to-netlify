@@ -931,7 +931,7 @@
             "name": "SearchListing",
             "content": {
               "searchListingContent": {
-                "title": "Encontramos {numRes} recetas con: {searchInputValue}"
+                "title": "Encontramos {numRes} resultados con: {searchInputValue}"
               },
               "searchInputContent": {
                 "title": "¿Buscando algo?",

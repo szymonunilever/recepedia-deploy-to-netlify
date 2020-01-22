@@ -10,7 +10,8 @@
   }
 
   &__button {
-    width: $button-large-max-width;
+    width: 100%;
+    max-width: $button-large-max-width;
     &-wrap {
       margin-top: 20px;
       text-align: center;

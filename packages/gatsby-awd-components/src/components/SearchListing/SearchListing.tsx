@@ -130,7 +130,7 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
   const searchResultsText = content.searchListingContent.title
     .replace(
       '{numRes}',
-      (recipeResults.count + articleResults.count).toString()
+      (recipeResults.count + articleResults.count + productResults.count).toString()
     )
     .replace(
       '{searchInputValue}',
