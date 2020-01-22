@@ -20,6 +20,9 @@ import {
   BrandSocialChannels,
   Hero,
   Listing,
+  Reviews,
+  RatingAndReviewsEntityType,
+  Rating,
 } from 'gatsby-awd-components/src';
 import { findPageComponentContent, isBrowser } from 'src/utils';
 import BrandHero from 'src/components/BrandHero';
@@ -291,6 +294,12 @@ const BrandProductDetailsPage: React.FunctionComponent<
           >
             {productHero}
           </div>
+          <Rating
+            id={product.productId}
+            entityType={RatingAndReviewsEntityType.product}
+            provider={RatingAndReviewsProvider.kritique}
+            linkTo={product.fields.slug}
+          />
           <ProductCopy
             viewType={ProductCopyViewType.Description}
             product={product}
@@ -362,6 +371,14 @@ const BrandProductDetailsPage: React.FunctionComponent<
       </div>
       <div className={cx(theme.product__attributesRelated)}>
         {relatedCards ? relatedProducts : null}
+      </div>
+      <div>
+        <Reviews
+          id={product.productId}
+          entityType={RatingAndReviewsEntityType.product}
+          provider={RatingAndReviewsProvider.kritique}
+          linkTo={product.fields.slug}
+        />
       </div>
     </section>
   );

@@ -29,6 +29,7 @@ import {
   Tags,
   Button,
   RatingAndReviewsProvider,
+  RatingAndReviewsEntityType,
   Text,
   BrandLogo,
   VideoPlayer,
@@ -250,7 +251,8 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
               />
               {isRecipeValid ? (
                 <Rating
-                  recipeId={recipe.recipeId}
+                  id={recipe.recipeId}
+                  entityType={RatingAndReviewsEntityType.recipe}
                   provider={RatingAndReviewsProvider.kritique}
                   averageRating={recipe.averageRating}
                   linkTo={recipe.fields.slug}
@@ -375,7 +377,8 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
       {isRecipeValid ? (
         <section className={cx(theme.reviews, '_pt--40 wrapper ')}>
           <Reviews
-            recipeId={recipe.recipeId}
+            id={recipe.recipeId}
+            entityType={RatingAndReviewsEntityType.recipe}
             provider={RatingAndReviewsProvider.kritique}
             linkTo={recipe.fields.slug}
           />

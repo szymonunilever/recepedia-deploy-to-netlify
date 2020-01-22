@@ -1,8 +1,8 @@
 export enum RatingAndReviewsProvider {
-  kritique,
-  bazaarvoice,
-  inline,
-  none,
+  kritique = 'kritique',
+  bazaarvoice = 'bazaarvoice',
+  inline = 'inline',
+  none = 'none',
 }
 
 export enum RatingAndReviewsEntityType {

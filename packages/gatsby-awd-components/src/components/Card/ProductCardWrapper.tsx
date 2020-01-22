@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import React, { FunctionComponent } from 'react';
-import { RatingAndReviewsProvider } from '../../models';
+import { RatingAndReviewsEntityType, RatingAndReviewsProvider } from "../../models";
 import { Rating } from '../Rating';
 import { Card } from './Card';
 import { ProductCardWrapperProps } from './models';
@@ -11,15 +11,21 @@ export const ProductCardWrapper: FunctionComponent<ProductCardWrapperProps> = ({
  ratingProvider,
  mainImageIndex= 0,
 })=>{
-  const {averageRating, fields:{slug}, images} = children.props.content;
+  const {averageRating, fields:{slug}, images, productId} = children.props.content;
   const title = children.props.content.title || children.props.content.name;
   const mainImage = images && images[mainImageIndex];
   const localImage = children.props.content.localImage || mainImage;
 
   // this should be widget for rating for product
   const ratingWidget =
-    ratingProvider !== RatingAndReviewsProvider.none ? (
-      <></>
+    ratingProvider === RatingAndReviewsProvider.kritique ? (
+      <Rating
+        id={productId}
+        entityType={RatingAndReviewsEntityType.product}
+        provider={RatingAndReviewsProvider.kritique}
+        averageRating={averageRating}
+        linkTo={slug}
+      />
     ): undefined;
 
   return <Card

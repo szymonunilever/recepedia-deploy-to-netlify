@@ -5,6 +5,7 @@ declare namespace ProductData {
 
   export interface Product {
     id: number | string;
+    productId: number | string;
     brand: string;
     category: string;
     productName: string;

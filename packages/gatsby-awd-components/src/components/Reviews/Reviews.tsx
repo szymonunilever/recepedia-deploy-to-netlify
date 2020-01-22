@@ -12,7 +12,8 @@ import Helmet from 'react-helmet';
 
 const Reviews = ({
   className,
-  recipeId,
+  entityType,
+  id,
   provider,
   linkTo = '',
 }: ReviewsProps) => {
@@ -28,15 +29,6 @@ const Reviews = ({
     <>
       {provider === RatingAndReviewsProvider.kritique ? (
         <>
-          <Helmet
-            script={[
-              {
-                id: `rr-widget-${recipeId}`,
-                src: kritiqueWidgetSrc,
-                async: true,
-              },
-            ]}
-          />
           <div
             className={classNames}
             {...getComponentDataAttrs('recipe-reviews')}
@@ -44,9 +36,9 @@ const Reviews = ({
             <div
               className="rr-widget-container rr-container"
               data-readpanel-template={ReviewsSummaryTemplate.readpanel01}
-              data-entity-type={RatingAndReviewsEntityType.recipe}
-              data-unique-id={recipeId}
-              data-entity-url={isBrowser() && `${locationOrigin}${linkTo}`}
+              data-entity-type={entityType}
+              data-unique-id={id}
+              data-entity-url={isBrowser() && `${locationOrigin}/${linkTo}`}
               data-category-pageurl={isBrowser() && `${locationOrigin}/recipes`}
             />
           </div>

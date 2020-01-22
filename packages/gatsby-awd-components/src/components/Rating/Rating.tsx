@@ -12,7 +12,8 @@ import { ReactComponent as RatingIcon } from 'src/svgs/inline/rating.svg';
 
 const Rating = ({
   className,
-  recipeId,
+  id,
+  entityType,
   provider,
   averageRating = 0,
   linkTo = '',
@@ -48,9 +49,9 @@ const Rating = ({
           <div
             className="rr-widget-container rr-container"
             data-summary-template={RatingSummaryTemplate.inline01}
-            data-entity-type={RatingAndReviewsEntityType.recipe}
-            data-unique-id={recipeId}
-            data-entity-url={isBrowser() && `${locationOrigin}${linkTo}`}
+            data-entity-type={entityType}
+            data-unique-id={id}
+            data-entity-url={isBrowser() && `${locationOrigin}/${linkTo}`}
             data-category-pageurl={isBrowser() && `${locationOrigin}/recipes`}
             onClick={(e: SyntheticEvent) => {
               e.stopPropagation();
