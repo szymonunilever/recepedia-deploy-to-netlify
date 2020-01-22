@@ -54,7 +54,8 @@ const formatUrlPartial = (partial = '') =>
     .replace(/[_-]/, ' ')
     .toLowerCase()
     .split(' ')
-    .join('-');
+    .join('-')
+    .replace(/(-)(?=\1)/g, ''); // replace same concurrent - with single one
 
 const getSlugFromPath = (path, node, prependWithField = null) => {
   const urlPartial = urlPartialsByTypeMap[node.internal.type] || 'id';
