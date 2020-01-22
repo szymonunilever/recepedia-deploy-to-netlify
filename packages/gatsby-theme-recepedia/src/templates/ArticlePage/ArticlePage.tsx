@@ -19,7 +19,6 @@ import {
   SocialIcons,
   SocialSharing,
   SocialSharingViewType,
-  VideoPlayer,
 } from 'gatsby-awd-components/src';
 import DigitalData from '../../../integrations/DigitalData';
 import { WindowLocation } from '@reach/router';
@@ -29,7 +28,6 @@ import { getPagePath } from '../../utils/getPagePath';
 import { ReactComponent as FacebookIcon } from 'src/svgs/inline/facebook.svg';
 import { ReactComponent as TwitterIcon } from 'src/svgs/inline/twitter.svg';
 import { ReactComponent as CloseButton } from 'src/svgs/inline/x-mark.svg';
-import { ReactComponent as PlayIcon } from 'src/svgs/inline/arrow-right.svg';
 import { ReactComponent as OpenModelButtonIcon } from 'src/svgs/inline/social-sharing-circle.svg';
 import { ReactComponent as PinterestIcon } from 'src/svgs/inline/pinterest.svg';
 import { ReactComponent as WhatsappIcon } from 'src/svgs/inline/whatsapp.svg';
@@ -50,12 +48,13 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
   const {
     page: { seo, components, type },
   } = pageContext;
-  const tagList = article.tags.map(tag => tag.id);
-  const brandedArticles = allArticle.nodes
-    .filter(art => art.tags.every(tag => tagList.includes(tag.id)))
+  let brandedArticles = allArticle.nodes
+    .filter(art => art.tags && art.tags.some(tag => article.tags.includes(tag)))
     .filter(art => art.id !== article.id)
     .slice(0, 4);
-
+  if (!brandedArticles.length) {
+    brandedArticles = allArticle.nodes.slice(0, 4);
+  }
   const mainImageHero = {
     image: {
       localImage: article.localImage,
@@ -191,14 +190,16 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
           imageSizes={IMAGE_SIZES.HERO}
         />
       </section>
-      <section className={cx(theme.articleRecent, 'wrapper _pb--40 _pt--40')}>
-        <Listing
-          content={findPageComponentContent(components, 'RelatedArticles')}
-          titleLevel={2}
-        >
-          {articleCards}
-        </Listing>
-      </section>
+      {brandedArticles.length ? (
+        <section className={cx(theme.articleRecent, 'wrapper _pb--40 _pt--40')}>
+          <Listing
+            content={findPageComponentContent(components, 'RelatedArticles')}
+            titleLevel={2}
+          >
+            {articleCards}
+          </Listing>
+        </section>
+      ) : null}
     </Layout>
   );
 };
@@ -210,7 +211,7 @@ export const query = graphql`
     article(fields: { slug: { eq: $slug } }) {
       ...ArticleFields
     }
-    allArticle {
+    allArticle(sort: { fields: creationTime, order: DESC }) {
       nodes {
         ...ArticleFields
       }

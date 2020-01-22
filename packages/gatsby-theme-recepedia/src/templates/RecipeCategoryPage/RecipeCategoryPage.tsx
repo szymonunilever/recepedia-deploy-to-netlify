@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
@@ -22,7 +22,7 @@ import {
   RecipeCardWrapper,
   Card,
 } from 'gatsby-awd-components/src';
-import { findPageComponentContent, getImageAlt, isBrowser } from 'src/utils';
+import { findPageComponentContent, getImageAlt } from 'src/utils';
 import cx from 'classnames';
 import { favoriteButtonDefaults } from '../../themeDefaultComponentProps';
 import theme from '../RecipeCategoryPage/RecipeCategoryPage.module.scss';
@@ -90,9 +90,9 @@ const RecipeCategoryPage = ({
     });
     seoImage && (seoImage.content = localImage.childImageSharp.fluid.src);
   }
-  const tagList = categoryTags.map(tag => tag.id);
+  const tagList = categoryTags ? categoryTags.map(tag => tag.tagId) : [];
   let relatedArticles = allArticle.nodes
-    .filter(art => art.tags.every(tag => tagList.includes(tag.id)))
+    .filter(art => art.tags && art.tags.some(tag => tagList.includes(tag)))
     .slice(0, 4);
   if (!relatedArticles.length) {
     relatedArticles = allArticle.nodes.slice(0, 4);

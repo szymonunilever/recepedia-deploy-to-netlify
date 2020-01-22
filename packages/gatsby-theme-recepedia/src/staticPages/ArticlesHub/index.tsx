@@ -18,8 +18,6 @@ import {
   RecipeListing,
   RecipeListViewType,
   TagName,
-  Tags,
-  TagVariant,
   Text,
 } from 'gatsby-awd-components/src';
 import MediaGallery from 'gatsby-awd-components/src/components/MediaGallery';
@@ -38,7 +36,6 @@ import { ProfileKey } from '../../utils/browserStorage/models';
 // Component Styles
 import '../../scss/pages/_articleHub.scss';
 import theme from 'src/staticPages/ArticlesHub/ArticleHub.module.scss';
-import useMedia from '../../utils/useMedia';
 
 const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
   data,
@@ -58,27 +55,6 @@ const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
     () => getUserProfileByKey(ProfileKey.favorites) as number[],
     updateFavorites
   );
-  const initialTagsCount = useMedia(undefined, [4, 2]);
-  const tagsContent = findPageComponentContent(components, 'Tags');
-  const searchPagePath = getPagePath('Search');
-  const articleTags: Internal.Tag[] = []; // TODO Change logic for getting article tags
-  allArticle.nodes.forEach(article => {
-    article.tags.forEach((tag, i) => {
-      if (articleTags.some(artTag => artTag.id === tag.id)) {
-        return;
-      }
-      articleTags.push({
-        tagId: i,
-        id: tag.id,
-        name: tag.name,
-        title: tag.name,
-        fields: {
-          slug: `${searchPagePath}?searchQuery=${tag.name}`,
-        },
-      });
-    });
-  });
-
   const carouselConfig = {
     breakpoints: [
       {
@@ -119,16 +95,6 @@ const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
           brandLogoLink={brandLogoLink}
         />
       </section>
-      {tagsContent && articleTags.length > 0 && (
-        <section className={cx(theme.articleHubTags, 'wrapper')}>
-          <Tags
-            initialCount={initialTagsCount}
-            list={articleTags}
-            content={tagsContent}
-            className="_pb--40 _pt--40"
-          />
-        </section>
-      )}
       <section className="_pb--40">
         <Hero
           content={findPageComponentContent(components, 'Hero')}

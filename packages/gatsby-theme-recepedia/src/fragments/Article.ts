@@ -21,10 +21,7 @@ export const query = graphql`
         }
       }
     }
-    tags {
-      id
-      name
-    }
+    tags
     shortDescription
     content
     creationTime

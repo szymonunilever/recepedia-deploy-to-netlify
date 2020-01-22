@@ -191,7 +191,7 @@
               "value": "253x320 PAN Y TRIGO"
             }
           ],
-          "path": "/content/dam/brands/maizena/global_use/1531153-253x320-pan-y-trigo.jpg"
+          "path": "brands/maizena/global_use/1531153-253x320-pan-y-trigo.jpg"
         },
         {
           "fileName": "1531233-476x635-gluten.jpg",
@@ -382,7 +382,7 @@
               "value": "476X635 GLUTEN"
             }
           ],
-          "path": "/content/dam/brands/maizena/global_use/1531233-476x635-gluten.jpg"
+          "path": "brands/maizena/global_use/1531233-476x635-gluten.jpg"
         },
         {
           "fileName": "1531234-476x635-huevos.jpg",
@@ -581,7 +581,7 @@
               "value": "476X635 HUEVOS"
             }
           ],
-          "path": "/content/dam/brands/maizena/global_use/1531234-476x635-huevos.jpg"
+          "path": "brands/maizena/global_use/1531234-476x635-huevos.jpg"
         },
         {
           "fileName": "1845996-hellmans-recycling-2020-v2.jpg",
@@ -768,7 +768,7 @@
               "value": "Hellmann’s Art?culo 2020 M?xico V2"
             }
           ],
-          "path": "/content/dam/brands/hellmann_s_world/mexico/1845996-hellmans-recycling-2020-v2.jpg"
+          "path": "brands/hellmann_s_world/mexico/1845996-hellmans-recycling-2020-v2.jpg"
         },
         {
           "fileName": "1841798-hellmans-recycling-angel-2020.png",
@@ -915,7 +915,7 @@
               "value": "Hellmans Articulo Angel !00% Reciclado"
             }
           ],
-          "path": "/content/dam/brands/hellmann_s_world/mexico/1841798-hellmans-recycling-angel-2020.png"
+          "path": "brands/hellmann_s_world/mexico/1841798-hellmans-recycling-angel-2020.png"
         },
         {
           "fileName": "1531236-476x635-panque-platano.jpg",
@@ -1106,7 +1106,7 @@
               "value": "476X635 PANQUE PLATANO"
             }
           ],
-          "path": "/content/dam/brands/maizena/global_use/1531236-476x635-panque-platano.jpg"
+          "path": "brands/maizena/global_use/1531236-476x635-panque-platano.jpg"
         },
         {
           "fileName": "1690800-sustentabilidad-imagen-2.jpg",
@@ -1305,7 +1305,7 @@
               "value": "Sustentabilidad Imagen 12"
             }
           ],
-          "path": "/content/dam/brands/knorr_world/global_use/1690800-sustentabilidad-imagen-2.jpg"
+          "path": "brands/knorr_world/global_use/1690800-sustentabilidad-imagen-2.jpg"
         },
         {
           "fileName": "1845997-hellmans-recycling-1662205-v2.jpg",
@@ -1500,7 +1500,7 @@
               "value": "Hellmann’s Art?culo Reciclable M?xico V2"
             }
           ],
-          "path": "/content/dam/brands/hellmann_s_world/mexico/1845997-hellmans-recycling-1662205-v2.jpg"
+          "path": "brands/hellmann_s_world/mexico/1845997-hellmans-recycling-1662205-v2.jpg"
         }
       ]
     },
@@ -1765,12 +1765,7 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "tags": [1488]
         },
         {
           "id": "YXJ0aWNsZXMvaGVsbG1hbm5zL2Nvbm9jZS1tYXMtZGUtbm9zb3Ryb3MvLXF1ZS1lcy1sYS1tYXlvbmVzYS0\u003d",
@@ -1851,189 +1846,7 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
-        },
-        {
-          "id": "YXJ0aWNsZXMvaGVsbG1hbm5zL2Nvbm9jZS1tYXMtZGUtbm9zb3Ryb3MvLXF1ZS1oZXN0YW1vcy1oYWNpZW5kby1hbC1yZXNwZWN0by0\u003d",
-          "path": "/content/aem-headless-cms/recepedia/mx-es/articles/hellmanns/conoce-mas-de-nosotros/-que-hestamos-haciendo-al-respecto-",
-          "brand": "Hellmanns",
-          "section": "Conoce más de nosotros",
-          "articleName": "¿Qué hestamos haciendo al respecto?",
-          "creationTime": "2020-01-09T18:04:36Z",
-          "articleContent": [
-            {
-              "_key": "057a8793-a293-4fbc-9dc7-35e255dd09a7",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "1431bf06-7aef-4d47-a7c6-3edc5d851b4e",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "El problema general de los plásticos es un problema a nivel global, lo que estamos haciendo al respecto y lo que puedes hacer para ayudar está a continuación  (s1)"
-                }
-              ],
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "1249e690-a4cc-4183-90ff-cb502e36d7e6",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "6b696693-eb2c-457a-a94f-2a8595133c13",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "En Hellmann’s estamos del lado del sabor ."
-                }
-              ],
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "221d19e5-6610-4f95-bb00-d281057aafd2",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "09260994-77fa-4b3c-a052-febce2fe9a14",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "Como marca líder de mayonesa a nivel global, tenemos la responsabilidad de proporcionar a las personas que aman nuestros productos condimentos que no sólo tienen buen sabor, sino que son una fuerza para el bien. En pocas palabras, queremos ofrecer productos con más sabor y menos desperdicio. Es por eso que nos comprometemos a ser parte de la solución ante el desperdicio de envases de nuestros productos. El problema general de los plásticos es un problema a nivel global, lo que estamos haciendo al respecto y lo que puedes hacer para ayudar está a continuación."
-                }
-              ],
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "ae39837c-8a08-446a-a2c5-c5f6500725b2",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "445adf73-42b2-4c57-bac0-62aa3fb2c729",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "Los plásticos en todo el mundo es un problema que tenemos que arreglar. Mientras que los plásticos tienen muchas cualidades, muchos métodos de manufactura actuales significan que muchos productos están hechos de plásticos de un solo uso. No hay una guía clara sobre cómo y dónde deshacernos de los plásticos, la infraestructura de reciclaje de distintos países no permite que estos plásticos sean reintegrados a producción. Como parte de una iniciativa mundial de Unilever,"
-                }
-              ],
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "7db816c2-ef53-46ed-809f-24922fe144d4",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "643663ba-388b-4fcf-ba0d-b4598168191f",
-                  "_type": "span",
-                  "marks": [
-                    "c45fcdfc-fd70-4422-8a35-a4fe5c2058d2"
-                  ],
-                  "text": ""
-                }
-              ],
-              "markDefs": [
-                {
-                  "_key": "c45fcdfc-fd70-4422-8a35-a4fe5c2058d2",
-                  "_type": "image",
-                  "src": "/content/dam/brands/hellmann_s_world/mexico/1845996-hellmans-recycling-2020-v2.jpg"
-                }
-              ],
-              "style": "normal"
-            },
-            {
-              "_key": "e1a0f9d0-94ca-4fe0-8921-9f093e55ef85",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "4c23153b-3bea-4934-b457-3b29fd65203d",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "Hellmann’s está cambiando sus envases Nos emociona compartir contigo que a partir de 2019 todos los envases plásticos de mayonesa Hellmann’s en México son reciclables y están 100% hechos de plásticos recuperados."
-                }
-              ],
-              "level": 1,
-              "listItem": "bullet",
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "474f8622-6bb3-451a-b964-0564a348ca94",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "430694fc-812f-4050-adb5-03e3d0f2bf88",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "Los nuevos envases de plástico recuperado cuentan nivel alimentario, lo que significa que es 100% seguro poner alimento en ellos."
-                }
-              ],
-              "level": 1,
-              "listItem": "bullet",
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "9b266104-891c-4054-930e-bfaa91950994",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "df1f9a16-6488-4a24-8761-d8215fe70ce9",
-                  "_type": "span",
-                  "marks": [],
-                  "text": "Unilever está comprometido a asegurar que el 100% de los envases plásticos estarán diseñados para poder ser reutilizados, reciclados o compostables para el año 2025 y los esfuerzos de Hellmann’s México ya aportan a este compromiso. "
-                }
-              ],
-              "level": 1,
-              "listItem": "bullet",
-              "markDefs": [],
-              "style": "normal"
-            },
-            {
-              "_key": "01d73a43-1157-4c26-a693-a37ab02326aa",
-              "_type": "block",
-              "children": [
-                {
-                  "_key": "4220d2b4-67f0-4c11-bb1c-c1eaf1b3552d",
-                  "_type": "span",
-                  "marks": [],
-                  "text": ""
-                },
-                {
-                  "_key": "27c514e3-cec8-436f-bdf5-85f262e58dbc",
-                  "_type": "span",
-                  "marks": [],
-                  "text": ""
-                },
-                {
-                  "_key": "1da5d255-e313-48a7-9da4-f16494e7822b",
-                  "_type": "span",
-                  "marks": [
-                    "1ec8d212-6038-45b5-a266-43792a433a3e"
-                  ],
-                  "text": ""
-                }
-              ],
-              "markDefs": [
-                {
-                  "_key": "1ec8d212-6038-45b5-a266-43792a433a3e",
-                  "_type": "image",
-                  "src": "/content/dam/brands/hellmann_s_world/mexico/1841798-hellmans-recycling-angel-2020.png"
-                }
-              ],
-              "style": "normal"
-            }
-          ],
-          "articleHeroImage": "/content/dam/brands/hellmann_s_world/mexico/1845996-hellmans-recycling-2020-v2.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "tags": [1361]
         },
         {
           "id": "YXJ0aWNsZXMvaGVsbG1hbm5zL251ZXN0cm8tY29tcHJvbWlzby1lcy1jb24vZWwtYXV0ZW50aWNvLXNhYm9yLWRlLWxhLWNvbWlkYQ\u003d\u003d",
@@ -2130,12 +1943,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/hellmann_s_world/mexico/1607817-pescado-mayo-hellmanns.jpg",
+          "tags": [1499]
         },
         {
           "id": "YXJ0aWNsZXMvaGVsbG1hbm5zL251ZXN0cm8tY29tcHJvbWlzby1lcy1jb24vaHVldm9zLWRlLWdhbGxpbmEtbGlicmU\u003d",
@@ -2174,12 +1983,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/hellmann_s_world/north_america/934650-6544-franklin-eggs-r1.jpg",
+          "tags": [1474, 1506]
         },
         {
           "id": "YXJ0aWNsZXMvaGVsbG1hbm5zL251ZXN0cm8tY29tcHJvbWlzby1lcy1jb24vaW5ncmVkaWVudGVzLWRlLWFsdGEtY2FsaWRhZA\u003d\u003d",
@@ -2218,12 +2023,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/hellmann_s_world/north_america/954051-bean-retina.jpg",
+          "tags": [1400]
         },
         {
           "id": "YXJ0aWNsZXMvaGVsbG1hbm5zL251ZXN0cm8tY29tcHJvbWlzby1lcy1jb24vbm8tbWFzLXBsYXN0aWNv",
@@ -2392,13 +2193,8 @@
               "style": "normal"
             }
           ],
-          "articleHeroImage": "/content/dam/brands/hellmann_s_world/mexico/1845997-hellmans-recycling-1662205-v2.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/hellmann_s_world/mexico/1845997-hellmans-recycling-1662205-v2.jpg",
+          "tags": [1472, 1473, 1488]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvZWwtZnV0dXJvLWRlbC1tdW5kby1lc3RhLWVuLW51ZXN0cm9zLXBsYXRpbGxvcy9jdWx0aXZhci1wYXJhLW9idGVuZXItdW4tZ3Jhbi1zYWJvci1jb24tbWVub3MtYWd1YQ\u003d\u003d",
@@ -2548,12 +2344,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/global_use/756943-cp-005-video-teaser-image-article-01.jpg",
+          "tags": [1518]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvZWwtZnV0dXJvLWRlbC1tdW5kby1lc3RhLWVuLW51ZXN0cm9zLXBsYXRpbGxvcy9kZXNoaWRyYXRhZG8tLXVuYS1hbnRpZ3VhLWZvcm1hLWRlLWNvbnNlcnZhci1lbC1zYWJvcg\u003d\u003d",
@@ -2689,12 +2481,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/united_kingdom/1590229-cp-005-hero-image-01.jpg",
+          "tags": [1514, 2078, 1553]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvZWwtZnV0dXJvLWRlbC1tdW5kby1lc3RhLWVuLW51ZXN0cm9zLXBsYXRpbGxvcy9lbC1mdXR1cm8tZGVsLW11bmRvLWVzdGEtZW4tdHUtcGxhdG8t",
@@ -2823,12 +2611,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/cocina",
-              "displayName": "cocina"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/global_use/1514818-homepageafterlaunch-6.jpg",
+          "tags": [1108, 1053, 1514]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvZWwtZnV0dXJvLWRlbC1tdW5kby1lc3RhLWVuLW51ZXN0cm9zLXBsYXRpbGxvcy9lbC1pbXBhY3RvLWRlLW51ZXN0cmFzLWVsZWNjaW9uZXMtZGUtYWxpbWVudG9z",
@@ -3064,12 +2848,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/global_use/1541834-future-50-foods-for-a-healthier-planet-1143px-op1.jpg",
+          "tags": [1475, 1487]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvZWwtZnV0dXJvLWRlbC1tdW5kby1lc3RhLWVuLW51ZXN0cm9zLXBsYXRpbGxvcy9lbC1pbXBhY3RvLWRlLW51ZXN0cmFzLWVsZWNjaW9uZXMtZGUtYWxpbWVudG9zMA\u003d\u003d",
@@ -3222,12 +3002,7 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/cocina",
-              "displayName": "cocina"
-            }
-          ]
+          "tags": [1108, 1487]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvZWwtZnV0dXJvLWRlbC1tdW5kby1lc3RhLWVuLW51ZXN0cm9zLXBsYXRpbGxvcy92ZWdldGFsZXMtc3VzdGVudGFibGVz",
@@ -3355,13 +3130,8 @@
               "style": "normal"
             }
           ],
-          "articleHeroImage": "/content/dam/brands/knorr_world/global_use/1690800-sustentabilidad-imagen-2.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/global_use/1690800-sustentabilidad-imagen-2.jpg",
+          "tags": [1518, 1487, 2077, 1495]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvbG9zLTUwLWFsaW1lbnRvcy1kZWwtZnV0dXJvL2NlcmVhbGVzLS1ncmFub3MtLWxlZ3VtaW5vc2FzLXktbWFz",
@@ -3683,12 +3453,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/global_use/1541833-discover-the-11-categories-of-the-future-50-foods-1143px.jpg",
+          "tags": [1462, 1498, 2078]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvbG9zLTUwLWFsaW1lbnRvcy1kZWwtZnV0dXJvL2RhbGUtdW4tZ2lyby1zdXRlbnRhYmxlLWEtdHVzLXJlY2V0YXM\u003d",
@@ -3916,12 +3682,7 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "tags": [1108, 2075, 1487, 1053]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvbG9zLTUwLWFsaW1lbnRvcy1kZWwtZnV0dXJvL2Rlc2N1YnJlLWxvcy0xNy1hbGltZW50b3MtZGVsLWZ1dHVyby1lbi1tZXhpY28\u003d",
@@ -4240,12 +4001,7 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "tags": [1495, 1518, 2077]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvbG9zLTUwLWFsaW1lbnRvcy1kZWwtZnV0dXJvL2Rlc2N1YnJlLWxvcy01MC1hbGltZW50b3MtZGVsLWZ1dHVybw\u003d\u003d",
@@ -4530,12 +4286,7 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "tags": [1462]
         },
         {
           "id": "YXJ0aWNsZXMva25vcnIvbG9zLTUwLWFsaW1lbnRvcy1kZWwtZnV0dXJvL2VsLXF1aWVuLS1xdWUteS1wb3ItcXVlLWRlLWxvcy01MC1hbGltZW50b3MtZGVsLWZ1dHVybw\u003d\u003d",
@@ -4659,12 +4410,8 @@
               "style": "normal"
             }
           ],
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/future50foods",
-              "displayName": "future50foods"
-            }
-          ]
+          "articleHeroImage": "brands/knorr_world/global_use/1541860-the-who-what-and-why-of-future-50-foods-1143px.jpg",
+          "tags": [1487, 1462]
         },
         {
           "id": "YXJ0aWNsZXMvbWFpemVuYS9jb25vY2UtbWFzLWRlL2FsaW1ldGFjaW9uLXNhbHVkYWJsZQ\u003d\u003d",
@@ -4791,13 +4538,8 @@
               "style": "normal"
             }
           ],
-          "articleHeroImage": "/content/dam/brands/maizena/global_use/1531153-253x320-pan-y-trigo.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/maizena/global_use/1531153-253x320-pan-y-trigo.jpg",
+          "tags": [1487]
         },
         {
           "id": "YXJ0aWNsZXMvbWFpemVuYS9jb25vY2UtbWFzLWRlL2VsLXNlY3JldG8tZGUtbGEtdHJhZGljaW9u",
@@ -4878,13 +4620,8 @@
               "style": "normal"
             }
           ],
-          "articleHeroImage": "/content/dam/brands/maizena/global_use/1531233-476x635-gluten.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/maizena/global_use/1531233-476x635-gluten.jpg",
+          "tags": [1397, 710]
         },
         {
           "id": "YXJ0aWNsZXMvbWFpemVuYS9jb25vY2UtbWFzLWRlL3RhbWJpZW4tc29tb3MtZGUtaGllcnJv",
@@ -4937,13 +4674,8 @@
               "style": "normal"
             }
           ],
-          "articleHeroImage": "/content/dam/brands/maizena/global_use/1531234-476x635-huevos.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/maizena/global_use/1531234-476x635-huevos.jpg",
+          "tags": [617]
         },
         {
           "id": "YXJ0aWNsZXMvbWFpemVuYS9jb25vY2UtbWFzLWRlL3VuLWRlc2F5dW5vLXBlcmZlY3RvLQ\u003d\u003d",
@@ -4996,13 +4728,8 @@
               "style": "normal"
             }
           ],
-          "articleHeroImage": "/content/dam/brands/maizena/global_use/1531236-476x635-panque-platano.jpg",
-          "tags": [
-            {
-              "id": "aem-headless-cms:recepedia/sustentabilidad/food-waste",
-              "displayName": "sustentabilidad/food-waste"
-            }
-          ]
+          "articleHeroImage": "brands/maizena/global_use/1531236-476x635-panque-platano.jpg",
+          "tags": [1551]
         }
       ]
     }
