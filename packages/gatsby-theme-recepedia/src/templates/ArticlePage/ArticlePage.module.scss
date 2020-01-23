@@ -207,6 +207,7 @@
             left: calc(50% - 28px);
             top: 8rem;
             z-index: 1;
+            width: auto;
             @include respondTo(desktop) {
               left: calc(50% - 66px);
               top: 4rem;

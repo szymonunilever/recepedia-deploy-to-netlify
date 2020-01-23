@@ -109,21 +109,17 @@ exports.sourceNodes = async (
   articlesList.forEach(article => {
     const { id, path, brand, section, articleName, articleContent, tags, creationTime } = article;
     const getImage = (article, imagesData) => {
-      return imagesData[
-        article.articleHeroImage ?
-          article.articleHeroImage.replace('/content/dam/', '') :
-          'brands/maizena/global_use/1531233-476x635-gluten.jpg']
+      return imagesData[article.articleHeroImage || 'brands/maizena/global_use/1531233-476x635-gluten.jpg']
     };
 
     const articleNode = {
-      id, path, section, creationTime,
+      id, path, section, creationTime, tags,
       brand: brand ? brand.replace(/[^a-zA-Z0-9\s-]+/g, '').toLowerCase() : '',
       name: articleName,
       title: articleName,
       localImage: getImage(article, imagesData),
       content: JSON.stringify(articleContent),
       assets: [],
-      tags: tags ? tags.map(el => ({...el, name: el.displayName })) : []
     };
     createArticleNodes(
       articleNode,
@@ -213,7 +209,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       assets: [ArticleAsset]
       fields: ArticleSlugField
       brand: String
-      tags: [ArticleTags]
+      tags: [Int]
     }
     type ArticleImage {
       childImageSharp: ArticleImageChild
@@ -239,10 +235,6 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
     }
     type ArticleSlugField {
       slug: String!
-    }
-    type ArticleTags {
-      id: String!
-      name: String!
     }
   `;
   createTypes(typeDefs);
