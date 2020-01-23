@@ -63,7 +63,7 @@
     "react-swipeable": "^5.5.0",
     "smart-outline": "^0.0.5",
     "smoothscroll-polyfill": "^0.4.4",
-    "terser-webpack-plugin": "^1.4.1",
+    "terser-webpack-plugin": "^2.3.2",
     "typeface-rubik": "^0.0.72",
     "url-search-params-polyfill": "^7.0.1",
     "whatwg-fetch": "^3.0.0",
