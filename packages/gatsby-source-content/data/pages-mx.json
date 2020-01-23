@@ -1057,19 +1057,25 @@
           {
             "name": "Card",
             "content": {
-              "view": "Address",
-              "title": "Dirección",
-              "texts": [
-                "Paseo de Los Tamarindos 150, Bosques de las Lomas, Cuajimalpa de Morelos,",
-                "05120 Ciudad de México, CDMX"
-              ],
-              "type": "address"
+              "view": "Phone",
+              "title": "Teléfono",
+              "texts": ["800 99 060 00"],
+              "type": "phone"
             }
           },
           {
             "name": "Card",
             "content": {
-              "view": "Contact",
+              "view": "Email",
+              "title": "Correo electrónico",
+              "texts": ["foods.sac@unilever.com"],
+              "type": "email"
+            }
+          },
+          {
+            "name": "Card",
+            "content": {
+              "view": "ContactHidden",
               "title": "Envíanos un mail.",
               "texts": [
                 "Para ponerte en contacto con nostros vía correo electrónico solo llena el siguiente formulario"
