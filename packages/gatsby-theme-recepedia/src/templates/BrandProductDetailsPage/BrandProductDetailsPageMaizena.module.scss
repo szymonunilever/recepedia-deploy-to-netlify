@@ -1,9 +1,10 @@
 @import 'src/scss/vars';
 @import 'src/scss/mixins';
+@import './../../scss/brands/hellmanns/_fonts.scss';
 @import './../../scss/brands/maizena/mixins';
 
 :global {
-  @import './../../scss/brands/maizena/index.scss';
+  @import './../../scss/brands/maizena/_theme.scss';
   @import './../../scss/components/Button/_index.scss';
 }
 
@@ -79,6 +80,76 @@
       &-nutrients {
         table {
           @include text-transformer;
+        }
+      }
+
+      &__rating {
+        .rr-widget-container {
+          .tReview {
+            color: $maizena-color-secondary;
+            &:after {
+              content: 'Comentarios'; // sort of mock for es-mx. Needs for another approach
+            }
+          }
+          .wRtng {
+            &:after {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+      &__reviews {
+        .rr-widget-container {
+          padding-top: 15px;
+          background: transparent;
+          h2 {
+            font: 700 2.4rem/1 $vivaStdBold;
+            color: $maizena-color-secondary;
+            @include respondTo(desktop) {
+              line-height: 1.25;
+            }
+          }
+          .reviewDate {
+            @include text-transformer;
+          }
+          .average-rating {
+            .total-reviews {
+              @include text-transformer;
+              .aggRtng {
+                font: 700 4.8rem/1.21 $proximaNovaBold;
+                color: $maizena-color-secondary;
+                &:after {
+                  border-right: 1px solid $maizena-color-secondary;
+                }
+              }
+              .tRtng {
+                @include text-transformer;
+              }
+            }
+          }
+          .write-review-btn {
+            @extend .m-button-light;
+            &:before {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+            }
+            @media (hover: hover),
+              (-ms-high-contrast: none),
+              (-ms-high-contrast: active) {
+              &:hover {
+                &:before {
+                  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23facc00' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+                }
+              }
+            }
+          }
+          .reviews-container {
+            h3 {
+              @include title-transformer;
+            }
+            h4.reviewer-name {
+              font: 400 1.6rem/1.25 $proximaNovaNormal;
+            }
+          }
         }
       }
     }

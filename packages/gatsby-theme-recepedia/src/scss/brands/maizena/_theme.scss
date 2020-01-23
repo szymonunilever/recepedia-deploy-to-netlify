@@ -177,3 +177,23 @@
     }
   }
 }
+.m-button-light {
+  background-color: $maizena-color-primary;
+  color: $maizena-color-secondary;
+  border: 1px solid $maizena-color-primary;
+  svg {
+    fill: $maizena-color-secondary;
+  }
+  @media (hover: hover),
+    (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+    &:hover {
+      background-color: $maizena-color-secondary;
+      color: $maizena-color-primary;
+      border: 1px solid $maizena-color-secondary;
+      svg {
+        fill: $maizena-color-primary;
+      }
+    }
+  }
+}

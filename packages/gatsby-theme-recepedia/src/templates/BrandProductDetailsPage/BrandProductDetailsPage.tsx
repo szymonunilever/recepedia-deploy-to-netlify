@@ -177,7 +177,7 @@ const BrandProductDetailsPage: React.FunctionComponent<
   );
 
   const brandSocialChannels = (
-    <section className="wrapper bg-primary brand-social _pt--40 _pb--40">
+    <section className="wrapper bg-primary bg-primary--wave brand-social _pt--40 _pb--40">
       <div className="bow-white" />
       <Text
         tag={TagName.h2}
@@ -299,6 +299,7 @@ const BrandProductDetailsPage: React.FunctionComponent<
             entityType={RatingAndReviewsEntityType.product}
             provider={RatingAndReviewsProvider.kritique}
             linkTo={product.fields.slug}
+            className="product__rating"
           />
           <ProductCopy
             viewType={ProductCopyViewType.Description}
@@ -324,63 +325,69 @@ const BrandProductDetailsPage: React.FunctionComponent<
   );
 
   const productBody = (
-    <section
-      className={cx(
-        theme.product__attributesWrapper,
-        brandTheme && brandTheme.product__attributesWrapper,
-        '_pb--40 _pt--40 bg-primary bg-primary--wave up-to wrapper'
-      )}
-    >
-      <div
+    <>
+      <section
         className={cx(
-          theme.product__attributes,
-          brandTheme && brandTheme.product__attributes
+          theme.product__attributesWrapper,
+          brandTheme && brandTheme.product__attributesWrapper,
+          '_pb--40 _pt--40 bg-primary bg-primary--wave up-to wrapper'
         )}
       >
-        {product.allergy || product.ingredients ? (
-          product.ingredients ? (
-            <div className={cx(theme.product__attributesColumn)}>
-              <ProductCopy
-                viewType={ProductCopyViewType.Ingredients}
-                product={product}
-                titleLevel={3}
-                content={findPageComponentContent(
-                  components,
-                  'ProductCopy',
-                  'Ingredients'
-                )}
-              />
-              {product.allergy ? (
+        <div
+          className={cx(
+            theme.product__attributes,
+            brandTheme && brandTheme.product__attributes
+          )}
+        >
+          {product.allergy || product.ingredients ? (
+            product.ingredients ? (
+              <div className={cx(theme.product__attributesColumn)}>
                 <ProductCopy
-                  viewType={ProductCopyViewType.Allergy}
+                  viewType={ProductCopyViewType.Ingredients}
                   product={product}
                   titleLevel={3}
                   content={findPageComponentContent(
                     components,
                     'ProductCopy',
-                    'Allergy'
+                    'Ingredients'
                   )}
                 />
-              ) : null}
-            </div>
-          ) : null
-        ) : null}
-        <div className={cx(theme.product__attributesColumn)}>
-          {productNutrients}
+                {product.allergy ? (
+                  <ProductCopy
+                    viewType={ProductCopyViewType.Allergy}
+                    product={product}
+                    titleLevel={3}
+                    content={findPageComponentContent(
+                      components,
+                      'ProductCopy',
+                      'Allergy'
+                    )}
+                  />
+                ) : null}
+              </div>
+            ) : null
+          ) : null}
+          <div className={cx(theme.product__attributesColumn)}>
+            {productNutrients}
+          </div>
         </div>
-      </div>
-      <div className={cx(theme.product__attributesRelated)}>
-        {relatedCards.length ? relatedProducts : null}
-      </div>
-      <div>
-        <Reviews
-          id={product.productId}
-          entityType={RatingAndReviewsEntityType.product}
-          provider={RatingAndReviewsProvider.kritique}
-          linkTo={product.fields.slug}
-        />
-      </div>
-    </section>
+        <div className={cx(theme.product__attributesRelated)}>
+          {relatedCards.length ? relatedProducts : null}
+        </div>
+      </section>
+      <section
+        className={'product__reviews bg-secondary wrapper _pt--40 _pb--40'}
+      >
+        <div>
+          <Reviews
+            id={product.productId}
+            entityType={RatingAndReviewsEntityType.product}
+            provider={RatingAndReviewsProvider.kritique}
+            linkTo={product.fields.slug}
+          />
+        </div>
+      </section>
+    </>
   );
 
   if (localImage) {

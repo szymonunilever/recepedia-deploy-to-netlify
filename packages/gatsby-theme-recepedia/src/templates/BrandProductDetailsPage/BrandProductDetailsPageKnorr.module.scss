@@ -94,6 +94,67 @@
           }
         }
       }
+      &__rating {
+        .rr-widget-container {
+          .tReview {
+            color: $knorr-text-color;
+            &:after {
+              content: 'Comentarios'; // sort of mock for es-mx. Needs for another approach
+            }
+          }
+          .wRtng {
+            &:after {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23777777' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+      &__reviews {
+        .rr-widget-container {
+          padding-top: 15px;
+          background: transparent;
+          h2 {
+            font: 700 1.6rem/0.88 $filsonSoftBold;
+            color: $knorr-color-primary;
+            @include respondTo(desktop) {
+              font-size: 2.5rem;
+              line-height: 1.2;
+            }
+          }
+          .reviewDate {
+            font: 400 1.2rem/1.17 $arial;
+          }
+          .average-rating {
+            .total-reviews {
+              font: 400 1.4rem/1.29 $arial;
+              color: $knorr-color-primary;
+              .aggRtng {
+                font: 700 4.8rem/1.21 $filsonSoftBold;
+                color: $knorr-color-primary;
+              }
+              .tRtng {
+                font: 400 1.4rem/1.29 $arial;
+                color: $knorr-color-primary;
+              }
+            }
+          }
+          .write-review-btn {
+            @extend .k-button-dark;
+            &:before {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+            }
+          }
+          .reviews-container {
+            h3 {
+              font: 700 2.1rem/1.33 $filsonSoftBold;
+              color: $knorr-color-primary;
+            }
+            .rr-comments {
+              font: 400 1.4rem/1.29 $arial;
+            }
+          }
+        }
+      }
     }
 
     .card {
