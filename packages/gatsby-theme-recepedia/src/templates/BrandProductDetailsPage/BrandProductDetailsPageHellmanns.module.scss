@@ -63,11 +63,114 @@
 
       &__heading {
         &-button {
-          // background: $hellmans-color-primary;
           @extend .h-button-dark;
           @include respondTo(desktop) {
             font-size: 1.8rem;
             height: 60px;
+          }
+        }
+      }
+      &__rating {
+        .rr-widget-container {
+          .tReview {
+            color: $hellmans-color-primary;
+            &:after {
+              content: 'Comentarios'; // sort of mock for es-mx. Needs for another approach
+            }
+          }
+          .wRtng {
+            &:after {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23004976' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+      &__reviews {
+        .rr-widget-container {
+          padding-top: 15px;
+          background: transparent;
+          h2 {
+            font: 900 1.6rem/0.88 $brandonGrotesqueBlack;
+            text-transform: uppercase;
+            color: $hellmans-color-primary;
+            @include respondTo(desktop) {
+              font-size: 2.5rem;
+              line-height: 1.2;
+            }
+          }
+          .reviewDate {
+            font: 400 1.2rem/1.17 $arial;
+            color: $hellmans-color-primary;
+          }
+          .average-rating {
+            .total-reviews {
+              font: 400 1.4rem/1.29 $arial;
+              color: $hellmans-color-primary;
+              .aggRtng {
+                font: 900 4.8rem/1.42 $brandonGrotesqueBlack;
+                color: $hellmans-color-primary;
+                &:after {
+                  border-right: 1px solid $hellmans-color-primary;
+                }
+              }
+              .tRtng {
+                font: 400 1.4rem/1.29 $arial;
+                color: $hellmans-color-primary;
+              }
+            }
+          }
+          .write-review-btn {
+            @extend .h-button-dark;
+            &:before {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23fdf6e8' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+            }
+            @media (hover: hover),
+              (-ms-high-contrast: none),
+              (-ms-high-contrast: active) {
+              &:hover {
+                &:before {
+                  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23004976' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+                }
+              }
+            }
+          }
+          .reviews-container {
+            h3 {
+              font: 900 2.1rem/1.33 $brandonGrotesqueBlack;
+              color: $hellmans-color-primary;
+            }
+            h4.reviewer-name {
+              font: 400 1.6rem/1.13 $arial;
+              color: $hellmans-color-primary;
+            }
+            .rr-comments {
+              font: 400 1.4rem/1.29 $arial;
+              color: $hellmans-color-primary;
+            }
+            .feedback-container {
+              dt {
+                font: 400 1.4rem/1.29 $arial;
+                color: $hellmans-color-primary;
+              }
+              dd {
+                a {
+                  background-color: $hellmans-color-primary;
+                  color: $hellmans-color-secondary;
+                  border: 1px solid $hellmans-color-primary;
+                  @media (hover: hover),
+                    (-ms-high-contrast: none),
+                    (-ms-high-contrast: active) {
+                    &:hover {
+                      background-color: $hellmans-color-secondary;
+                      color: $hellmans-color-primary;
+                    }
+                  }
+                }
+              }
+            }
+            .socialBtn {
+              color: $hellmans-color-primary;
+            }
           }
         }
       }

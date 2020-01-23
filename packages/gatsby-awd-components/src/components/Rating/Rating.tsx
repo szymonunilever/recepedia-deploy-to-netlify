@@ -9,6 +9,7 @@ import cx from 'classnames';
 import isBrowser from '../../utils/isBrowser';
 import getComponentDataAttrs from '../../utils/getComponentDataAttrs';
 import { ReactComponent as RatingIcon } from 'src/svgs/inline/rating.svg';
+import theme from './Rating.module.scss';
 
 const Rating = ({
   className,
@@ -20,6 +21,7 @@ const Rating = ({
 }: RatingProps) => {
   // @ts-ignore
   const classNames = cx(
+    theme.recipeRating,
     'recipe-rating',
     className,
     provider === RatingAndReviewsProvider.kritique
