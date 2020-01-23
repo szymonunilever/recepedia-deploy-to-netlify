@@ -796,7 +796,7 @@
     ],
     "recipeDetails": {},
     "inNavigation": true,
-    "inFooter": true,
+    "inFooter": false,
     "showOnHomepage": 30,
     "categoryOrder": 400,
     "tags": [
@@ -1774,7 +1774,7 @@
     ],
     "recipeDetails": {},
     "inNavigation": true,
-    "inFooter": true,
+    "inFooter": false,
     "showOnHomepage": 20,
     "categoryOrder": 600,
     "tags": [
@@ -1961,7 +1961,7 @@
     "imageKey": "static/es/mx/categories/900718.jpg",
     "recipeDetails": {},
     "inNavigation": true,
-    "inFooter": true,
+    "inFooter": false,
     "showOnHomepage": 0,
     "categoryOrder": 600,
     "tags": [
@@ -2015,7 +2015,7 @@
     ],
     "recipeDetails": {},
     "inNavigation": true,
-    "inFooter": true,
+    "inFooter": false,
     "showOnHomepage": 10,
     "categoryOrder": 700,
     "tags": [
@@ -3006,7 +3006,7 @@
     ],
     "recipeDetails": {},
     "inNavigation": true,
-    "inFooter": true,
+    "inFooter": false,
     "showOnHomepage": 40,
     "categoryOrder": 1000,
     "tags": [
@@ -3723,5 +3723,82 @@
         ]
       }
     ]
+  },
+  {
+    "id": 7000,
+    "parentId": 0,
+    "name": "mexicana",
+    "description": "<p> En Recepedia encuentra deliciosas recetas mexicanas. Descrube grandes beneficios con nuestro planificador de menús. </p>\n",
+    "title": "Recetas Mexicanas",
+    "imageKey": "static/es/mx/categories/926346.jpg",
+    "recipeDetails": {},
+    "inNavigation": false,
+    "inFooter": true,
+    "showOnHomepage": 0,
+    "categoryOrder": 140,
+    "tags": [
+      {
+        "id": 1427,
+        "name": ""
+      }
+    ]
+  },
+  {
+    "id": 7001,
+    "parentId": 0,
+    "name": "asiática",
+    "description": "<p> En Recepedia encuentra deliciosas recetas asiáticas. Descrube grandes beneficios con nuestro planificador de menús. </p>\n",
+    "title": "Delicias Asiáticas",
+    "imageKey": "static/es/mx/categories/924918.jpg",
+    "recipeDetails": {},
+    "inNavigation": false,
+    "inFooter": true,
+    "showOnHomepage": 0,
+    "categoryOrder": 130,
+    "tags": [
+      {
+        "id": 1433,
+        "name": ""
+      }
+    ]
+  },
+  {
+    "id": 7002,
+    "parentId": 0,
+    "name": "parrillada",
+    "description": "<p> En Recepedia encuentra deliciosas recetas para tuparrilladaDescrube grandes beneficios con nuestro planificador de menús.</p>\n",
+    "title": "Parrillada",
+    "imageKey": "static/es/mx/categories/1851385.jpg",
+    "recipeDetails": {},
+    "inNavigation": false,
+    "inFooter": true,
+    "showOnHomepage": 0,
+    "categoryOrder": 120,
+    "tags": [
+      {
+        "id": 1520,
+        "name": "parrillada"
+      }
+    ]
+  },
+  {
+    "id": 7003,
+    "parentId": 0,
+    "name": "thirty-minutos-o-menos",
+    "description": "<p> En Recepedia encuentra deliciosas recetas mexicanas. Descrube grandes beneficios con nuestro planificador de menús. </p>\n",
+    "title": "30 Minutos o Menos",
+    "imageKey": "static/es/mx/categories/900718.jpg",
+    "recipeDetails": {},
+    "inNavigation": false,
+    "inFooter": true,
+    "showOnHomepage": 0,
+    "categoryOrder": 110,
+    "tags": [
+      {
+        "id": 1259,
+        "name": ""
+      }
+    ],
+    "categories": []
   }
 ]

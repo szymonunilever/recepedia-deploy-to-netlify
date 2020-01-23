@@ -10,6 +10,9 @@ import UnileverLogoIcon from 'src/svgs/inline/unilever-logo.svg';
 import { ReactComponent as ArrowUpIcon } from 'src/svgs/inline/arrow-up.svg';
 import { ReactComponent as FacebookIcon } from 'src/svgs/inline/facebook.svg';
 import { ReactComponent as InstagramIcon } from 'src/svgs/inline/instagram.svg';
+import { ReactComponent as PinterestIcon } from 'src/svgs/inline/pinterest.svg';
+import { ReactComponent as TwitterIcon } from 'src/svgs/inline/twitter.svg';
+import { ReactComponent as YoutubeIcon } from 'src/svgs/inline/youtube-simple.svg';
 import Navigation from '../Navigation/Navigation';
 import cx from 'classnames';
 import { findPageComponentContent } from 'src/utils';
@@ -32,7 +35,10 @@ const Layout = ({
           name
         }
       }
-      allCategory(filter: { inFooter: { eq: true } }) {
+      allCategory(
+        filter: { inFooter: { eq: true } }
+        sort: { fields: categoryOrder, order: DESC }
+      ) {
         nodes {
           title
           inFooter
@@ -124,8 +130,11 @@ const Layout = ({
         <BrandSocialChannels
           content={findPageComponentContent(components, 'BrandSocialChannels')}
           listIcons={{
+            twitter: <TwitterIcon />,
             facebook: <FacebookIcon />,
             instagram: <InstagramIcon />,
+            pinterest: <PinterestIcon />,
+            youtube: <YoutubeIcon />,
           }}
         />
       </GlobalFooter>

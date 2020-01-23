@@ -119,6 +119,10 @@
           "name": "BrandSocialChannels",
           "content": {
             "socialItems": {
+              "twitter": {
+                "label": "Twitter",
+                "url": "https://twitter.com/RecepediaMexico"
+              },
               "facebook": {
                 "label": "Facebook",
                 "url": "https://www.facebook.com/RecepediaMexico-592647864277781/"
@@ -126,6 +130,14 @@
               "instagram": {
                 "label": "Instagram",
                 "url": "https://www.instagram.com/recepediamx/?hl=es"
+              },
+              "pinterest": {
+                "label": "Pinterest",
+                "url": "https://www.pinterest.com.mx/mexicorecepedia/"
+              },
+              "youtube": {
+                "label": "YouTube",
+                "url": "https://www.youtube.com/channel/UC55Im6PFBvfnU-HPYr0mrXg"
               }
             }
           }
@@ -145,11 +157,11 @@
     }
   },
   "dictionary": {
-    "budgets": "Precio",
-    "cuisines": "Tipo de cocina",
+    "budgets": "Presupuesto",
+    "cuisines": "Cocina",
     "difficulties": "Dificultad",
-    "dishes": "Platillos",
-    "mainIngredient": "Ingredientes principales",
+    "dishes": "Platillo",
+    "mainIngredient": "Ingredientes en casa",
     "dietary": "Dieta",
     "freeFormTags": "Tags de formulario libre",
     "cookingMethod": "Método de cocción",
