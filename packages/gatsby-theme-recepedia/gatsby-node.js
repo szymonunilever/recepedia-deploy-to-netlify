@@ -297,8 +297,7 @@ exports.createPages = async ({ graphql, actions }) => {
     pages,
     constants.TEMPLATE_PAGE_TYPES.TAG
   );
-
-  await Promise.all([
+  const pagesCreators = [
     createRecipePages({
       graphql,
       createPage,
@@ -315,19 +314,25 @@ exports.createPages = async ({ graphql, actions }) => {
       page: recipeCategoryData,
       landingPage: categoryLandingData,
     }),
-    createArticlePages({
-      graphql,
-      createPage: edge => {
-        createPageFromTemplate(edge, articleDetailsData);
-      },
-    }),
     createContentHubPages({
       graphql,
       createPage: edge => {
         createPageFromTemplate(edge, contentHubData);
       },
     }),
-  ]);
+  ];
+
+  articleDetailsData &&
+    pagesCreators.push(
+      createArticlePages({
+        graphql,
+        createPage: edge => {
+          createPageFromTemplate(edge, articleDetailsData);
+        },
+      })
+    );
+
+  await Promise.all(pagesCreators);
 };
 
 exports.onCreateWebpackConfig = ({

@@ -910,66 +910,6 @@
       }
     },
     {
-      "type": "ArticleDetail",
-      "relativePath": "/artigos",
-      "components": {
-        "items": [
-          {
-            "name": "SocialSharing",
-            "content": {
-              "buttons": [
-                {
-                  "label": "Facebook",
-                  "name": "facebook"
-                },
-                {
-                  "label": "Twitter",
-                  "name": "twitter"
-                }
-              ],
-              "openModalButton": {
-                "label": "Compartilhe"
-              },
-              "modalTitle": "Compartilhe essa receita"
-            }
-          },
-          {
-            "name": "Text",
-            "content": {
-              "text": "Próximo artigo",
-              "view": "NextTitle"
-            }
-          },
-          {
-            "name": "Hero",
-            "content": {
-              "header": "Planejamento Semanal",
-              "longSubheader": "We will collect your preferences and customize a weekly menu so you don't even have to think.",
-              "primaryCta": {
-                "type": "Button",
-                "linkTo": "/planejamento-da-semana",
-                "label": "Experimente o planejamento semanal"
-              },
-              "image": {
-                "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/teaser-content/images/teaser-image.png",
-                "alt": "Planejamento Semanal"
-              }
-            }
-          }
-        ]
-      },
-      "seo": {
-        "title": "Seu assistente de cozinha",
-        "description": "Recepedia é um site de receitas para quem ama cozinhar. Encontre as receitas que busca e compartilhe suas favoritas. E sua receita, qual é?",
-        "meta": [
-          {
-            "name": "og:image",
-            "content": "https://br.recepedia.com/sites/default/files/styles/hero_marquee_breakpoints_theme_recepedia_phone_1x/public/new_recepedia/recipes/images/4ce26f6b-73ea-4755-b287-afd33fe7735e.jpg"
-          }
-        ]
-      }
-    },
-    {
       "type": "Search",
       "relativePath": "/procurar",
       "components": {

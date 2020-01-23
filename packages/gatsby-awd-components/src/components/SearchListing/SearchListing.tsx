@@ -236,12 +236,12 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
         }
 
         case 'articles': {
-          tabs.list.push(
+          articles && tabs.list.push(
             <Tab view={view} key={view}>
               {articles}
             </Tab>
           );
-          tabs.content.tabs.push({
+          articles && tabs.content.tabs.push({
             ...tab,
             resultsCount: articleResults.count,
           });
@@ -250,12 +250,12 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
         }
 
         case 'recipes': {
-          tabs.list.push(
+          recipes && tabs.list.push(
             <Tab view={view} key={view}>
               {recipes}
             </Tab>
           );
-          tabs.content.tabs.push({
+          recipes && tabs.content.tabs.push({
             ...tab,
             resultsCount: recipeResults.count,
           });
@@ -263,12 +263,12 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
         }
 
         case 'products': {
-          tabs.list.push(
+          products && tabs.list.push(
             <Tab view={view} key={view}>
               {products}
             </Tab>
           );
-          tabs.content.tabs.push({
+          products && tabs.content.tabs.push({
             ...tab,
             resultsCount: productResults.count,
           });
