@@ -51,9 +51,11 @@ import themeKnorr from './BrandProductDetailsPageKnorr.module.scss';
 import themeMaizena from './BrandProductDetailsPageMaizena.module.scss';
 import '../../scss/pages/_brand.scss';
 
-const BrandProductDetailsPage: React.FunctionComponent<
-  BrandProductDetailsPageProps
-> = ({ pageContext, location, data: { allProduct } }) => {
+const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPageProps> = ({
+  pageContext,
+  location,
+  data: { allProduct },
+}) => {
   const {
     page: { components, seo, type },
     product,

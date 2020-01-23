@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const useMedia = (
   queries: string[] = ['(min-width: 768px)', '(max-width: 767px)'],
   values: number[] = [8, 6],
-  debounceTimeout: number = 200
+  debounceTimeout = 200
 ) => {
   let timerId: number;
 

@@ -33,7 +33,7 @@ export async function searchRecipes(
   const maxTry = RecipePersonalizationFormula.template.length;
   const introQuizAnswers = getUserProfileByKey(ProfileKey.initialQuiz);
   const mealPlanerAnswers = getUserProfileByKey(ProfileKey.mealPlannerAnswers);
-  let queryString = generateQuery(
+  const queryString = generateQuery(
     introQuizAnswers,
     mealPlanerAnswers,
     RecipePersonalizationFormula,

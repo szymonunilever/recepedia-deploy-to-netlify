@@ -88,7 +88,7 @@ const MealPlannerPage = ({ pageContext, location }: MealPlannerProps) => {
   const processSearchData = (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     quizData: any,
-    i: number = 0,
+    i = 0,
     fromChanged = FROM
   ) => {
     setLastSearchProps({

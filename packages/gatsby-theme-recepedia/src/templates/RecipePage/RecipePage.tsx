@@ -141,7 +141,7 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
     ...Object.keys(dietaryAttributesIcons).map(i => parseInt(i)),
     ...Object.values(dietaryEqual).map(i => i),
   ];
-  let showDietaryTags = intersection(existingImagesIds, pageContext.tagIds);
+  const showDietaryTags = intersection(existingImagesIds, pageContext.tagIds);
   const mappedRecipeTags = tags.map(tag =>
     dietaryEqual[`${tag.tagId}`]
       ? { ...tag, tagId: parseInt(dietaryEqual[`${tag.tagId}`]) }

@@ -150,7 +150,7 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
     new Set(allProduct.nodes.map(product => product.category))
   );
   const categoriesInitial = () => {
-    let initial: { [key: string]: boolean } = {};
+    const initial: { [key: string]: boolean } = {};
     categories.forEach(category => {
       initial[category] = false;
     });

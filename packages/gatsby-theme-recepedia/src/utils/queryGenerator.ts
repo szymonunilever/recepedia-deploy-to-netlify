@@ -27,8 +27,8 @@ const generateQueryString = (
   const delimiter = /;/g;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const arrayToQueryPart = (prop: any[]) => {
-    for (let key in prop) {
-      let [searchPath, value] = [
+    for (const key in prop) {
+      const [searchPath, value] = [
         searchAttributes[prop[key].filterPropName],
         prop[key].value,
       ];
@@ -51,16 +51,14 @@ const generateQueryString = (
     return prop;
   };
 
-  let q = quiz && objectToArray(quiz);
-  let mp = mealPlaner && objectToArray(mealPlaner);
+  const q = quiz && objectToArray(quiz);
+  const mp = mealPlaner && objectToArray(mealPlaner);
   q && arrayToQueryPart(q);
   mp && arrayToQueryPart(mp);
   const operator = template[indexTry].match(/AND|OR/g);
   const parts = template[indexTry].replace(/[()]/g, '').split(/AND|OR/);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let params: { param: any; weight: string }[];
 
-  params = parts.map(str => {
+  const params: { param: any; weight: string }[] = parts.map(str => {
     const arr = str.split('^');
     return { param: arr[0], weight: arr[1] };
   });
