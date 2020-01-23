@@ -7,6 +7,8 @@ import Layout from '../../components/Layout/Layout';
 import { ContactCard, TagName, Text } from 'gatsby-awd-components/src';
 import theme from './ContactUs.module.scss';
 import { ReactComponent as MapMarker } from 'src/svgs/inline/map-marker.svg';
+import { ReactComponent as Email } from 'src/svgs/inline/email.svg';
+import { ReactComponent as Phone } from 'src/svgs/inline/phone.svg';
 import { WindowLocation } from '@reach/router';
 // Component Styles
 import '../../scss/pages/_contactUs.scss';
@@ -20,6 +22,14 @@ const ContactUsPage = ({ pageContext, location }: ContactUsPageProps) => {
     'Card',
     'Contact'
   );
+  const phoneContent = findPageComponentContent(components, 'Card', 'Phone');
+  const emailContent = findPageComponentContent(components, 'Card', 'Email');
+  const addressContent = findPageComponentContent(
+    components,
+    'Card',
+    'Address'
+  );
+
   return (
     <Layout>
       <SEO {...seo} canonical={location.href} />
@@ -37,14 +47,36 @@ const ContactUsPage = ({ pageContext, location }: ContactUsPageProps) => {
           }
         />
         <div className={theme.cardholder}>
-          <div className={theme.cardholderItem}>
-            <ContactCard
-              className="contact-card"
-              titleLevel={2}
-              content={findPageComponentContent(components, 'Card', 'Address')}
-              Icon={MapMarker}
-            />
-          </div>
+          {!!Object.keys(addressContent).length && (
+            <div className={theme.cardholderItem}>
+              <ContactCard
+                className="contact-card"
+                titleLevel={2}
+                content={addressContent}
+                Icon={MapMarker}
+              />
+            </div>
+          )}
+          {!!Object.keys(phoneContent).length && (
+            <div className={theme.cardholderItem}>
+              <ContactCard
+                className="contact-card"
+                titleLevel={2}
+                content={phoneContent}
+                Icon={Phone}
+              />
+            </div>
+          )}
+          {!!Object.keys(emailContent).length && (
+            <div className={theme.cardholderItem}>
+              <ContactCard
+                className="contact-card"
+                titleLevel={2}
+                content={emailContent}
+                Icon={Email}
+              />
+            </div>
+          )}
           {!!Object.keys(contactFormCardContent).length && (
             <div className={theme.cardholderItem}>
               <ContactCard
