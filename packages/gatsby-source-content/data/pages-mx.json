@@ -1657,6 +1657,17 @@
                     "filterPropName": "tags",
                     "options": [
                       {
+                        "id": 900016400,
+                        "value": "",
+                        "label": {
+                          "text": "Sin restricciones dietéticas",
+                          "image": {
+                            "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/meal-planner-content/meal-planner-images/question-1/1/no-restrictions.png",
+                            "alt": "Sin restricciones dietéticas"
+                          }
+                        }
+                      },
+                      {
                         "id": 90001640,
                         "value": "7",
                         "label": {
