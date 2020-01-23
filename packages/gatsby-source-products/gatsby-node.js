@@ -65,6 +65,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       productId: ID!
       brand: String!
       category: String!
+      EANparent: String!
       productName: String!
       productLaunchDate: String
       shortPageDescription: String

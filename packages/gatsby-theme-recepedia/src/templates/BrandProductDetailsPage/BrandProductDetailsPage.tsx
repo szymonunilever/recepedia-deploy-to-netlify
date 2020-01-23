@@ -370,7 +370,7 @@ const BrandProductDetailsPage: React.FunctionComponent<
         </div>
       </div>
       <div className={cx(theme.product__attributesRelated)}>
-        {relatedCards ? relatedProducts : null}
+        {relatedCards.length ? relatedProducts : null}
       </div>
       <div>
         <Reviews
@@ -412,7 +412,13 @@ export default BrandProductDetailsPage;
 
 export const query = graphql`
   query($brand: String, $category: String) {
-    allProduct(filter: { brand: { eq: $brand }, category: { eq: $category } }) {
+    allProduct(
+      filter: {
+        brand: { eq: $brand }
+        category: { eq: $category }
+        EANparent: { eq: "" }
+      }
+    ) {
       nodes {
         brand
         id

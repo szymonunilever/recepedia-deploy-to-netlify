@@ -10,6 +10,7 @@ exports.createPagesNodes = (
     brand: page.brand.replace(/[^a-zA-Z0-9\s-]+/g, '').toLowerCase(),
     productId: page.id,
     parent: null,
+    EANparent: page.EANparent || '',
     children: [],
     internal: {
       type: 'Product',
