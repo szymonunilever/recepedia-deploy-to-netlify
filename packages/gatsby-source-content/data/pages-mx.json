@@ -1485,14 +1485,14 @@
             "name": "NullResult",
             "content": {
               "title": "Recetas favoritas",
-              "subtitle": "Você ainda não tem receitas favoritas :(",
+              "subtitle": "Aún no cuentas con recetas favoritas",
               "textList": []
             }
           },
           {
             "name": "Button",
             "content": {
-              "label": "Escolher receitas favoritas",
+              "label": "Empiezar a agregar recetas",
               "view": "ProfileFavorites"
             }
           },
@@ -1519,7 +1519,7 @@
                 "contents": [
                   {
                     "heading": "Recetas favoritas",
-                    "subheading": "Você possui {num} receitas favoritas",
+                    "subheading": "Tienes {num} recetas favoritas",
                     "view": "ProfileFavorites"
                   },
                   {
@@ -1537,7 +1537,7 @@
           {
             "name": "PreferencesQuiz",
             "content": {
-              "quizTitle": "Preferências",
+              "quizTitle": "Preferencias",
               "view": "IntroQuiz"
             }
           },
@@ -1558,7 +1558,7 @@
           {
             "name": "Button",
             "content": {
-              "label": "Actualizar mis preferencias",
+              "label": "Cambiar mi respuesta",
               "view": "ChangeMealPlan"
             }
           },
