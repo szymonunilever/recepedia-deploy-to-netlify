@@ -25,11 +25,24 @@ const fetchContent = (configOptions, contentType) => {
         'x-api-key': configOptions.key,
       },
     }
+  ).catch(error =>
+    console.error(
+      'Fetch content error',
+      configOptions.endpoint,
+      contentType,
+      error
+    )
   );
 };
 
-const fetchImages = (endpoint) => {
-  return axios.get(endpoint);
+const fetchImage = (endpoint, params) => {
+  return axios.get(endpoint, { params })
+    .catch(error => console.error(
+      'Fetch image error',
+      endpoint,
+      params,
+      error
+    ));
 };
 
 exports.sourceNodes = async (
@@ -41,72 +54,67 @@ exports.sourceNodes = async (
   delete configOptions.plugins;
 
   const [
-    // pagesResponse,
-    // componentsResponse,
+    pagesResponse,
+    componentsResponse,
     articlesResponse,
-    imagesResponse,
     categoriesResponse,
   ] = await Promise.all([
-    //fetchContent(configOptions, 'pages'),
-    //fetchContent(configOptions, 'components'),
-    new Promise(resolve => resolve (isMx() ? articlesMockMx : articlesMockBr)),
-    //isMx()? new Promise(resolve => resolve({data:categoriesMockMx})) : fetchContent(configOptions, 'aem/categories'),
-    fetchImages(configOptions.imagesEndpoint),
-    new Promise(resolve =>
-      resolve({ data: isMx() ? categoriesMockMx : categoriesMockBr })
+      new Promise(resolve => resolve (isMx() ? pagesMockMx : pagesMockBr)),
+      new Promise(resolve => resolve (isMx() ? componentsMockMx : componentsMockBr)),
+      new Promise(resolve => resolve (isMx() ? articlesMockMx : articlesMockBr)),
+      new Promise(resolve => resolve (isMx() ? categoriesMockMx : categoriesMockBr)
     ),
   ]);
-  // please add to pagesData local page json mocks for development purposes if page on BE does not exist or incorrect
-  // e.g. const pagesData = [...pagesResponse.data.pages, newPageMock];
-  const pagesMock = isMx() ? pagesMockMx : pagesMockBr;
-  const componentsMock = isMx() ? componentsMockMx : componentsMockBr;
-  const pagesData = [...pagesMock.pages];
-  const imagesData = imagesResponse.data.reduce((response, item) => {
-    response[item.pk] = { childImageSharp: { fluid: item } };
-    return response;
-  }, {});
-  //TODO: remove next string when data for components will fixed on middleware
-  const componentsData = componentsMock;
+
+  const pagesData = [...pagesResponse.pages];
+  const componentsData = componentsResponse;
   pagesData.forEach(page => {
     createPagesNodes(page, { createNodeId, createContentDigest, createNode });
   });
 
-  //TODO: modify next two functions when data for components will be fixed on middleware.
+  const createNodeParams = {
+    createNodeId,
+    createContentDigest,
+    createNode,
+  };
   componentsData.components.components.items.forEach(component => {
-    createComponentsNodes(component, {
-      createNodeId,
-      createContentDigest,
-      createNode,
-    });
+    createComponentsNodes(component, createNodeParams);
   });
   componentsData.dictionary &&
-    createDictionaryNodes(componentsData.dictionary, {
-      createNodeId,
-      createContentDigest,
-      createNode,
-    });
+    createDictionaryNodes(componentsData.dictionary, createNodeParams);
 
   componentsData.disclaimer &&
-    createDisclaimerNodes(componentsData.disclaimer, {
-      createNodeId,
-      createContentDigest,
-      createNode,
-    });
+    createDisclaimerNodes(componentsData.disclaimer, createNodeParams);
 
-  //  componentsResponse.data.components.components.items.forEach(component => {
-  //   createComponentsNodes(component, {
-  //     createNodeId,
-  //     createContentDigest,
-  //     createNode,
-  //   });
-  // });
+  const imagesKeys = [];
+  articlesResponse.data.articleEntries.results.forEach(article =>
+    article.articleHeroImage && imagesKeys.push(article.articleHeroImage)
+  );
+  categoriesResponse.forEach(category => {
+    category.imageKey && imagesKeys.push(category.imageKey);
+    category.categories && category.categories.forEach(subcat =>
+      subcat.imageKey && imagesKeys.push(subcat.imageKey)
+    );
+  });
+
+  const imagesCollection = await Promise.all(
+    imagesKeys.map(imgKey => fetchImage(configOptions.imagesEndpoint,
+      { keys: imgKey }
+    ))
+  );
+
+  const imagesData = imagesCollection.reduce((response, item) => {
+   response[item.data[0]['pk']] = { childImageSharp: { fluid: item.data[0] } };
+   return response;
+  }, {});
+
+  const defaultImageKey = Object.keys(imagesData)[0];
+  const getImage = (article, imagesData) => {
+    return imagesData[article.articleHeroImage || defaultImageKey]
+  };
 
   articlesResponse.data.articleEntries.results.forEach(article => {
     const { id, path, brand, section, articleName, articleContent, tags, creationTime } = article;
-    const getImage = (article, imagesData) => {
-      return imagesData[article.articleHeroImage || 'brands/maizena/global_use/1531233-476x635-gluten.jpg']
-    };
-
     const articleNode = {
       id, path, section, creationTime, tags,
       brand: brand ? brand.replace(/[^a-zA-Z0-9\s-]+/g, '').toLowerCase() : '',
@@ -132,7 +140,7 @@ exports.sourceNodes = async (
       image: category.image ? category.image :
         imagesData[category.imageKey].childImageSharp.fluid
   });
-  categoriesResponse.data.forEach(
+  categoriesResponse.forEach(
     item => {
       const categoryItem = {
         ...enhanceCategoryItem(item, imagesData),
@@ -141,11 +149,7 @@ exports.sourceNodes = async (
           [],
       };
 
-      createCategoryNodes(categoryItem, {
-        createNodeId,
-        createContentDigest,
-        createNode,
-      });
+      createCategoryNodes(categoryItem, createNodeParams);
     }
   );
 };
