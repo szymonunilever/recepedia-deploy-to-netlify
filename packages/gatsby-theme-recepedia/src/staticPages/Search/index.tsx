@@ -81,7 +81,7 @@ const SearchPage = ({ data, pageContext, searchQuery }: SearchPageProps) => {
         // @ts-ignore
         cat => cat.children.findIndex(el => el.id === tag.id) !== -1
       );
-      let tagWithCategory: Internal.Tag & { category?: string } = tag;
+      const tagWithCategory: Internal.Tag & { category?: string } = tag;
       category && (tagWithCategory.category = category.name);
       return tagWithCategory;
     });

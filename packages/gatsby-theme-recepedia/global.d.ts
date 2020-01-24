@@ -1,4 +1,4 @@
-declare var __PATH_PREFIX__: string;
+declare let __PATH_PREFIX__: string;
 
 /*
  * For remove typescript errors in case importing scss module
@@ -24,6 +24,6 @@ declare module 'smart-outline' {
   export default content;
 }
 
-declare var digitalData: any;
+declare let digitalData: any;
 
 declare module '*';

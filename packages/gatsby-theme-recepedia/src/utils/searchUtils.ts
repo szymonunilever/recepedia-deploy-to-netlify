@@ -241,7 +241,7 @@ export const getRecipesByIdsResponse = async (
 export const getRecipeResponse = async (
   searchQuery: string,
   params: SearchParams,
-  filter: string = ''
+  filter = ''
 ) =>
   useElasticSearch<Internal.Recipe>(
     recipeSearchParams(searchQuery, params, filter)
@@ -268,7 +268,7 @@ export const getProductResponse = async (
 export const getSearchSuggestionResponse = async (
   searchQuery: string,
   { from, size }: SearchParams,
-  filter: string = ''
+  filter = ''
 ) => {
   return Promise.all([
     useElasticSearch<Internal.Recipe>(

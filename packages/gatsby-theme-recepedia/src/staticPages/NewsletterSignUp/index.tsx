@@ -9,9 +9,10 @@ import { TagName, Text } from 'gatsby-awd-components/src';
 
 const GIGYA_SCRIPT_SRC = `${process.env['gigya_script_src']}?apiKey=${process.env['gigya_script_api_key']}&lang=${process.env['gigya_script_lang']}`;
 
-const NewsletterSignupPage: React.FunctionComponent<
-  NewsletterSignupPageProps
-> = ({ pageContext, location }) => {
+const NewsletterSignupPage: React.FunctionComponent<NewsletterSignupPageProps> = ({
+  pageContext,
+  location,
+}) => {
   const {
     page: { seo, type, components },
   } = pageContext;

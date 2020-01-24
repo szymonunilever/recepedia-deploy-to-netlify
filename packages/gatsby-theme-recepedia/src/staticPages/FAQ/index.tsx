@@ -53,7 +53,7 @@ const FAQPage = ({
             className={cx(theme.faq__question, 'faq__question')}
             Icon={ArrowDownIcon}
           >
-            {item.answer.hasOwnProperty('questions') ? (
+            {Object.prototype.hasOwnProperty.call(item.answer, 'questions') ? (
               <ul className={cx(theme.faq__list, theme.faq__sublist)}>
                 {getQuestions(item.answer as FAQsProps)}
               </ul>

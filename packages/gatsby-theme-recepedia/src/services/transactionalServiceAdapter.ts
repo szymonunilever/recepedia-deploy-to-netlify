@@ -6,7 +6,7 @@ const TransactionalServiceAdapter = ({ url, host }: FormServiceProps) => {
     sections: any,
     reCaptchaToken: string
   ): Promise<any> => {
-    let payload: object = {
+    const payload: object = {
       ...commonProps,
       ...sections,
       g: {

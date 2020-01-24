@@ -35,6 +35,6 @@ export const LinkTracking = ({ children }) => {
       }
     }, 300);
     // Slight delay added to facilitate dynamic elements of page
-  });
+  }, []);
   return <>{children}</>;
 };

@@ -9,9 +9,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "2.17.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "gatsby-theme-recepedia": "1.0.0"
+    "gatsby": "2.19.2",
+    "gatsby-theme-recepedia": "1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }

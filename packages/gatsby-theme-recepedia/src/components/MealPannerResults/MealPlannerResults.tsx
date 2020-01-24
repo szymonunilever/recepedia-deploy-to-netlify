@@ -159,7 +159,7 @@ export const MealPlannerResults: FunctionComponent<MealPannerResultsProps> = ({
         exclude
       ).then(res => {
         const { data, total } = esResponseHandler(res);
-        let recipes: Internal.Recipe[] = [];
+        const recipes: Internal.Recipe[] = [];
         if (total === 0) {
           const newSearchContent = {
             ...customSearchContent,

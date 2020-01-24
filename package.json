@@ -10,7 +10,7 @@
     "awd-develop": "yarn workspace gatsby-awd-components storybook",
     "lint": "yarn workspace gatsby-theme-recepedia lint",
     "lint:fix": "yarn workspace gatsby-theme-recepedia lint --fix",
-    "storybook-styled": "yarn workspace gatsby-awd-components storybook",
+    "storybook-styled": "echo 'ok'",
     "build-storybook": "yarn workspace gatsby-awd-components build-storybook"
   }
 }

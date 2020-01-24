@@ -36,7 +36,7 @@ const Tag = ({
     if (enableExternalManage && state !== active) {
       setState(active);
     }
-  });
+  }, []);
 
   let view;
   switch (variant) {

@@ -3,7 +3,7 @@ import useMedia from '../useMedia';
 
 function useResponsiveScreenInitialSearch(
   searchQuery: (size: number) => Promise<void>,
-  listSize: number = 0,
+  listSize = 0,
   statesToWatch: string[] = [],
   mediaQueries?: string[],
   values?: number[]

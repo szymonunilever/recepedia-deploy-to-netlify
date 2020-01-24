@@ -2,7 +2,7 @@ import React from 'react';
 import components from '../page';
 
 const PageComponent = ({ name, content }: PageComponentProps) => {
-  let component = null;
+  const component = null;
 
   //@ts-ignore
   if (components[name]) {

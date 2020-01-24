@@ -91,7 +91,7 @@ const Tags = ({
           initialCount !== 'all' ? tagsList.slice(0, initialCount) : tagsList,
       });
     }
-  });
+  }, []);
 
   const shouldAppear =
     tags.list.length > tags.displayList.length && loadMoreButton;

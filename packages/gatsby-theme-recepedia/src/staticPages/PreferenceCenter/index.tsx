@@ -5,9 +5,10 @@ import { WindowLocation } from '@reach/router';
 import DigitalData from '../../../integrations/DigitalData';
 import '../../scss/pages/_preferenceCenter.scss';
 
-const PreferenceCenterPage: React.FunctionComponent<
-  PreferenceCenterPageProps
-> = ({ pageContext, location }) => {
+const PreferenceCenterPage: React.FunctionComponent<PreferenceCenterPageProps> = ({
+  pageContext,
+  location,
+}) => {
   const {
     page: { seo, type },
   } = pageContext;

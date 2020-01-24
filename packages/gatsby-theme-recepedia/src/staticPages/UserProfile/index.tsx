@@ -77,9 +77,7 @@ const carouselConfig = {
   ],
   arrowIcon: <IconArrowDown />,
 };
-const FavoritesRecipeListingPage: FunctionComponent<
-  FavoriteRecipeListingProps
-> = ({
+const FavoritesRecipeListingPage: FunctionComponent<FavoriteRecipeListingProps> = ({
   pageContext: {
     page: { components, seo, type },
   },

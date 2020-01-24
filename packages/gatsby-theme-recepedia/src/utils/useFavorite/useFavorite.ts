@@ -7,7 +7,7 @@ const useFavorite = (
   const [favorites, setFavorites] = useState<number[]>([]);
   const updateFavoriteState = (val: boolean, recipeId: number) => {
     const index = favorites.indexOf(recipeId);
-    let newFavorites = [...favorites];
+    const newFavorites = [...favorites];
     if (index !== -1 && !val) {
       newFavorites.splice(index, 1);
       setFavorites(newFavorites);

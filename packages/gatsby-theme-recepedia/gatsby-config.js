@@ -23,11 +23,11 @@ const plugins = [
     options: {
       prettier: false,
       svgoConfig: {
-        plugins: {
-          removeViewBox: false,
-          cleanupNumericValues: true,
-          prefixIds: true,
-        },
+        plugins: [
+          { removeViewBox: false },
+          { cleanupNumericValues: true },
+          { prefixIds: true },
+        ],
       },
     },
   },
