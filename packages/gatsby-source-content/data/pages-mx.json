@@ -1018,7 +1018,7 @@
             "name": "PageListing",
             "content": {
               "view": "RecipeCategories",
-              "title": "Recetas relacionadas"
+              "title": "Da un vistazo a todas nuestras recetas"
             }
           }
         ]
@@ -3793,14 +3793,16 @@
           {
             "name": "Tags",
             "content": {
-              "title": "Filtros similares",
-              "loadMoreButton": { "label": "+ Mostrar filtros adicionales" }
+              "title": "Procurar por categorias",
+              "loadMoreButton": {
+                "label": "+ Ver mais categorias"
+              }
             }
           },
           {
             "name": "RecipeListing",
             "content": {
-              "title": "Recetas relacionadas"
+              "title": "Da un vistazo a todas nuestras recetas"
             }
           },
           {

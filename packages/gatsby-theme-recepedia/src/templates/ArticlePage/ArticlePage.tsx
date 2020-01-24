@@ -162,7 +162,7 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
         />
       </section>
       {next && next.fields && next.fields.slug && nextContent.image && (
-        <section className={theme.articleNext}>
+        <section className={cx(theme.articleNext, 'wrapper')}>
           <Text
             tag={TagName.h2}
             text={

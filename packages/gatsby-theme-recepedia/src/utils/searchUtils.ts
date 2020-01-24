@@ -166,7 +166,7 @@ const articleSearchParams = (
         // eslint-disable-next-line @typescript-eslint/camelcase
         analyze_wildcard: true,
         query: filter,
-        fields: ['tags.id'],
+        fields: ['tags'],
       },
     });
 
