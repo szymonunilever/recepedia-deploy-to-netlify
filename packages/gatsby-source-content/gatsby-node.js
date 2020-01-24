@@ -9,6 +9,7 @@ const {
   createDisclaimerNodes,
 } = createNodes;
 const articlesMockMx = require('./data/articles-mx.json');
+const articlesMockBr = require('./data/articles-br.json');
 const pagesMockBr = require('./data/pages.json');
 const componentsMockBr = require('./data/components.json');
 const pagesMockMx = require('./data/pages-mx.json');
@@ -48,9 +49,7 @@ exports.sourceNodes = async (
   ] = await Promise.all([
     //fetchContent(configOptions, 'pages'),
     //fetchContent(configOptions, 'components'),
-    isMx()
-      ? new Promise(resolve => resolve(articlesMockMx))
-      : fetchContent(configOptions, 'articles'),
+    new Promise(resolve => resolve (isMx() ? articlesMockMx : articlesMockBr)),
     //isMx()? new Promise(resolve => resolve({data:categoriesMockMx})) : fetchContent(configOptions, 'aem/categories'),
     fetchImages(configOptions.imagesEndpoint),
     new Promise(resolve =>
@@ -102,11 +101,7 @@ exports.sourceNodes = async (
   //   });
   // });
 
-  const articlesList = isMx() ?
-    articlesResponse.data.articleEntries.results :
-    articlesResponse.data.articles;
-
-  articlesList.forEach(article => {
+  articlesResponse.data.articleEntries.results.forEach(article => {
     const { id, path, brand, section, articleName, articleContent, tags, creationTime } = article;
     const getImage = (article, imagesData) => {
       return imagesData[article.articleHeroImage || 'brands/maizena/global_use/1531233-476x635-gluten.jpg']
