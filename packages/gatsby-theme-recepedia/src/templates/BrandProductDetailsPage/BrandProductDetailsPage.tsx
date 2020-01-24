@@ -223,7 +223,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  });
+  }, []);
   const relatedProducts = (
     <>
       <Listing content={relatedProductsContent} titleLevel={3}>

@@ -227,7 +227,7 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  });
+  }, []);
 
   return (
     <Layout className={classWrapper}>
