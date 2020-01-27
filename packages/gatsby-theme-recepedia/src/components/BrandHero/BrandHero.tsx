@@ -20,7 +20,14 @@ const BrandHero: FunctionComponent<BrandHeroProps> = ({
   imageSizes = IMAGE_SIZES.FULL_WIDTH,
 }) => {
   const { title, image, links } = content;
-
+  const headingTitle = prefix ? (
+    <>
+      <span>{prefix}</span>
+      <br /> {title}
+    </>
+  ) : (
+    title
+  );
   // @ts-ignore
   return (
     <>
@@ -32,19 +39,11 @@ const BrandHero: FunctionComponent<BrandHeroProps> = ({
         />
         <div className="wrapper brand-hero__content">
           {iconNormalize(brandLogo, 'brand-hero__logo')}
-          {prefix ? (
-            <Text
-              // @ts-ignore */
-              tag={TagName[`h${titleLevel + 1}`]}
-              className="brand-hero__prefix"
-              text={prefix}
-            />
-          ) : null}
           <Text
             // @ts-ignore */
             tag={TagName[`h${titleLevel}`]}
             className="brand-hero__title"
-            text={title}
+            text={headingTitle}
           />
           <div className="brand-hero__links">
             {links.map((link, index: number) => (

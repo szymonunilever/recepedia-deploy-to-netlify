@@ -44,7 +44,7 @@ export const SocialSharingBase = ({
       });
     };
     if (!state.loaded && addThisReady) initSocial();
-  }, []);
+  });
 
   const socialButtons = buttons.map((item, key) => {
     const { name, label, linkDescriptionToShare, linkTitleToShare } = item;

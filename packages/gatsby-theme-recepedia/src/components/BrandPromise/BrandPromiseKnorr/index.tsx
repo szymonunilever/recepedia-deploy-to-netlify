@@ -144,11 +144,7 @@ const BrandPromiseKnorr = ({
           className="about-future__image"
           sizes={IMAGE_SIZES.CONTAINER_WIDTH}
         />
-        <Listing
-          content={aboutFutureContent.listingTitle}
-          className="about-future__listing"
-          titleLevel={3}
-        >
+        <Listing content={[]} className="about-future__listing" titleLevel={3}>
           {mapArticlesListingContent({
             articles: futureFoodsArticles,
             countState: futureFoodsCount,

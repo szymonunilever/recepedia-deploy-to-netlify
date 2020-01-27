@@ -135,7 +135,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
       ));
 
   const brandHero = (
-    <section>
+    <section className={theme.productBrandHero}>
       <BrandHero
         content={findPageComponentContent(components, 'BrandHero')}
         titleLevel={2}
@@ -150,7 +150,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
       <ProductHero
         content={product}
         localImage={localImage}
-        imageSizes={'(max-width: 1366px) 100vw, 800px'}
+        imageSizes={IMAGE_SIZES.PRODUCT_HERO}
       />
       <div className={theme.product__headingSocialSharing}>
         <SocialSharing
@@ -408,8 +408,8 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
         description={product.longPageDescription}
       />
       <DigitalData title={seo.title} type={type} />
-      {brandHero}
       {productHeader}
+      {brandHero}
       {productBody}
       {brandSocialChannels}
       {mealPlanner}
