@@ -105,7 +105,7 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
           }}
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
           cardKey={brandedArticle.fields.slug}
-          brandName={article.brand}
+          brandName={brandedArticle.brand}
           brandLink={searchPath}
         />
       </ProductCardWrapper>
