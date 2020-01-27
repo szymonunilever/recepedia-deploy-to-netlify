@@ -31,6 +31,9 @@ export const Tabs = ({
       : tabs[0].view;
     setActive(activeTab as string);
   }, [location]);
+  useEffect(() => {
+    setActive(tabs[0].view);
+  }, [tabs]);
   let tabItems: JSX.Element[], tabsContents: JSX.Element[];
   tabsContents = children.reduce(
     (accum, child) => {

@@ -218,17 +218,20 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
       tab
     ) => {
       const { view } = tab;
+      const onlyCategory = [!!recipes, !!articles, !!products].filter(
+        item => item
+      ).length;
 
       switch (view) {
         case 'all': {
-          tabs.list.push(
+          onlyCategory !== 1 && tabs.list.push(
             <Tab view={view} key={view}>
               {recipes}
               {articles}
               {products}
             </Tab>
           );
-          tabs.content.tabs.push({
+          onlyCategory !== 1 && tabs.content.tabs.push({
             ...tab,
             resultsCount: recipeResults.count + articleResults.count + productResults.count,
           });
