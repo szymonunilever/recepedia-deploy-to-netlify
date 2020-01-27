@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import cx from 'classnames';
@@ -18,6 +18,7 @@ import {
   RecipeListing,
   RecipeListViewType,
   TagName,
+  Tags,
   Text,
 } from 'gatsby-awd-components/src';
 import MediaGallery from 'gatsby-awd-components/src/components/MediaGallery';
@@ -36,6 +37,7 @@ import { ProfileKey } from '../../utils/browserStorage/models';
 // Component Styles
 import '../../scss/pages/_articleHub.scss';
 import theme from 'src/staticPages/ArticlesHub/ArticleHub.module.scss';
+import useMedia from '../../utils/useMedia';
 
 const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
   data,
@@ -49,12 +51,14 @@ const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
   const {
     page: { components, seo, type, title = '' },
   } = pageContext;
-  const { allRecipe, allArticle } = data;
+  const { allRecipe, allArticle, allTag } = data;
   const brandLogoLink = getPagePath('Search');
+  const initialCount = useMedia(undefined, [9, 5]);
   const { updateFavoriteState, favorites } = useFavorite(
     () => getUserProfileByKey(ProfileKey.favorites) as number[],
     updateFavorites
   );
+  const [tagList, setTagList] = useState<Internal.Tag[]>([]);
   const carouselConfig = {
     breakpoints: [
       {
@@ -67,6 +71,19 @@ const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
     ],
     arrowIcon: <IconArrowDown />,
   };
+
+  useEffect(() => {
+    const articleTags: number[] = [];
+    allArticle.nodes.forEach(article => {
+      article.tags.forEach(tag => {
+        if (articleTags.includes(tag)) {
+          return;
+        }
+        articleTags.push(tag);
+      });
+    });
+    setTagList(allTag.nodes.filter(tag => articleTags.includes(tag.tagId)));
+  }, [allArticle]);
 
   const onLoadMore = useCallback(
     size => {
@@ -95,6 +112,16 @@ const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
           brandLogoLink={brandLogoLink}
         />
       </section>
+      {!!tagList.length && (
+        <section className={cx(theme.articleHubTags, 'wrapper')}>
+          <Tags
+            list={tagList}
+            content={findPageComponentContent(components, 'Tags')}
+            initialCount={initialCount}
+            className="_pb--40 _pt--40"
+          />
+        </section>
+      )}
       <section className="_pb--40">
         <Hero
           content={findPageComponentContent(components, 'Hero')}
@@ -154,6 +181,11 @@ export const query = graphql`
       }
       totalCount
     }
+    allTag {
+      nodes {
+        ...TagFields
+      }
+    }
     allRecipe(limit: 6) {
       nodes {
         ...RecipeFields
@@ -170,6 +202,9 @@ interface ArticlesHubProps extends WithArticleAsyncLoadMore {
     allArticle: {
       nodes: Internal.Article[];
       totalCount: number;
+    };
+    allTag: {
+      nodes: Internal.Tag[];
     };
   };
   articleResults: {
