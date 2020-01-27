@@ -15,11 +15,12 @@ export interface CardProps {
   brandLink?: string;
   children?: ReactElement<ButtonProps> | ReactElement<ButtonProps>[];
   showDescription?: boolean;
+  maxDescriptionLength?: number;
 }
 
 export interface CardContentProps {
-  fields:{
-    slug: string
+  fields: {
+    slug: string;
   };
   name?: string;
   title?: string;

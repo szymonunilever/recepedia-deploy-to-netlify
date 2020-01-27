@@ -15,10 +15,19 @@
       background: $white-gray;
       border-radius: 20px;
       @include respondTo(desktop) {
+        top: 230px;
         border-radius: 0;
       }
     }
     :global {
+      .listing__item {
+        @include respondTo(medium) {
+          width: calc(50% - 16.01px);
+        }
+      }
+      .card__image .adaptive-image__image > div {
+        padding-bottom: 220px !important;
+      }
       .load-more {
         display: flex;
         margin: 40px auto 0;
