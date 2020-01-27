@@ -8,7 +8,7 @@ import {
 } from 'gatsby-awd-components/src';
 import DigitalData from 'integrations/DigitalData';
 import React, { useCallback, useState, useEffect } from 'react';
-import { IMAGE_SIZES, MealPlannerPersonalizationFormula } from 'src/constants';
+import { IMAGE_SIZES, MealPlannerPersonalizationFormulas } from 'src/constants';
 import { ReactComponent as CheckMarkIcon } from 'src/svgs/inline/checkmark-bigger.svg';
 import DataCapturingForm from '../../components/DataCapturingForm';
 import SEO from '../../components/Seo';
@@ -40,7 +40,7 @@ const MealPlannerPage = ({ pageContext, location }: MealPlannerProps) => {
     smartOutline.init();
   }, []);
 
-  const { allCommonComponent } = useStaticQuery(graphql`
+  const { allCommonComponent, allSite } = useStaticQuery(graphql`
     {
       allCommonComponent {
         nodes {
@@ -48,8 +48,16 @@ const MealPlannerPage = ({ pageContext, location }: MealPlannerProps) => {
           name
         }
       }
+      allSite {
+        nodes {
+          siteMetadata {
+            lang
+          }
+        }
+      }
     }
   `);
+  const lang: string = allSite.nodes[0].siteMetadata.lang.toLowerCase();
   const componentNodes = allCommonComponent.nodes;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   componentNodes.forEach((component: any) => {
@@ -97,11 +105,13 @@ const MealPlannerPage = ({ pageContext, location }: MealPlannerProps) => {
     });
 
     setIsLoading(true);
-    const maxTry = MealPlannerPersonalizationFormula.template.length;
+    // @ts-ignore
+    const MPFormula = MealPlannerPersonalizationFormulas[lang];
+    const maxTry = MPFormula.template.length;
     const queryString = generateQuery(
       getUserProfileByKey(ProfileKey.initialQuiz),
       quizData.data,
-      MealPlannerPersonalizationFormula,
+      MPFormula,
       i
     );
     saveUserProfileByKey(quizData.data, ProfileKey.mealPlannerAnswers);

@@ -17,14 +17,25 @@ export const RecipePersonalizationFormula: RecipePersonalizationFormulaProps = {
   },
 };
 
-export const MealPlannerPersonalizationFormula = {
-  template: [
-    'MP#2 AND MP#1 AND MP#3 AND MP#5 AND MP#4',
-    'MP#2 AND MP#1 AND MP#3 AND MP#5',
-    'MP#2 AND MP#1 AND MP#3',
-    'MP#2 AND MP#1',
-  ],
-  searchAttributes: RecipePersonalizationFormula.searchAttributes,
+export const MealPlannerPersonalizationFormulas = {
+  'pt-br': {
+    template: [
+      'MP#2 AND MP#1 AND MP#3 AND MP#5 AND MP#4',
+      'MP#2 AND MP#1 AND MP#3 AND MP#5',
+      'MP#2 AND MP#1 AND MP#3',
+      'MP#2 AND MP#1',
+    ],
+    searchAttributes: RecipePersonalizationFormula.searchAttributes,
+  },
+  'es-mx': {
+    template: [
+      'MP#1 AND MP#3 AND MP#4 AND MP#2',
+      'MP#1 AND MP#3 AND MP#4',
+      'MP#1 AND MP#3',
+      'MP#1',
+    ],
+    searchAttributes: RecipePersonalizationFormula.searchAttributes,
+  },
 };
 
 export interface RecipePersonalizationFormulaProps {
