@@ -473,7 +473,7 @@
             "name": "RecipeListing",
             "content": {
               "view": "RelatedRecipes",
-              "title": "Recetas similares"
+              "title": "Da un vistazo a todas nuestras recetas"
             }
           },
           {
@@ -592,7 +592,7 @@
             "name": "PageListing",
             "content": {
               "view": "RecipeCategories",
-              "title": "Recetas similares"
+              "title": "Da un vistazo a todas nuestras recetas"
             }
           },
           {
@@ -798,7 +798,7 @@
             "name": "PageListing",
             "content": {
               "view": "RecipeCategories",
-              "title": "Outras categorias que recomendo"
+              "title": "Da un vistazo a todas nuestras recetas"
             }
           },
           {
@@ -2807,9 +2807,6 @@
             "content": {
               "title": "La pequeña gran diferencia",
               "subtitle": "Descubre cómo pequeñas acciones pueden generar grandes cambios para ti y para el medio ambiente.",
-              "listingTitle": {
-                "title": "Los 50 alimentos del Futuro:"
-              },
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/promise/future.jpg",
                 "alt": "Los 50 alimentos del Futuro"

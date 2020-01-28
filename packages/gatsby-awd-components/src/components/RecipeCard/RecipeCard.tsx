@@ -83,7 +83,12 @@ export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
           {itemTitle}
           {RatingWidget}
         </div>
-        <BrandLogo brand={brand} linkTo={`${searchLink}?searchQuery=${brand}`} isExternal={isExternalItemLink} />
+        <BrandLogo
+          className={cx(theme.recipeCard__infoBrand, 'recipe-card__info-brand')}
+          brand={brand}
+          linkTo={`${searchLink}?searchQuery=${brand}`}
+          isExternal={isExternalItemLink}
+        />
       </div>
     </div>
   );

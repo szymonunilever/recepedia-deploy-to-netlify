@@ -1710,7 +1710,7 @@
                   "marks": [
                     "372a09be-b8d9-4172-8a18-399ccad19bf9"
                   ],
-                  "text": " "
+                  "text": "COMUNÍCATE CON NOSOTROS"
                 }
               ],
               "markDefs": [
@@ -2856,7 +2856,7 @@
           "path": "/content/aem-headless-cms/recepedia/mx-es/articles/knorr/el-futuro-del-mundo-esta-en-nuestros-platillos/el-impacto-de-nuestras-elecciones-de-alimentos0",
           "brand": "Knorr",
           "section": "El futuro del mundo está en nuestros platillos",
-          "articleName": "EL IMPACTO DE NUESTRAS ELECCIONES DE ALIMENTOS",
+          "articleName": "EL IMPACTO DE NUESTRAS ELECCIONES DE ALIMENTOS DUPLICATE NAME",
           "creationTime": "2020-01-07T18:04:36Z",
           "articleContent": [
             {

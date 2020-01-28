@@ -3,6 +3,10 @@
 
 .product-page {
   .product {
+
+    &-brand-hero {
+      order: -1;
+    }
     &__attributes {
       margin-top: 3rem;
       @include respondTo(desktop) {
@@ -187,6 +191,11 @@
       &__link {
         display: none;
       }
+    }
+
+    #content {
+      display: flex;
+      flex-direction: column;
     }
 
     .product {
