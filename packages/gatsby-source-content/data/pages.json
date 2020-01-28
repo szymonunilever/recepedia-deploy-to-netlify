@@ -25,7 +25,7 @@
             "name": "RecipeListing",
             "content": {
               "view": "TopRecipes",
-              "title": "Mais buscadas"
+              "title": "Novidades"
             }
           },
           {

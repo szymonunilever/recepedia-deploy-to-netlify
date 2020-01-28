@@ -33,17 +33,21 @@ import { getRecipes, isQuizesStored } from './helpers';
 // Component Styles
 import '../../scss/pages/_home.scss';
 import { IMAGE_SIZES } from 'src/constants';
-import xor from 'lodash/xor';
 import { FROM, RESULT_SIZE } from '../../utils/getPersonalizationSearchData';
 import { ReactComponent as ArrowIcon } from 'src/svgs/inline/arrow-down.svg';
 import { getPagePath } from '../../utils/getPagePath';
 
 const HomePage = ({ data, pageContext, location }: HomePageProps) => {
   const { latestAndGrates, topRecipes, allCategory } = data;
-  topRecipes.nodes = xor(topRecipes.nodes, latestAndGrates.nodes).slice(
-    FROM,
-    RESULT_SIZE
-  );
+  topRecipes.nodes = topRecipes.nodes
+    .filter(
+      recipe =>
+        !latestAndGrates.nodes.some(
+          gRecipe => gRecipe.recipeId === recipe.recipeId
+        )
+    )
+    .slice(FROM, RESULT_SIZE);
+
   const brandLogoLink = getPagePath('Search');
 
   const pageListingData = allCategory.nodes.map(category => ({
@@ -159,7 +163,7 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
             'RecipeListing',
             'LatestAndGreatest'
           )}
-          list={latestAndGratestResult}
+          list={topRecipesResult}
           ratingProvider={RatingAndReviewsProvider.inline}
           className={`${!loadedLatest &&
             theme.recipeHidden} recipe-list--blue-header recipe-list--carousel`}
@@ -180,8 +184,8 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
           brandLogoLink={brandLogoLink}
         >
-          {latestAndGratestResult &&
-            latestAndGratestResult.map(recipe => (
+          {topRecipesResult &&
+            topRecipesResult.map(recipe => (
               <CardLinkWrapper
                 key={recipe.id}
                 cardKey={recipe.id}
@@ -214,7 +218,7 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
             'RecipeListing',
             'TopRecipes'
           )}
-          list={topRecipesResult}
+          list={latestAndGratestResult}
           ratingProvider={RatingAndReviewsProvider.inline}
           viewType={RecipeListViewType.Carousel}
           className={`${!loadedTop &&
@@ -235,8 +239,8 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.NON_STANDARD}
           brandLogoLink={brandLogoLink}
         >
-          {topRecipesResult &&
-            topRecipesResult.map(recipe => (
+          {latestAndGratestResult &&
+            latestAndGratestResult.map(recipe => (
               <CardLinkWrapper
                 title={recipe.title}
                 key={recipe.id}
