@@ -58,3 +58,5 @@ export const IMAGE_SIZES = {
   CONTAINER_WIDTH: '(max-width: 1365px) 100vw, 1092px',
   FULL_WIDTH: '100vw',
 };
+
+export const MAX_CARD_TEXT_LENGTH = 75;

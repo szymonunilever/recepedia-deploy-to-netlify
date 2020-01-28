@@ -35,7 +35,7 @@ import {
 import DigitalData from '../../../integrations/DigitalData';
 import Layout from '../../components/Layout/Layout';
 import LookByCategory from '../../components/LookByCategory';
-import { IMAGE_SIZES } from '../../constants';
+import { IMAGE_SIZES, MAX_CARD_TEXT_LENGTH } from '../../constants';
 import { ReactComponent as ArrowIcon } from 'src/svgs/inline/arrow-down.svg';
 import '../../scss/pages/_brand.scss';
 import { ReactComponent as MaizenaSpikeletIcon } from 'src/svgs/inline/spikelet.svg';
@@ -142,6 +142,7 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
             cardKey={product.fields.slug}
             content={{ ...product, title: product.productName }}
             imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
+            maxDescriptionLength={MAX_CARD_TEXT_LENGTH}
           />
         </ProductCardWrapper>
       </CardLinkWrapper>

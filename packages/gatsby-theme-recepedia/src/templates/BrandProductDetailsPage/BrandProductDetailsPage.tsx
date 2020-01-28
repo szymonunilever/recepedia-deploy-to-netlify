@@ -288,6 +288,13 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
             titleLevel={1}
             className="product-copy__title"
           />
+          <Rating
+            id={product.productId}
+            entityType={RatingAndReviewsEntityType.product}
+            provider={RatingAndReviewsProvider.kritique}
+            linkTo={product.fields.slug}
+            className="product__rating"
+          />
           <div
             className={cx(
               theme.product__headingHeroWrapper,
@@ -296,13 +303,6 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
           >
             {productHero}
           </div>
-          <Rating
-            id={product.productId}
-            entityType={RatingAndReviewsEntityType.product}
-            provider={RatingAndReviewsProvider.kritique}
-            linkTo={product.fields.slug}
-            className="product__rating"
-          />
           <ProductCopy
             viewType={ProductCopyViewType.Description}
             product={product}

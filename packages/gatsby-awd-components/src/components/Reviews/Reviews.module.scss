@@ -239,7 +239,9 @@
           }
 
           &.column02 {
-            padding-top: 28px;
+            @include respondTo(medium) {
+              padding-top: 28px;
+            }
           }
         }
 
