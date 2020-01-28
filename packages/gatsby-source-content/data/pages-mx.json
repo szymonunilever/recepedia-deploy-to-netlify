@@ -1832,21 +1832,21 @@
                     "options": [
                       {
                         "id": 90001654,
-                        "value": "Menos de 30 min",
+                        "value": "<30",
                         "label": {
                           "text": "Menos de 30 min."
                         }
                       },
                       {
                         "id": 90001654,
-                        "value": "Entre 30 y 60 min",
+                        "value": "[31 TO 60]",
                         "label": {
                           "text": "Entre 30 y 60 min."
                         }
                       },
                       {
                         "id": 90001655,
-                        "value": "Más de 60 min",
+                        "value": ">60",
                         "label": {
                           "text": "Más de 60 min."
                         }
