@@ -14,12 +14,10 @@ import {
 } from '../../../utils/browserStorage';
 import { ProfileKey } from '../../../utils/browserStorage/models';
 import DataCapturingForm from '../../DataCapturingForm';
-import {
-  Logo,
-  Modal,
-  Wizard,
-  Quiz as WizardQuiz,
-} from 'gatsby-awd-components/src';
+import { Logo } from 'gatsby-awd-components/src/components/Logo';
+import { Modal } from 'gatsby-awd-components/src/components/Modal';
+import { Wizard } from 'gatsby-awd-components/src/components/Wizard';
+import { Quiz as WizardQuiz } from 'gatsby-awd-components/src/components/Wizard';
 import { IntroQuizProps } from './models';
 import { trackQuiz } from 'src/tracking/quiz-tracking';
 

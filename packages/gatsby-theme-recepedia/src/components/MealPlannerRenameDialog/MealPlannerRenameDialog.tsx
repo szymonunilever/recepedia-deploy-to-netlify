@@ -1,7 +1,8 @@
-import { GeneratedForm, Modal } from 'gatsby-awd-components/src';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { MealPlannerRenameDialogProps } from './models';
 import { ReactComponent as CloseBtn } from '../../svgs/inline/x-mark.svg';
+import Modal from 'gatsby-awd-components/src/components/Modal';
+import GeneratedForm from 'gatsby-awd-components/src/components/GeneratedForm';
 
 export const MealPlannerRenameDialog: FunctionComponent<MealPlannerRenameDialogProps> = ({
   callback,

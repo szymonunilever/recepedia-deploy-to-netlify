@@ -4,18 +4,18 @@ import { graphql } from 'gatsby';
 import DigitalData from 'integrations/DigitalData';
 import React, { useCallback, useEffect, useState } from 'react';
 import Layout from 'src/components/Layout/Layout';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { PageListing } from 'gatsby-awd-components/src/components/PageListing';
 import {
-  RecipeCard,
-  CardLinkWrapper,
-  Hero,
-  PageListing,
   RecipeListing,
   RecipeListViewType,
-  TagName,
-  RatingAndReviewsProvider,
-  Text,
-  Button,
-} from 'gatsby-awd-components/src';
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { TagName } from 'gatsby-awd-components/src/components/Text';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src/models';
+import { Text } from 'gatsby-awd-components/src/components/Text';
+import { Button } from 'gatsby-awd-components/src/components/Button';
 
 import SEO from 'src/components/Seo';
 import { findPageComponentContent } from 'src/utils';

@@ -1,4 +1,3 @@
-import { ButtonViewType, FilterIcons, Icon } from 'gatsby-awd-components/src';
 import React from 'react';
 import * as icons from './svgs/attributes';
 import { ReactComponent as OpenIcon } from './svgs/inline/arrow-down.svg';
@@ -10,6 +9,9 @@ import {
   ReactComponent as RemoveTagIcon,
   ReactComponent as CloseSvg,
 } from './svgs/inline/x-mark.svg';
+import { ButtonViewType } from 'gatsby-awd-components/src/components/Button';
+import { FilterIcons } from 'gatsby-awd-components/src/components/Filter';
+import { Icon } from 'gatsby-awd-components/src/models/globalModels';
 
 export const favoriteButtonDefaults = {
   className: 'recipe-card__favorite',

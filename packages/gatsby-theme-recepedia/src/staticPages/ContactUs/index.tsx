@@ -4,7 +4,6 @@ import SEO from 'src/components/Seo';
 import { findPageComponentContent } from 'src/utils';
 import DigitalData from '../../../integrations/DigitalData';
 import Layout from '../../components/Layout/Layout';
-import { ContactCard, TagName, Text } from 'gatsby-awd-components/src';
 import theme from './ContactUs.module.scss';
 import { ReactComponent as MapMarker } from 'src/svgs/inline/map-marker.svg';
 import { ReactComponent as Email } from 'src/svgs/inline/email.svg';
@@ -12,6 +11,8 @@ import { ReactComponent as Phone } from 'src/svgs/inline/phone.svg';
 import { WindowLocation } from '@reach/router';
 // Component Styles
 import '../../scss/pages/_contactUs.scss';
+import ContactCard from 'gatsby-awd-components/src/components/ContactCard';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 
 const ContactUsPage = ({ pageContext, location }: ContactUsPageProps) => {
   const {

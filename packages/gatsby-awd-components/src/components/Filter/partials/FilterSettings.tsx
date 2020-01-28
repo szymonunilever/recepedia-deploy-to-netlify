@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
-import { Accordion, Button, Tags, TagToggleHandler, TagViewType, TagVariant } from '../../';
 import theme from './FilterSettings.module.scss';
-import { FilterSettingsProps } from '..';
+import Tags, { TagToggleHandler, TagVariant, TagViewType } from "../../Tags";
+import { FilterSettingsProps } from "..";
+import Accordion from "../../Accordion";
+import Button from "../../Button";
 
 const FilterSettings = ({
   allFilters,

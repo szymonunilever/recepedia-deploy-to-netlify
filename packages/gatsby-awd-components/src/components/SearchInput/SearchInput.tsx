@@ -5,7 +5,7 @@ import { SearchInputProps, FilterData } from './models';
 import trim from 'lodash/trim';
 import getComponentDataAttrs from '../../utils/getComponentDataAttrs';
 import theme from './SearchInput.module.scss';
-import { Button, ButtonViewType } from '../index';
+import { Button, ButtonViewType } from "../Button";
 
 const SearchInput = ({
   list = [],

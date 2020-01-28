@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getTagsFromRecipes } from '../../utils/getTagsFromRecipes';
 import { useElasticSearch } from '../../utils';
-import { SearchParams } from 'gatsby-awd-components/src';
 import useMedia from 'src/utils/useMedia';
 import _values from 'lodash/values';
 import _compact from 'lodash/compact';
 import { esResponseHandler } from '../../utils/esResponseHandler';
+import { SearchParams } from 'gatsby-awd-components/src/components/SearchListing';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const withRecipeAsyncLoadMore = <T extends any>(

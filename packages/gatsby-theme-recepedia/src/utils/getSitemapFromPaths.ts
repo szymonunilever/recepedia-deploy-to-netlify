@@ -1,10 +1,10 @@
 import capitalize from 'lodash/capitalize';
-import { SitemapCategoryEntry } from 'gatsby-awd-components/src';
 import remove from 'lodash/remove';
 import groupBy from 'lodash/groupBy';
 import values from 'lodash/values';
 import uniqBy from 'lodash/uniqBy';
 import flatten from 'lodash/flatten';
+import { SitemapCategoryEntry } from 'gatsby-awd-components/src/components/Sitemap';
 
 const ROOT_PATH = '/';
 // @todo review do we need this section

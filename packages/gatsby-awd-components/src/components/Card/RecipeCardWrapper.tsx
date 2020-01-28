@@ -1,10 +1,10 @@
-import cx from 'classnames';
-import React, { FunctionComponent } from 'react';
-import { RatingAndReviewsProvider } from '../../models';
-import { Rating } from '../Rating';
-import { Card } from './Card';
-import theme from './RecipeCardWrapper.module.scss';
-import { RecipeCardWrapperProps } from './models';
+import cx from "classnames";
+import React, { FunctionComponent } from "react";
+import { RatingAndReviewsEntityType, RatingAndReviewsProvider } from "../../models";
+import { Rating } from "../Rating";
+import { Card } from "./Card";
+import theme from "./RecipeCardWrapper.module.scss";
+import { RecipeCardWrapperProps } from "./models";
 
 export const RecipeCardWrapper: FunctionComponent<RecipeCardWrapperProps> = ({
 children,
@@ -15,10 +15,11 @@ ratingProvider,
     ratingProvider !== RatingAndReviewsProvider.none ? (
         <Rating
           className={cx(theme.recipeRatingStars, 'recipe-rating--stars')}
-          recipeId={recipeId}
+          id={recipeId}
           provider={ratingProvider}
           averageRating={averageRating}
           linkTo={slug}
+          entityType={RatingAndReviewsEntityType.recipe}
         />
     ): undefined;
 

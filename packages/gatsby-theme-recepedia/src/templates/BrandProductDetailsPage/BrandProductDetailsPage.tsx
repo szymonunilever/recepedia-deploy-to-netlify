@@ -2,28 +2,6 @@ import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import { WindowLocation } from '@reach/router';
 
-import {
-  SocialIcons,
-  SocialSharing,
-  SocialSharingViewType,
-  ProductHero,
-  ProductCopy,
-  ProductCopyViewType,
-  ProductNutrients,
-  Button,
-  CardLinkWrapper,
-  ProductCardWrapper,
-  RatingAndReviewsProvider,
-  Card,
-  Text,
-  TagName,
-  BrandSocialChannels,
-  Hero,
-  Listing,
-  Reviews,
-  RatingAndReviewsEntityType,
-  Rating,
-} from 'gatsby-awd-components/src';
 import { findPageComponentContent, isBrowser } from 'src/utils';
 import BrandHero from 'src/components/BrandHero';
 import Layout from 'src/components/Layout/Layout';
@@ -50,6 +28,28 @@ import themeHellmanns from './BrandProductDetailsPageHellmanns.module.scss';
 import themeKnorr from './BrandProductDetailsPageKnorr.module.scss';
 import themeMaizena from './BrandProductDetailsPageMaizena.module.scss';
 import '../../scss/pages/_brand.scss';
+import SocialSharing, {
+  SocialIcons,
+  SocialSharingViewType,
+} from 'gatsby-awd-components/src/components/SocialSharing';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { ProductCopyViewType } from 'gatsby-awd-components/src/components/ProductCopy';
+import { Rating } from 'gatsby-awd-components/src/components/Rating';
+import { BrandSocialChannels } from 'gatsby-awd-components/src/components/BrandSocialChannels';
+import {
+  RatingAndReviewsEntityType,
+  RatingAndReviewsProvider,
+} from 'gatsby-awd-components/src';
+import { Card } from 'gatsby-awd-components/src/components/Card';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import ProductHero from 'gatsby-awd-components/src/components/ProductHero';
+import { ProductCardWrapper } from 'gatsby-awd-components/src/components/Card';
+import { Reviews } from 'gatsby-awd-components/src/components/Reviews';
+import { Listing } from 'gatsby-awd-components/src/components/Listing';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import ProductNutrients from 'gatsby-awd-components/src/components/ProductNutrients';
+import Button from 'gatsby-awd-components/src/components/Button';
+import ProductCopy from 'gatsby-awd-components/src/components/ProductCopy/ProductCopy';
 
 const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPageProps> = ({
   pageContext,

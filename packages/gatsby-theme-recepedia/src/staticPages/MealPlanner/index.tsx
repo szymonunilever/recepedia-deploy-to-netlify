@@ -1,11 +1,5 @@
 import { WindowLocation } from '@reach/router';
 import { graphql, navigate, useStaticQuery } from 'gatsby';
-import {
-  IntroductionPanel as WizardIntroductionPanel,
-  Quiz as WizardQuiz,
-  Wizard,
-  Menu,
-} from 'gatsby-awd-components/src';
 import DigitalData from 'integrations/DigitalData';
 import React, { useCallback, useState, useEffect } from 'react';
 import { IMAGE_SIZES, MealPlannerPersonalizationFormulas } from 'src/constants';
@@ -31,6 +25,10 @@ import Navigation from 'src/components/Navigation/Navigation';
 import { getPagePath } from '../../utils/getPagePath';
 import { esResponseHandler } from '../../utils/esResponseHandler';
 import smartOutline from 'smart-outline';
+import Wizard from 'gatsby-awd-components/src/components/Wizard';
+import { Menu } from 'gatsby-awd-components/src/components/GlobalFooter';
+import Quiz from 'gatsby-awd-components/src/components/Wizard/partials/Quiz';
+import IntroductionPanel from 'gatsby-awd-components/src/components/Wizard/partials/IntroductionPanel';
 
 const MAX_PER_MP = 7;
 const RESULT_SIZE = MAX_PER_MP * 2;
@@ -232,13 +230,13 @@ const MealPlannerPage = ({ pageContext, location }: MealPlannerProps) => {
       />
       <section>
         <Wizard actionCallback={wizardCallback}>
-          <WizardIntroductionPanel
+          <IntroductionPanel
             {...componentContent.wizardIntroductionPanel}
             containerClass="wizard--intro"
             stepId="intro"
             imageSizes={IMAGE_SIZES.MEAL_PLANNER.INTRODUCTION}
           />
-          <WizardQuiz
+          <Quiz
             CheckMarkIcon={CheckMarkIcon}
             {...componentContent.wizardQuiz}
             {...{ stepResultsCallback }}

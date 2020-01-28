@@ -1,6 +1,7 @@
 import React from 'react';
-import { CardLinkWrapper, Card } from 'gatsby-awd-components/src';
 import { IMAGE_SIZES } from 'src/constants';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { Card } from 'gatsby-awd-components/src/components/Card';
 
 export const mapArticlesListingContent = ({
   articles,

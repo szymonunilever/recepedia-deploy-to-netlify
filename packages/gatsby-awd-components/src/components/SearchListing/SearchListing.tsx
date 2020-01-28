@@ -1,3 +1,4 @@
+// @todo remove this link and pass images sizes as prop
 import { IMAGE_SIZES } from 'gatsby-theme-recepedia/src/constants';
 import React, {
   useState,
@@ -5,20 +6,6 @@ import React, {
   useCallback,
   FunctionComponent,
 } from 'react';
-import {
-  Button,
-  RecipeCard,
-  SearchInput,
-  Tabs,
-  Tab,
-  RecipeListing,
-  NullResult,
-  MediaGallery,
-  Filter,
-  CardLinkWrapper,
-  ProductListing,
-  LoadMoreType
-} from '../index';
 import cx from 'classnames';
 import get from 'lodash/get';
 import trim from 'lodash/trim';
@@ -28,6 +15,17 @@ import { RatingAndReviewsProvider } from '../../models';
 import getComponentDataAttrs from '../../utils/getComponentDataAttrs';
 import { icons } from '../../mocks/global';
 import theme from './SearchListing.module.scss';
+import RecipeListing, { LoadMoreType } from "../RecipeListing";
+import { CardLinkWrapper } from "../CardLinkWrapper";
+import { RecipeCard } from "../RecipeCard";
+import Button from "../Button";
+import MediaGallery from "../MediaGallery";
+import ProductListing from "../ProductListing";
+import { Tab } from "../Tabs/partials";
+import SearchInput from "../SearchInput";
+import Filter from "../Filter/Filter";
+import NullResult from "../NullResult";
+import Tabs from "../Tabs";
 
 
 const SearchListing: FunctionComponent<SearchListingProps> = ({

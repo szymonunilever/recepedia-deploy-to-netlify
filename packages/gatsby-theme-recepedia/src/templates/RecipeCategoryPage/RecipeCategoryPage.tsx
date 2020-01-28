@@ -2,26 +2,6 @@ import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
-import {
-  RecipeCard,
-  Listing,
-  CardLinkWrapper,
-  AdaptiveImage,
-  Hero,
-  LoadMoreType,
-  PageListing,
-  RecipeListing,
-  RecipeListViewType,
-  TagName,
-  Tags,
-  Text,
-  RatingAndReviewsProvider,
-  RichText,
-  PageListingViewTypes,
-  Button,
-  RecipeCardWrapper,
-  Card,
-} from 'gatsby-awd-components/src';
 import { findPageComponentContent, getImageAlt } from 'src/utils';
 import cx from 'classnames';
 import { favoriteButtonDefaults } from '../../themeDefaultComponentProps';
@@ -41,6 +21,26 @@ import useFavorite from 'src/utils/useFavorite';
 import { IMAGE_SIZES } from 'src/constants';
 import { dietaryAttributesIcons } from '../../themeDefaultComponentProps';
 import { getPagePath } from '../../utils/getPagePath';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { AdaptiveImage } from 'gatsby-awd-components/src/components/AdaptiveImage';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import RecipeListing, {
+  LoadMoreType,
+  RecipeListViewType,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import {
+  PageListing,
+  PageListingViewTypes,
+} from 'gatsby-awd-components/src/components/PageListing';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { Card } from 'gatsby-awd-components/src/components/Card';
+import { RecipeCardWrapper } from 'gatsby-awd-components/src/components/Card';
+import { Listing } from 'gatsby-awd-components/src/components/Listing';
+import RichText from 'gatsby-awd-components/src/components/RichText';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import Tags from 'gatsby-awd-components/src/components/Tags';
+import Button from 'gatsby-awd-components/src/components/Button';
 const RecipeCategoryPage = ({
   data,
   pageContext,

@@ -14,12 +14,6 @@ import { ReactComponent as KnorrLogoIcon } from 'src/svgs/inline/logo-knorr.svg'
 import { ReactComponent as HellmannsLogoIcon } from 'src/svgs/inline/logo-hellmanns.svg';
 import { ReactComponent as MaizenaLogoIcon } from 'src/svgs/inline/logo-maizena.svg';
 import '../../scss/pages/_brand.scss';
-import {
-  Hero,
-  Text,
-  BrandSocialChannels,
-  TagName,
-} from 'gatsby-awd-components/src';
 import { ReactComponent as FacebookIcon } from 'src/svgs/inline/facebook.svg';
 import { ReactComponent as InstagramIcon } from 'src/svgs/inline/instagram.svg';
 import { ReactComponent as TwitterIcon } from 'src/svgs/inline/twitter.svg';
@@ -28,6 +22,9 @@ import { IMAGE_SIZES } from 'src/constants';
 import BrandPromiseHellmanns from 'src/components/BrandPromise/BrandPromiseHellmanns';
 import BrandPromiseKnorr from 'src/components/BrandPromise/BrandPromiseKnorr';
 import BrandPromiseMaizena from 'src/components/BrandPromise/BrandPromiseMaizena';
+import BrandSocialChannels from 'gatsby-awd-components/src/components/BrandSocialChannels';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
 
 const BrandPromisePage: React.FunctionComponent<BrandPromisePageProps> = ({
   data: {

@@ -3,11 +3,12 @@ import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/Seo';
 import DigitalData from '../../../integrations/DigitalData';
 import { WindowLocation } from '@reach/router';
-import { RichText, TagName, Text } from 'gatsby-awd-components/src';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 import { findPageComponentContent } from 'src/utils';
 import theme from './termsAndConditions.module.scss';
 import cx from 'classnames';
 import '../../scss/pages/_default.scss';
+import RichText from 'gatsby-awd-components/src/components/RichText';
 
 const TermsAndConditionsPage = ({
   pageContext: {

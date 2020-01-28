@@ -7,21 +7,9 @@ import { findPageComponentContent } from 'src/utils';
 import DigitalData from '../../../integrations/DigitalData';
 import { WindowLocation } from '@reach/router';
 import { IMAGE_SIZES } from 'src/constants';
-import {
-  Button,
-  CardLinkWrapper,
-  Hero,
-  Loader,
+import MediaGallery, {
   MediaGalleryViewType,
-  RatingAndReviewsProvider,
-  RecipeCard,
-  RecipeListing,
-  RecipeListViewType,
-  TagName,
-  Tags,
-  Text,
-} from 'gatsby-awd-components/src';
-import MediaGallery from 'gatsby-awd-components/src/components/MediaGallery';
+} from 'gatsby-awd-components/src/components/MediaGallery';
 import { ReactComponent as IconArrowDown } from '../../svgs/inline/arrow-down.svg';
 import { ReactComponent as Spinner } from '../../svgs/inline/spinner.svg';
 import withArticleAsyncLoadMore from '../../components/withArticleAsyncLoadMore';
@@ -38,6 +26,18 @@ import { ProfileKey } from '../../utils/browserStorage/models';
 import '../../scss/pages/_articleHub.scss';
 import theme from 'src/staticPages/ArticlesHub/ArticleHub.module.scss';
 import useMedia from '../../utils/useMedia';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import {
+  RecipeListing,
+  RecipeListViewType,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import Loader from 'gatsby-awd-components/src/components/Loader';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { Tags } from 'gatsby-awd-components/src/components/Tags';
+import Button from 'gatsby-awd-components/src/components/Button';
 
 const ArticlesHub: React.FunctionComponent<ArticlesHubProps> = ({
   data,

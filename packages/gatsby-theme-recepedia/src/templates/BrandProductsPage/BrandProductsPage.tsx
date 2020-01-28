@@ -1,19 +1,6 @@
 import { WindowLocation } from '@reach/router';
 import cx from 'classnames';
 import { graphql } from 'gatsby';
-import {
-  BrandSocialChannels,
-  Button,
-  Card,
-  CardLinkWrapper,
-  GenericCarousel,
-  Hero,
-  Listing,
-  ProductCardWrapper,
-  RatingAndReviewsProvider,
-  TagName,
-  Text,
-} from 'gatsby-awd-components/src';
 import React, { useEffect, useState } from 'react';
 import SEO from 'src/components/Seo';
 import BrandHero from '../../components/BrandHero';
@@ -39,6 +26,16 @@ import { IMAGE_SIZES, MAX_CARD_TEXT_LENGTH } from '../../constants';
 import { ReactComponent as ArrowIcon } from 'src/svgs/inline/arrow-down.svg';
 import '../../scss/pages/_brand.scss';
 import { ReactComponent as MaizenaSpikeletIcon } from 'src/svgs/inline/spikelet.svg';
+import { ProductCardWrapper } from 'gatsby-awd-components/src/components/Card';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { Listing } from 'gatsby-awd-components/src/components/Listing';
+import { GenericCarousel } from 'gatsby-awd-components/src/components/GenericCarousel';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { BrandSocialChannels } from 'gatsby-awd-components/src/components/BrandSocialChannels';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { Card } from 'gatsby-awd-components/src/components/Card';
+import Button from 'gatsby-awd-components/src/components/Button';
 
 const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
   pageContext,

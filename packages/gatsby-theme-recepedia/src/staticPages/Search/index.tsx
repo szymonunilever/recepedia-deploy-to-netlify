@@ -3,18 +3,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/Seo';
 import cx from 'classnames';
-import {
-  Hero,
-  PageListing,
-  PageListingViewTypes,
-  RecipeListViewType,
-  SearchListing,
-  Tags,
-  RatingAndReviewsProvider,
-  WithLocation as withLocation,
-  WithLocationProps,
-  Loader,
-} from 'gatsby-awd-components/src';
 import { findPageComponentContent } from 'src/utils';
 import DigitalData from '../../../integrations/DigitalData';
 import {
@@ -38,6 +26,18 @@ import { ReactComponent as ArrowIcon } from 'src/svgs/inline/arrow-down.svg';
 import { ReactComponent as CloseSvg } from 'src/svgs/inline/x-mark.svg';
 import { ReactComponent as Spinner } from 'src/svgs/inline/spinner.svg';
 import { getPagePath } from '../../utils/getPagePath';
+import SearchListing from 'gatsby-awd-components/src/components/SearchListing';
+import Loader from 'gatsby-awd-components/src/components/Loader';
+import { RecipeListViewType } from 'gatsby-awd-components/src/components/RecipeListing';
+import withLocation, {
+  WithLocationProps,
+} from 'gatsby-awd-components/src/components/WithLocation';
+import PageListing, {
+  PageListingViewTypes,
+} from 'gatsby-awd-components/src/components/PageListing';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { Tags } from 'gatsby-awd-components/src/components/Tags';
 
 const SearchPage = ({ data, pageContext, searchQuery }: SearchPageProps) => {
   const {

@@ -1,30 +1,37 @@
-const path = require('path');
-const fs = require('fs');
-
 const templatesMap = {
-  RecipeCategory: path.resolve(
-    `./src/templates/RecipeCategoryPage/RecipeCategoryPage.tsx`
-  ),
-  ContentHub: path.resolve(`./src/templates/ContentHubPage/ContentHubPage.tsx`),
-  RecipeDetail: path.resolve(`./src/templates/RecipePage/RecipePage.tsx`),
-  ArticleDetail: path.resolve(`./src/templates/ArticlePage/ArticlePage.tsx`),
-  BrandPromisePage: path.resolve(
-    `./src/templates/BrandPromisePage/BrandPromisePage.tsx`
-  ),
-  BrandProductsPage: path.resolve(
-    `./src/templates/BrandProductsPage/BrandProductsPage.tsx`
-  ),
-  ProductDetails: path.resolve(
-    `./src/templates/BrandProductDetailsPage/BrandProductDetailsPage.tsx`
-  ),
-  default: path.resolve(`./src/templates/ContentPage/ContentPage.tsx`),
+  RecipeCategory: './src/templates/RecipeCategoryPage/RecipeCategoryPage.tsx',
+  ContentHub: './src/templates/ContentHubPage/ContentHubPage.tsx',
+  RecipeDetail: './src/templates/RecipePage/RecipePage.tsx',
+  ArticleDetail: './src/templates/ArticlePage/ArticlePage.tsx',
+  BrandPromisePage: './src/templates/BrandPromisePage/BrandPromisePage.tsx',
+  BrandProductsPage: './src/templates/BrandProductsPage/BrandProductsPage.tsx',
+  ProductDetails: './src/templates/BrandProductDetailsPage/BrandProductDetailsPage.tsx',
+  default: './src/templates/ContentPage/ContentPage.tsx',
 };
 
 module.exports = pageType => {
-  const staticPath = path.resolve(`./src/staticPages/${pageType}/index.tsx`);
 
-  if (fs.existsSync(staticPath)) {
-    return staticPath;
+  const pageTypes = [
+    'Home',
+    'AllRecipes',
+    'Search',
+    'ContactUs',
+    'ContactForm',
+    'ContactUsThankYou',
+    'UserProfile',
+    'NotFound',
+    'AboutUs',
+    'MealPlanner',
+    'Sitemap',
+    'NewsletterSignUp',
+    'TermsAndConditions',
+    'FAQ',
+    'ArticlesHub',
+    'Search'
+  ];
+
+  if (pageTypes.indexOf(pageType) > -1) {
+    return `./src/staticPages/${pageType}/index.tsx`;
   } else if (templatesMap[pageType]) {
     return templatesMap[pageType];
   }

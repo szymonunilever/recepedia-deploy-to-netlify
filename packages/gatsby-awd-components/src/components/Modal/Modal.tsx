@@ -5,7 +5,6 @@ import ReactModal from 'react-modal';
 import theme from './Modal.module.scss';
 import { Button, ButtonViewType } from '../Button';
 import { Text, TagName } from '../Text';
-import { iconNormalize } from '../../utils';
 
 const Modal: FunctionComponent<ModalProps> = ({
   isOpen,

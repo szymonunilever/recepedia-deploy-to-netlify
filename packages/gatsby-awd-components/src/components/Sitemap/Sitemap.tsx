@@ -1,10 +1,9 @@
 import React from 'react';
 import { SitemapProps } from './models';
-import { SitemapCategoryEntry } from './partials/models';
+import { SitemapCategoryEntry } from "./partials";
 import { Text } from '../Text';
-import { TagName } from '../Text/models';
+import { TagName } from "../Text";
 import { SitemapCategory } from './partials';
-import { Link } from 'gatsby';
 import partition from 'lodash/partition';
 import cx from 'classnames';
 import theme from './Sitemap.module.scss';

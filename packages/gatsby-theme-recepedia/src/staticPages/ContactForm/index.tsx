@@ -5,7 +5,6 @@ import { findPageComponentContent } from 'src/utils';
 import DigitalData from '../../../integrations/DigitalData';
 import ReCaptchaInit from '../../../integrations/RecaptchaV3';
 import Layout from '../../components/Layout/Layout';
-import { GeneratedForm, Modal } from 'gatsby-awd-components/src';
 import theme from './/ContactForm.module.scss';
 import sendForm from 'src/services/transactionalServiceAdapter';
 import { WindowLocation } from '@reach/router';
@@ -13,6 +12,8 @@ import { WindowLocation } from '@reach/router';
 import '../../scss/pages/_contactForm.scss';
 import { navigate } from 'gatsby';
 import { getPagePath } from '../../utils/getPagePath';
+import Modal from 'gatsby-awd-components/src/components/Modal';
+import GeneratedForm from 'gatsby-awd-components/src/components/GeneratedForm';
 
 const ContactFormPage: React.FunctionComponent<ContactFormPageProps> = ({
   pageContext,

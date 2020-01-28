@@ -1,15 +1,12 @@
 import cx from 'classnames';
 import React, { FunctionComponent } from 'react';
-import {
-  AdaptiveImage,
-  TagName,
-  Text,
-  iconNormalize,
-} from 'gatsby-awd-components/src';
 import { Link } from 'gatsby';
 import theme from './BrandHero.module.scss';
 import { BrandHeroProps } from './models';
 import { IMAGE_SIZES } from 'src/constants';
+import { iconNormalize } from 'gatsby-awd-components/src';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { AdaptiveImage } from 'gatsby-awd-components/src/components/AdaptiveImage';
 
 const BrandHero: FunctionComponent<BrandHeroProps> = ({
   className,

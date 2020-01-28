@@ -2,12 +2,14 @@ import React, { useCallback, useState } from 'react';
 import { graphql, navigate, useStaticQuery } from 'gatsby';
 import {
   Button,
-  Modal,
+  ButtonViewType,
+} from 'gatsby-awd-components/src/components/Button';
+import { Modal } from 'gatsby-awd-components/src/components/Modal';
+import {
   SearchInput,
   SearchInputProps,
-  SearchParams,
-  ButtonViewType,
-} from 'gatsby-awd-components/src';
+} from 'gatsby-awd-components/src/components/SearchInput';
+import { SearchParams } from 'gatsby-awd-components/src/components/SearchParams';
 import { ReactComponent as ButtonCloseIcon } from 'src/svgs/inline/x-mark.svg';
 import { ReactComponent as SearchIcon } from 'src/svgs/inline/search-icon.svg';
 import { getSearchSuggestionResponse } from 'src/utils/searchUtils';

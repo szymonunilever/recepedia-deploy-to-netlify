@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import React, { FunctionComponent } from 'react';
-import { GeneratedForm, TagName, Text } from 'gatsby-awd-components/src';
+import { GeneratedForm } from 'gatsby-awd-components/src/components/GeneratedForm';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 import ReCaptchaInit from '../../../integrations/RecaptchaV3';
 import {
   getUserProfileByKey,

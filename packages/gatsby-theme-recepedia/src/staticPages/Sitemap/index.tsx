@@ -3,12 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/Seo';
 import {
-  Sitemap,
-  TagName,
-  Text,
-  SitemapCategoryEntry,
-} from 'gatsby-awd-components/src';
-import {
   getSitemapFromPaths,
   SiteMapRawData,
 } from 'src/utils/getSitemapFromPaths';
@@ -17,6 +11,10 @@ import { WindowLocation } from '@reach/router';
 import { findPageComponentContent } from 'src/utils';
 // Component Styles
 import '../../scss/pages/_sitemap.scss';
+import Sitemap, {
+  SitemapCategoryEntry,
+} from 'gatsby-awd-components/src/components/Sitemap';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 
 const SitemapPage = ({
   pageContext: {

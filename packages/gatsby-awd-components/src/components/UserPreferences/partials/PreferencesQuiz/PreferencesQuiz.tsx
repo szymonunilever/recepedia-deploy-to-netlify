@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, useCallback } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 import PreferenceEntry from './partials/PreferenceEntry';
 import {
   PreferenceQuizProps,
@@ -12,7 +12,7 @@ import { PreferenceUpdateResultType } from './partials';
 import {
   Question,
   QuestionFilterPropNameKeys,
-} from '../../../Wizard/partials/Quiz/models';
+} from "../../../Wizard/partials/Quiz";
 import PreferenceUpdateBlock from './partials/PreferenceUpdateBlock';
 import { RecipeAttributesKeys } from '../../../RecipeAttributes';
 

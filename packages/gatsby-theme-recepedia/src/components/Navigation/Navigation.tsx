@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { ReactComponent as ButtonCloseIcon } from 'src/svgs/inline/x-mark.svg';
-import { GlobalNavigation } from 'gatsby-awd-components/src';
+import { GlobalNavigation } from 'gatsby-awd-components/src/components/GlobalNavigation';
 import { ReactComponent as LogoIcon } from 'src/svgs/inline/logo.svg';
 import { ReactComponent as ArrowDownIcon } from 'src/svgs/inline/arrow-down.svg';
 import GlobalSearch from 'src/components/Search/GlobalSearch';

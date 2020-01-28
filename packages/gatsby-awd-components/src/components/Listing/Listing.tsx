@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+import React, { FunctionComponent } from 'react';
 import cx from 'classnames';
 import { getComponentDataAttrs } from '../../utils';
 import { CardProps } from '../Card';

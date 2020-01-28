@@ -5,19 +5,6 @@ import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
 import SEO from 'src/components/Seo';
 
-import {
-  RecipeCard,
-  CardLinkWrapper,
-  Hero,
-  LoadMoreType,
-  RecipeListing,
-  RecipeListViewType,
-  TagName,
-  Text,
-  RatingAndReviewsProvider,
-  Button,
-  Loader,
-} from 'gatsby-awd-components/src';
 import { findPageComponentContent, useElasticSearch } from 'src/utils';
 import { favoriteButtonDefaults } from '../../themeDefaultComponentProps';
 import theme from './AllRecipes.module.scss';
@@ -26,7 +13,6 @@ import DigitalData from '../../../integrations/DigitalData';
 // Component Styles
 import '../../scss/pages/_allRecipes.scss';
 
-import { SearchParams } from 'gatsby-awd-components/src';
 import { WindowLocation } from '@reach/router';
 import { ProfileKey } from 'src/utils/browserStorage/models';
 import { getUserProfileByKey, updateFavorites } from 'src/utils/browserStorage';
@@ -41,6 +27,18 @@ import { ReactComponent as ArrowIcon } from 'src/svgs/inline/arrow-down.svg';
 import { ReactComponent as Spinner } from 'src/svgs/inline/spinner.svg';
 import { getPagePath } from '../../utils/getPagePath';
 import { esResponseHandler } from '../../utils/esResponseHandler';
+import Loader from 'gatsby-awd-components/src/components/Loader';
+import RecipeListing, {
+  LoadMoreType,
+  RecipeListViewType,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { TagName, Text } from 'gatsby-awd-components/src/components/Text';
+import { SearchParams } from 'gatsby-awd-components/src/components/SearchListing';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import Button from 'gatsby-awd-components/src/components/Button';
+import Hero from 'gatsby-awd-components/src/components/Hero';
 
 const AllRecipesPage = ({
   data,

@@ -3,20 +3,6 @@ import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
 import { findPageComponentContent, getImageAlt } from 'src/utils';
-import {
-  RecipeCard,
-  CardLinkWrapper,
-  Button,
-  Hero,
-  LoadMoreType,
-  PageListing,
-  PageListingViewTypes,
-  RatingAndReviewsProvider,
-  RecipeListing,
-  RecipeListViewType,
-  Tags,
-} from 'gatsby-awd-components/src';
-
 import cx from 'classnames';
 import { favoriteButtonDefaults } from '../../themeDefaultComponentProps';
 import theme from './ContentHubPage.module.scss';
@@ -34,6 +20,20 @@ import { WithRecipeAsyncLoadMore } from 'src/components/withRecipeAsyncLoadMore/
 import useFavorite from 'src/utils/useFavorite';
 import { IMAGE_SIZES } from 'src/constants';
 import { getPagePath } from '../../utils/getPagePath';
+import {
+  PageListing,
+  PageListingViewTypes,
+} from 'gatsby-awd-components/src/components/PageListing';
+import RecipeListing, {
+  LoadMoreType,
+  RecipeListViewType,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import Tags from 'gatsby-awd-components/src/components/Tags';
+import Button from 'gatsby-awd-components/src/components/Button';
 
 const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
   data,
