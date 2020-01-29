@@ -10,5 +10,15 @@
         padding-top: 1.6rem;
       }
     }
+    .recipe-top-block {
+      &-logo {
+        svg {
+          max-width: 6.5rem;
+          @include respondTo(desktop) {
+            max-width: 7.9rem;
+          }
+        }
+      }
+    }
   }
 }

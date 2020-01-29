@@ -19,6 +19,7 @@ export const Tabs = ({
   tabFromLocation = false,
   location,
   data,
+  dataFetched,
 }: TabsProps) => {
   const classWrapper = cx(theme.tabs, className);
   const [active, setActive] = useState<string>(tabs[0].view);
@@ -32,9 +33,11 @@ export const Tabs = ({
     setActive(activeTab as string);
   }, [location]);
   useEffect(() => {
-    !tabs.filter(tab => tab.view === active && tab.resultsCount).length &&
-      setActive(tabs[0].view);
-  }, [tabs]);
+    dataFetched
+      ? !tabs.filter(tab => tab.view === active && tab.resultsCount).length &&
+        setActive(tabs[0].view)
+      : setActive(tabs[0].view);
+  }, [tabs, dataFetched]);
   let tabItems: JSX.Element[], tabsContents: JSX.Element[];
   tabsContents = children.reduce(
     (accum, child) => {

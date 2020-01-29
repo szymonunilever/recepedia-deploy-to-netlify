@@ -9,6 +9,7 @@ export interface TabsProps
   tabFromLocation?: boolean;
   location?: Location;
   data?: TabsData[];
+  dataFetched?: boolean;
   titleLevel?: titleLevel;
 }
 

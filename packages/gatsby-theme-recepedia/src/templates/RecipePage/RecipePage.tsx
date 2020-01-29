@@ -244,7 +244,10 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
               <BrandLogo
                 brand={recipe.brand}
                 linkTo={LinkToBrandProducts}
-                className={theme.recipeTopBlockLogo}
+                className={cx(
+                  theme.recipeTopBlockLogo,
+                  'recipe-top-block-logo'
+                )}
               />
               <RecipeCopy
                 viewType={RecipeCopyViewType.Title}
