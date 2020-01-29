@@ -35,10 +35,10 @@
       padding: 0;
 
       svg {
-        width: 56px;
+        max-width: 56px;
         height: auto;
         @include respondTo(medium) {
-          width: 132px;
+          max-width: 132px;
         }
       }
     }
