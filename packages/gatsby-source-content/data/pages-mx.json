@@ -18,14 +18,14 @@
             "name": "RecipeListing",
             "content": {
               "view": "LatestAndGreatest",
-              "title": "Conoce nuestras última creaciones"
+              "title": "Conoce nuestras recetas preferidas"
             }
           },
           {
             "name": "RecipeListing",
             "content": {
               "view": "TopRecipes",
-              "title": "Conoce nuestras recetas preferidas"
+              "title": "Conoce nuestras última creaciones"
             }
           },
           {
