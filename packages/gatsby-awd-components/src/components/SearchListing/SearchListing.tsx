@@ -40,6 +40,9 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
     searchInputResults,
     articleResults,
     productResults,
+    articleResultsFetched,
+    recipeResultsFetched,
+    productResultsFetched,
   },
   brandLogoLink,
 }) => {
@@ -328,7 +331,15 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
         results={recipeResults.count + articleResults.count + productResults.count}
       />
       {recipeResults.count + articleResults.count + productResults.count ? (
-        <Tabs className="search-tabs" content={tabs.content}>
+        <Tabs
+          className="search-tabs"
+          content={tabs.content}
+          dataFetched={
+            articleResultsFetched &&
+            recipeResultsFetched &&
+            productResultsFetched
+          }
+        >
           {tabs.list.map(tab => tab)}
         </Tabs>
         ) : <NullResult content={content.nullResultContent} />
