@@ -188,7 +188,7 @@ export const query = graphql`
     }
     allRecipe(limit: 6) {
       nodes {
-        ...RecipeFields
+        ...RecipeCardFields
       }
     }
   }

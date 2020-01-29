@@ -303,13 +303,13 @@ export const query = graphql`
       sort: { fields: creationTime, order: DESC }
     ) {
       nodes {
-        ...RecipeFields
+        ...RecipeCardFields
       }
     }
 
     allRecipe(limit: 8, sort: { order: DESC, fields: creationTime }) {
       nodes {
-        ...RecipeFields
+        ...RecipeCardFields
       }
       totalCount
     }

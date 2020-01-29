@@ -298,7 +298,7 @@ export const pageQuery = graphql`
       limit: 6
     ) {
       nodes {
-        ...RecipeFields
+        ...RecipeCardFields
       }
     }
 
@@ -307,7 +307,7 @@ export const pageQuery = graphql`
       limit: 12
     ) {
       nodes {
-        ...RecipeFields
+        ...RecipeCardFields
       }
     }
 

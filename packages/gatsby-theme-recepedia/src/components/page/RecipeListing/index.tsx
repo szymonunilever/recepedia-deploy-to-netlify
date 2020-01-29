@@ -26,7 +26,7 @@ const RecipeListing = ({ content }: RecipeListingProps) => {
         {
           allRecipe(limit: 2) {
             nodes {
-              ...RecipeFields
+              ...RecipeCardFields
             }
           }
         }
