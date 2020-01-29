@@ -2,38 +2,6 @@ import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
-import {
-  RecipeCard,
-  CardLinkWrapper,
-  Hero,
-  Rating,
-  RecipeAttributes,
-  RecipeAttributesKeys,
-  RecipeCookingMethod,
-  RecipeCopy,
-  RecipeCopyViewType,
-  RecipeDietaryAttributes,
-  RecipeHero,
-  RecipeListing,
-  RecipeListViewType,
-  RecipeMicrodata,
-  RecipeNutrients,
-  RecipeNutrientsViewType,
-  Reviews,
-  SocialIcons,
-  SocialSharing,
-  SocialSharingViewType,
-  Tabs,
-  Tab,
-  TagName,
-  Tags,
-  Button,
-  RatingAndReviewsProvider,
-  RatingAndReviewsEntityType,
-  Text,
-  BrandLogo,
-  VideoPlayer,
-} from 'gatsby-awd-components/src';
 import { ReactComponent as RecipeClock } from 'src/svgs/inline/recipe-clock.svg';
 import { ReactComponent as RecipeDifficulty } from 'src/svgs/inline/recipe-difficulty.svg';
 import { ReactComponent as RecipePeople } from 'src/svgs/inline/recipe-people.svg';
@@ -74,6 +42,41 @@ import '../../scss/pages/_recipePage.scss';
 import themeKnorr from './RecipePageKnorr.module.scss';
 import themeHellmanns from './RecipePageHellmanns.module.scss';
 import themeMaizena from './RecipePageMaizena.module.scss';
+import SocialSharing, {
+  SocialIcons,
+  SocialSharingViewType,
+} from 'gatsby-awd-components/src/components/SocialSharing';
+import RecipeHero from 'gatsby-awd-components/src/components/RecipeHero';
+import Button from 'gatsby-awd-components/src/components/Button';
+import RecipeCopy, {
+  RecipeCopyViewType,
+} from 'gatsby-awd-components/src/components/RecipeCopy';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { RecipeMicrodata } from 'gatsby-awd-components/src/components/RecipeMicrodata';
+import Rating from 'gatsby-awd-components/src/components/Rating';
+import RecipeListing, {
+  RecipeListViewType,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import RecipeAttributes, {
+  RecipeAttributesKeys,
+} from 'gatsby-awd-components/src/components/RecipeAttributes';
+import Tags from 'gatsby-awd-components/src/components/Tags';
+import RecipeNutrients, {
+  RecipeNutrientsViewType,
+} from 'gatsby-awd-components/src/components/RecipeNutrients';
+import { VideoPlayer } from 'gatsby-awd-components/src/components/VideoPlayer';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import {
+  RatingAndReviewsEntityType,
+  RatingAndReviewsProvider,
+} from 'gatsby-awd-components/src';
+import BrandLogo from 'gatsby-awd-components/src/components/BrandLogo';
+import { Reviews } from 'gatsby-awd-components/src/components/Reviews';
+import Tabs, { Tab } from 'gatsby-awd-components/src/components/Tabs';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import RecipeCookingMethod from 'gatsby-awd-components/src/components/RecipeCookingMethod';
+import RecipeDietaryAttributes from 'gatsby-awd-components/src/components/RecipeDietaryAttributes';
 
 const infoIcon = <InfoIcon />;
 const socialIcons: SocialIcons = {

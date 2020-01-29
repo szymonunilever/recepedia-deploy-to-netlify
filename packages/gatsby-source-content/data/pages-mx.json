@@ -2206,23 +2206,6 @@
       }
     },
     {
-      "type": "PreferenceCenter",
-      "relativePath": "/centro-de-preferencias",
-      "components": {
-        "items": []
-      },
-      "seo": {
-        "title": "Centro de preferencias",
-        "description": "Recepedia é um site de receitas para quem ama cozinhar. Encontre as receitas que busca e compartilhe suas favoritas. E sua receita, qual é?",
-        "meta": [
-          {
-            "name": "og:image",
-            "content": "https://br.recepedia.com/sites/default/files/styles/hero_marquee_breakpoints_theme_recepedia_phone_1x/public/new_recepedia/recipes/images/4ce26f6b-73ea-4755-b287-afd33fe7735e.jpg"
-          }
-        ]
-      }
-    },
-    {
       "type": "TermsAndConditions",
       "relativePath": "/termos-e-condicoes",
       "components": {

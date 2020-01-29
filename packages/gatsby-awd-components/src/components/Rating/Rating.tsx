@@ -1,7 +1,6 @@
 import React, { SyntheticEvent, useState, useEffect } from 'react';
 import { RatingProps } from './models';
 import {
-  RatingAndReviewsEntityType,
   RatingAndReviewsProvider,
   RatingSummaryTemplate,
 } from '../../models';

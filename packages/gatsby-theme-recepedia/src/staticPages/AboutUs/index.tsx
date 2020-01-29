@@ -1,10 +1,4 @@
 import React from 'react';
-import {
-  AdaptiveImage,
-  RichText,
-  TagName,
-  Text,
-} from 'gatsby-awd-components/src';
 import { findPageComponentContent } from 'src/utils';
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/Seo';
@@ -14,6 +8,9 @@ import theme from './AboutUs.module.scss';
 import cx from 'classnames';
 // Component Styles
 import '../../scss/pages/_default.scss';
+import { AdaptiveImage } from 'gatsby-awd-components/src/components/AdaptiveImage';
+import RichText from 'gatsby-awd-components/src/components/RichText';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 
 const AboutUs = ({
   pageContext: {

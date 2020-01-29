@@ -5,7 +5,7 @@ import DigitalData from '../../../integrations/DigitalData';
 import { WindowLocation } from '@reach/router';
 import '../../scss/pages/_newsletterSignUp.scss';
 import { isBrowser, findPageComponentContent } from 'src/utils';
-import { TagName, Text } from 'gatsby-awd-components/src';
+import { TagName, Text } from 'gatsby-awd-components/src/components/Text';
 
 const GIGYA_SCRIPT_SRC = `${process.env['gigya_script_src']}?apiKey=${process.env['gigya_script_api_key']}&lang=${process.env['gigya_script_lang']}`;
 

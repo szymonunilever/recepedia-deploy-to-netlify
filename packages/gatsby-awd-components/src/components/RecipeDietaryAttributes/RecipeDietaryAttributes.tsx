@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, ReactFragment } from 'react';
+import React, { FunctionComponent, memo } from 'react';
 import cx from 'classnames';
 import { iconNormalize } from '../../utils';
 import Attribute from './partials/Attribute';

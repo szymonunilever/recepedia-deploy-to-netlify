@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import { MediaGalleryProps, MediaGalleryViewType } from './models';
 import { TagName, Text } from '../Text';

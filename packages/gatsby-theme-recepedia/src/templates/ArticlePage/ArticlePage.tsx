@@ -1,25 +1,10 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import {
-  Card,
-  CardLinkWrapper,
-  Listing,
-  ProductCardWrapper,
-  RatingAndReviewsProvider,
-  TagName,
-  Text,
-} from 'gatsby-awd-components/src';
 import SEO from 'src/components/Seo/Seo';
 import cx from 'classnames';
 import { findPageComponentContent } from 'src/utils';
 import AddThis from '../../../integrations/AddThis';
 import Layout from '../../components/Layout/Layout';
-import {
-  Hero,
-  SocialIcons,
-  SocialSharing,
-  SocialSharingViewType,
-} from 'gatsby-awd-components/src';
 import DigitalData from '../../../integrations/DigitalData';
 import { WindowLocation } from '@reach/router';
 import BlockContent from '@sanity/block-content-to-react';
@@ -33,6 +18,17 @@ import { ReactComponent as PinterestIcon } from 'src/svgs/inline/pinterest.svg';
 import { ReactComponent as WhatsappIcon } from 'src/svgs/inline/whatsapp.svg';
 import theme from 'src/templates/ArticlePage/ArticlePage.module.scss';
 import '../../scss/pages/_article.scss';
+import SocialSharing, {
+  SocialIcons,
+  SocialSharingViewType,
+} from 'gatsby-awd-components/src/components/SocialSharing';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { ProductCardWrapper } from 'gatsby-awd-components/src/components/Card';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { Listing } from 'gatsby-awd-components/src/components/Listing';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { Card } from 'gatsby-awd-components/src/components/Card';
 
 const socialIcons: SocialIcons = {
   facebook: FacebookIcon,

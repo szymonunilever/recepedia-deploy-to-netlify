@@ -1,13 +1,4 @@
 import React from 'react';
-import {
-  Accordion,
-  AccordionTitle,
-  RichText,
-  TagName,
-  Text,
-  iconNormalize,
-  Icon,
-} from 'gatsby-awd-components/src';
 import { findPageComponentContent } from 'src/utils';
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/Seo';
@@ -22,6 +13,12 @@ import { ReactComponent as RecepediaLogoIcon } from '../../svgs/inline/logo.svg'
 import { ReactComponent as KnorrLogoIcon } from '../../svgs/inline/logo-knorr.svg';
 import { ReactComponent as HellmannsLogoIcon } from '../../svgs/inline/logo-hellmanns-filled.svg';
 import { ReactComponent as MaizenaLogoIcon } from '../../svgs/inline/logo-maizena.svg';
+import { Icon, iconNormalize } from 'gatsby-awd-components/src';
+import Accordion, {
+  AccordionTitle,
+} from 'gatsby-awd-components/src/components/Accordion';
+import RichText from 'gatsby-awd-components/src/components/RichText';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 
 const FAQPage = ({
   pageContext: {

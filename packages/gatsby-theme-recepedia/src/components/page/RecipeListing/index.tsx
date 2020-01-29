@@ -1,9 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import {
-  RecipeListing as RecipeListingComponent,
-  FilterIcons,
-} from 'gatsby-awd-components/src';
 import { ReactComponent as OpenIcon } from 'src/svgs/inline/arrow-down.svg';
 import { ReactComponent as ClosedIcon } from 'src/svgs/inline/arrow-up.svg';
 import { ReactComponent as FilterIcon } from 'src/svgs/inline/filter.svg';
@@ -11,6 +7,8 @@ import {
   ReactComponent as RemoveTagIcon,
   ReactComponent as CloseSvg,
 } from 'src/svgs/inline/x-mark.svg';
+import { FilterIcons } from 'gatsby-awd-components/src/components/Filter';
+import { RecipeListing as RecipeListingComponent } from 'gatsby-awd-components/src/components/RecipeListing';
 export const icons: FilterIcons = {
   close: CloseSvg,
   closed: ClosedIcon,

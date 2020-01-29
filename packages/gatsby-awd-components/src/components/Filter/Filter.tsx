@@ -1,13 +1,4 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import {
-  Button,
-  ButtonViewType,
-  Modal,
-  Option,
-  Select,
-  Tags,
-  TagVariant,
-} from '../';
 import { FilterProps, SortingOptions, FilterSettings, FilterIcons } from './';
 import { iconNormalize, enumToArray } from '../../utils';
 import theme from './Filter.module.scss';
@@ -18,6 +9,10 @@ import {
 } from '../../svgs/inline/x-mark.svg';
 import { ReactComponent as ClosedIcon } from '../../svgs/inline/arrow-down.svg';
 import { ReactComponent as FilterIcon } from '../../svgs/inline/filter.svg';
+import Button, { ButtonViewType } from "../Button";
+import { Option, Select } from "../Select";
+import { Modal } from "../Modal";
+import { Tags, TagVariant } from "../Tags";
 
 export const icons: FilterIcons = {
   close: CloseSvg,

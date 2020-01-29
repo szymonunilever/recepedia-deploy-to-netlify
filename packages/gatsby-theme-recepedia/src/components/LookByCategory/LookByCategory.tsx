@@ -1,5 +1,5 @@
-import { TagName, Text } from 'gatsby-awd-components/src';
 import React, { FunctionComponent, useEffect, useState } from 'react';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 import { LookByCategoryProps } from './models';
 import theme from './LookByCategory.module.scss';
 import cx from 'classnames';

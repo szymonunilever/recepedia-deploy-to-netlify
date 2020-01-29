@@ -1,22 +1,5 @@
 import cx from 'classnames';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import {
-  Button,
-  LoadMoreType,
-  NullResult,
-  PreferencesQuiz,
-  RatingAndReviewsProvider,
-  RecipeCard,
-  CardLinkWrapper,
-  RecipeListing,
-  RecipeListViewType,
-  Tab,
-  Tabs,
-  UserPreferences,
-  UserPreferencesIcons,
-  WithLocation as withLocation,
-  WithLocationProps,
-} from 'gatsby-awd-components/src';
 import get from 'lodash/get';
 import React, {
   Fragment,
@@ -55,6 +38,24 @@ import {
 import useFavoritesSearch from './useFavoritesSearch';
 import { getPagePath } from '../../utils/getPagePath';
 import theme from './UserProfile.module.scss';
+import {
+  UserPreferences,
+  UserPreferencesIcons,
+} from 'gatsby-awd-components/src/components/UserPreferences';
+import Tabs, { Tab } from 'gatsby-awd-components/src/components/Tabs';
+import withLocation, {
+  WithLocationProps,
+} from 'gatsby-awd-components/src/components/WithLocation';
+import { CardLinkWrapper } from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import RecipeListing, {
+  LoadMoreType,
+  RecipeListViewType,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import NullResult from 'gatsby-awd-components/src/components/NullResult';
+import Button from 'gatsby-awd-components/src/components/Button';
+import PreferencesQuiz from 'gatsby-awd-components/src/components/UserPreferences/partials/PreferencesQuiz/PreferencesQuiz';
 
 const userPreferencesIcons: UserPreferencesIcons = {
   arrowUp: <IconArrowUp />,

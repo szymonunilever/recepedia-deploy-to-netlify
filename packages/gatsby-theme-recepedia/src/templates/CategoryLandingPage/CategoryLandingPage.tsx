@@ -1,10 +1,3 @@
-import {
-  Hero,
-  Listing,
-  Button,
-  Tags,
-  GenericCarousel,
-} from 'gatsby-awd-components/src';
 import React, { useCallback, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -20,7 +13,11 @@ import { WindowLocation } from '@reach/router';
 // Component Styles
 import '../../scss/pages/_recipeCategories.scss';
 import { createCardsFromList, createRecipeCardsFromList } from './helpers';
-import { getPagePath } from '../../utils/getPagePath';
+import { Listing } from 'gatsby-awd-components/src/components/Listing';
+import { GenericCarousel } from 'gatsby-awd-components/src/components/GenericCarousel';
+import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import Tags from 'gatsby-awd-components/src/components/Tags';
+import Button from 'gatsby-awd-components/src/components/Button';
 
 const CategoryLandingPage = ({
   pageContext,

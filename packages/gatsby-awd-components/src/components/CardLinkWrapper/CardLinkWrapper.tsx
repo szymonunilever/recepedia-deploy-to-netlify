@@ -1,7 +1,6 @@
 import cx from 'classnames';
 import { Link } from 'gatsby';
 import React, { FunctionComponent } from 'react';
-import { RecipeCardProps } from '../RecipeCard';
 import theme from '../RecipeCard/RecipeCard.module.scss';
 import { CardLinkWrapperProps } from './models';
 

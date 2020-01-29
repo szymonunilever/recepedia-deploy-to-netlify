@@ -1,11 +1,9 @@
 import React, { ReactNode, useEffect } from 'react';
 import { graphql, navigate, useStaticQuery } from 'gatsby';
-import {
-  BackToTop,
-  BrandSocialChannels,
-  GeneratedForm,
-  GlobalFooter,
-} from 'gatsby-awd-components/src';
+import { BackToTop } from 'gatsby-awd-components/src/components/BackToTop';
+import { BrandSocialChannels } from 'gatsby-awd-components/src/components/BrandSocialChannels';
+import { GeneratedForm } from 'gatsby-awd-components/src/components/GeneratedForm';
+import { GlobalFooter } from 'gatsby-awd-components/src/components/GlobalFooter';
 import UnileverLogoIcon from 'src/svgs/inline/unilever-logo.svg';
 import { ReactComponent as ArrowUpIcon } from 'src/svgs/inline/arrow-up.svg';
 import { ReactComponent as FacebookIcon } from 'src/svgs/inline/facebook.svg';

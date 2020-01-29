@@ -1,13 +1,4 @@
 import React, { FunctionComponent, memo, ReactElement, useEffect, useRef, useState } from 'react';
-import {
-  Button,
-  Text,
-  Filter,
-  TagName,
-  RecipeCardProps,
-  SortingOptions,
-  RecipeSortingOptionsFieldsMappings,
-} from '../';
 import { CardLinkWrapperProps } from '../CardLinkWrapper';
 import { LoadMoreType, RecipeListingProps, RecipeListViewType } from './models';
 import {
@@ -26,6 +17,10 @@ import {
 import get from 'lodash/get';
 import { getComponentDataAttrs } from '../../utils';
 import { AppContext } from '../../context/appContext';
+import { RecipeCardProps } from "../RecipeCard";
+import { Text, TagName } from "../Text";
+import { Filter, RecipeSortingOptionsFieldsMappings, SortingOptions } from "../Filter";
+import Button from "../Button";
 
 export const RecipeListing: FunctionComponent<RecipeListingProps> = ({
   className,

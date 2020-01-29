@@ -1,8 +1,9 @@
 import React from 'react';
 import { findPageComponentContent } from 'src/utils';
-import { Text, AdaptiveImage, TagName } from 'gatsby-awd-components/src';
 import { ReactComponent as MaizenaSpikeletIcon } from 'src/svgs/inline/spikelet.svg';
 import { IMAGE_SIZES } from 'src/constants';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { AdaptiveImage } from 'gatsby-awd-components/src/components/AdaptiveImage';
 
 const BrandPromiseMaizena = ({ components }: MaizenaPromiseProps) => {
   const promiseArticleContent = findPageComponentContent(

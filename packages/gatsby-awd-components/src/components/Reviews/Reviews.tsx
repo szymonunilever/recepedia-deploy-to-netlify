@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ReviewsProps } from './models';
 import {
-  RatingAndReviewsEntityType,
   ReviewsSummaryTemplate,
   RatingAndReviewsProvider,
 } from '../../models';
 import cx from 'classnames';
 import isBrowser from '../../utils/isBrowser';
 import getComponentDataAttrs from '../../utils/getComponentDataAttrs';
-import Helmet from 'react-helmet';
 import theme from './Reviews.module.scss';
 
 const Reviews = ({

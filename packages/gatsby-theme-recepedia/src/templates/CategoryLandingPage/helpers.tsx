@@ -1,13 +1,3 @@
-import {
-  Button,
-  ButtonViewType,
-  Card,
-  CardLinkWrapper,
-  CardLinkWrapperProps,
-  Icon,
-  RatingAndReviewsProvider,
-  RecipeCardWrapper,
-} from 'gatsby-awd-components/src';
 import React, { ReactElement } from 'react';
 import { IMAGE_SIZES } from '../../constants';
 import { ReactComponent as HellmannsLogo } from '../../svgs/inline/logo-hellmanns.svg';
@@ -21,6 +11,16 @@ import {
 } from '../../utils/browserStorage';
 import { ProfileKey } from '../../utils/browserStorage/models';
 import useFavorite from '../../utils/useFavorite';
+import Button, {
+  ButtonViewType,
+} from 'gatsby-awd-components/src/components/Button';
+import { RecipeCardWrapper } from 'gatsby-awd-components/src/components/Card';
+import {
+  CardLinkWrapper,
+  CardLinkWrapperProps,
+} from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import { Icon, RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import { Card } from 'gatsby-awd-components/src/components/Card';
 
 const brandLogos: { [key: string]: Icon } = {
   Hellmans: <HellmannsLogo />,

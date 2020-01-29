@@ -7,7 +7,7 @@ import React, {
 import { UserPreferencesProps } from './models';
 import PreferencesIntro from './partials/PreferencesIntro';
 import ResultCount from './partials/PreferencesQuiz/partials/ResultCount';
-import { LastInteraction } from './partials/PreferencesQuiz/index';
+import { LastInteraction } from "./partials/PreferencesQuiz";
 import theme from './UserPreferences.module.scss';
 import cx from 'classnames';
 

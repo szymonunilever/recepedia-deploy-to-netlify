@@ -1,16 +1,16 @@
-import cx from 'classnames';
-import React, { FunctionComponent, useContext } from 'react';
-import { RatingAndReviewsProvider } from '../../models';
-import { getImageAlt } from '../../utils';
-import getComponentDataAttrs from '../../utils/getComponentDataAttrs';
-import AdaptiveImage from '../AdaptiveImage';
-import { ButtonProps } from '../Button';
-import Rating from '../Rating';
-import { TagName, Text } from '../Text';
-import { RecipeCardProps } from './models';
-import theme from './RecipeCard.module.scss';
-import { AppContext } from '../../context/appContext';
-import BrandLogo from '../BrandLogo';
+import cx from "classnames";
+import React, { FunctionComponent, useContext } from "react";
+import { RatingAndReviewsEntityType, RatingAndReviewsProvider } from "../../models";
+import { getImageAlt } from "../../utils";
+import getComponentDataAttrs from "../../utils/getComponentDataAttrs";
+import AdaptiveImage from "../AdaptiveImage";
+import { ButtonProps } from "../Button";
+import Rating from "../Rating";
+import { TagName, Text } from "../Text";
+import { RecipeCardProps } from "./models";
+import theme from "./RecipeCard.module.scss";
+import { AppContext } from "../../context/appContext";
+import BrandLogo from "../BrandLogo";
 
 export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
   recipeId,
@@ -50,15 +50,14 @@ export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
   const wrapClasses = cx(theme.recipeCard, brand, 'recipe-card', className);
   const RatingWidget =
     ratingProvider !== RatingAndReviewsProvider.none ? (
-      <>
-        <Rating
-          className={cx(theme.recipeRatingStars, 'recipe-rating--stars')}
-          recipeId={recipeId}
-          provider={ratingProvider}
-          averageRating={averageRating}
-          linkTo={slug}
-        />
-      </>
+      <Rating
+        className={cx(theme.recipeRatingStars, 'recipe-rating--stars')}
+        id={recipeId}
+        provider={ratingProvider}
+        averageRating={averageRating}
+        linkTo={slug}
+        entityType={RatingAndReviewsEntityType.recipe}
+      />
     ) : null;
 
   const Image = localImage && (

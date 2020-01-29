@@ -2,18 +2,15 @@ import React, { useState } from 'react';
 import { findPageComponentContent } from 'src/utils';
 import { Link } from 'gatsby';
 import {
-  Text,
-  RichText,
-  AdaptiveImage,
-  Listing,
-  TagName,
-  Button,
-} from 'gatsby-awd-components/src';
-import {
   mapArticlesListingContent,
   PromiseArticle,
 } from '../mapArticlesListingContent';
 import { IMAGE_SIZES } from 'src/constants';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { Listing } from 'gatsby-awd-components/src/components/Listing';
+import { AdaptiveImage } from 'gatsby-awd-components/src/components/AdaptiveImage';
+import RichText from 'gatsby-awd-components/src/components/RichText';
+import Button from 'gatsby-awd-components/src/components/Button';
 
 const BrandPromiseHellmanns = ({
   components,

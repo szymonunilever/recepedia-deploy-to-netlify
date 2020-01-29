@@ -1,24 +1,3 @@
-import {
-  NullResult,
-  Button,
-  ButtonViewType,
-  Modal,
-  RatingAndReviewsProvider,
-  RecipeAddPlaceholderProps,
-  CardLinkWrapper,
-  CardLinkWrapperProps,
-  RecipeListing,
-  RecipeListViewType,
-  ResultSection as WizardResultSection,
-  SearchInput,
-  SearchInputProps,
-  SearchParams,
-  TagName,
-  Text,
-  RecipeCard,
-  RecipeAddPlaceholder,
-  LoadMoreType,
-} from 'gatsby-awd-components/src';
 import React, {
   FunctionComponent,
   ReactElement,
@@ -42,6 +21,31 @@ import { getCustomMPSearch } from './hepers';
 import useMedia from '../../utils/useMedia';
 import { getPagePath } from '../../utils/getPagePath';
 import { esResponseHandler } from '../../utils/esResponseHandler';
+import Button, {
+  ButtonViewType,
+} from 'gatsby-awd-components/src/components/Button';
+import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import {
+  CardLinkWrapper,
+  CardLinkWrapperProps,
+} from 'gatsby-awd-components/src/components/CardLinkWrapper';
+import {
+  LoadMoreType,
+  RecipeAddPlaceholderProps,
+  RecipeListing,
+  RecipeListViewType,
+  RecipeAddPlaceholder,
+} from 'gatsby-awd-components/src/components/RecipeListing';
+import { RecipeCard } from 'gatsby-awd-components/src/components/RecipeCard';
+import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
+import {
+  SearchInput,
+  SearchInputProps,
+} from 'gatsby-awd-components/src/components/SearchInput';
+import Modal from 'gatsby-awd-components/src/components/Modal';
+import NullResult from 'gatsby-awd-components/src/components/NullResult';
+import { SearchParams } from 'gatsby-awd-components/src/components/SearchListing';
+import { ResultSection } from 'gatsby-awd-components/src/components/Wizard';
 
 export const MealPlannerResults: FunctionComponent<MealPannerResultsProps> = ({
   containerClass,
@@ -442,7 +446,7 @@ export const MealPlannerResults: FunctionComponent<MealPannerResultsProps> = ({
 
   return showCustomSelector ? (
     <div className="wizard-meal-planer--custom-search">
-      <WizardResultSection
+      <ResultSection
         content={customSearchResultContent}
         containerClass={containerClass}
         stepId="customNoResult"
@@ -457,10 +461,10 @@ export const MealPlannerResults: FunctionComponent<MealPannerResultsProps> = ({
         }}
       >
         {!customSearchInProcess ? customSearchResultChildrenView : spinnerView}
-      </WizardResultSection>
+      </ResultSection>
     </div>
   ) : (
-    <WizardResultSection
+    <ResultSection
       {...wizardResultSection}
       containerClass={containerClass}
       stepId={stepId}
@@ -495,7 +499,7 @@ export const MealPlannerResults: FunctionComponent<MealPannerResultsProps> = ({
         : spinnerView}
       {removeFromMPConfirmationView}
       {customSearchModalView}
-    </WizardResultSection>
+    </ResultSection>
   );
 };
 

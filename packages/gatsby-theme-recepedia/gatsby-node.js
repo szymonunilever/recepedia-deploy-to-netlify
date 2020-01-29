@@ -239,7 +239,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const slug = addTrailingSlash(edge.node.fields.slug);
     createPage({
       path: slug,
-      component: getPageTemplate(page.type),
+      component: path.resolve(getPageTemplate(page.type)),
       context: {
         page,
         edge,
@@ -258,7 +258,7 @@ exports.createPages = async ({ graphql, actions }) => {
       const slug = addTrailingSlash(page.relativePath);
       createPage({
         path: slug,
-        component: getPageTemplate(page.type),
+        component: path.resolve(getPageTemplate(page.type)),
         context: {
           title: get(page, 'title'),
           brand: get(page, 'brand'),
