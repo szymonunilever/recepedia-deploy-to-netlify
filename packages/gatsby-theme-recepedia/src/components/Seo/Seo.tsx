@@ -91,6 +91,10 @@ function SEO({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `google-site-verification`,
+          content: process.env['googleSiteVerification'],
+        },
       ].concat(meta)}
     >
       {children}
