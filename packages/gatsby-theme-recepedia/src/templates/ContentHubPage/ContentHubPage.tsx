@@ -210,6 +210,14 @@ export const query = graphql`
     ) {
       nodes {
         ...RecipeCardFields
+        tagGroups {
+          label
+          name
+          tags {
+            id
+            name
+          }
+        }
       }
       totalCount
     }
