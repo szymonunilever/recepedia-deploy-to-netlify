@@ -82,3 +82,4 @@ storybook-static
 # Redirects map will be generated automatically during build
 _redirects
 unmappedNewUrls.txt
+.vscode/
