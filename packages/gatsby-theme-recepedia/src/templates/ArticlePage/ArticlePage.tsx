@@ -59,7 +59,7 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
       url: '/',
     },
   };
-  const next = brandedArticles[0];
+  const next = allArticle.nodes.filter(art => art.brand === article.brand)[0];
   const nextContent = next && {
     image: {
       localImage: next.localImage,
@@ -75,7 +75,16 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
     components,
     'SocialSharing'
   );
-
+  const serializers = {
+    marks: {
+      // eslint-disable-next-line react/display-name
+      link: (props: any) => (
+        <a href={props.mark.href} target="_blank" rel="noopener noreferrer">
+          {props.children}
+        </a>
+      ),
+    },
+  };
   const searchPath = getPagePath('Search');
   const articleCards = brandedArticles.map(brandedArticle => (
     <CardLinkWrapper
@@ -145,7 +154,10 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
       )}
 
       <section className={cx(theme.articleText, 'wrapper')}>
-        <BlockContent blocks={JSON.parse(article.content)} />
+        <BlockContent
+          blocks={JSON.parse(article.content)}
+          serializers={serializers}
+        />
         <SocialSharing
           content={socialSharingContent}
           className={theme.articleSocial}

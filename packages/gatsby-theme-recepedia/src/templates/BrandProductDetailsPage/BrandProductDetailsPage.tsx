@@ -226,7 +226,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
   }, []);
   const relatedProducts = (
     <>
-      <Listing content={relatedProductsContent} titleLevel={3}>
+      <Listing content={relatedProductsContent} titleLevel={2}>
         {showFullList ? relatedCards : relatedCards.slice(0, query ? 2 : 4)}
       </Listing>
 
@@ -257,7 +257,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
 
   const productNutrients = (
     <ProductNutrients
-      titleLevel={3}
+      titleLevel={2}
       className={cx(brandTheme && brandTheme.product__nutrients)}
       content={findPageComponentContent(components, 'ProductNutrients')}
       nutritionFacts={product.nutritionFacts}
@@ -347,7 +347,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
                 <ProductCopy
                   viewType={ProductCopyViewType.Ingredients}
                   product={product}
-                  titleLevel={3}
+                  titleLevel={2}
                   content={findPageComponentContent(
                     components,
                     'ProductCopy',
@@ -358,7 +358,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
                   <ProductCopy
                     viewType={ProductCopyViewType.Allergy}
                     product={product}
-                    titleLevel={3}
+                    titleLevel={2}
                     content={findPageComponentContent(
                       components,
                       'ProductCopy',
