@@ -35,6 +35,7 @@ import { ReactComponent as InfoIcon } from '../../svgs/inline/info.svg';
 import { IMAGE_SIZES } from 'src/constants';
 import { ReactComponent as OpenModelButtonIcon } from '../../svgs/inline/social-sharing.svg';
 import { ReactComponent as WhatsappIcon } from '../../svgs/inline/whatsapp.svg';
+import { ReactComponent as PlayIcon } from '../../svgs/inline/youtube-play.svg';
 import { getPagePath } from '../../utils/getPagePath';
 import isBrowser from '../../utils/isBrowser';
 // Component Styles
@@ -214,11 +215,19 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
 
   const videoIds = recipe.videos && recipe.videos.map(video => video.id);
 
+  const preview =
+    videoIds && videoIds.length
+      ? {
+          playIcon: PlayIcon,
+          previewImage: recipe.localImage,
+        }
+      : undefined; // recipe image as YouTube video preview is a temporary solution
+
   const recipeVideos =
     videoIds &&
     videoIds.map(videoId => (
       <div className={theme.recipeVideo} key={videoId}>
-        <VideoPlayer content={{ videoId }} />
+        <VideoPlayer content={{ videoId, preview }} />
       </div>
     ));
 

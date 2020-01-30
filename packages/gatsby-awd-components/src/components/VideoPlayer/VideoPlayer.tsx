@@ -5,6 +5,7 @@ import AdaptiveImage from '../AdaptiveImage';
 import { Text, TagName } from '../Text';
 import getComponentDataAttrs from '../../utils/getComponentDataAttrs';
 import cx from 'classnames';
+import { iconNormalize } from '../../utils/iconNormalize';
 
 const VideoPlayer = ({
   width = 640,
@@ -40,7 +41,9 @@ const VideoPlayer = ({
         <div className="video-player__preview-tab">
           <Tab view="VideoPlayerCustomThumbnail" active={showPreview}>
             <div className="playback-icon" onClick={handlePlayButtonClick}>
-              {preview && PlayIcon ? <PlayIcon /> : preview && preview.playIcon}
+              {preview && PlayIcon
+                ? iconNormalize(PlayIcon)
+                : preview && iconNormalize(preview.playIcon)}
             </div>
             <AdaptiveImage
               className={'video-player__preview-image'}
@@ -59,14 +62,16 @@ const VideoPlayer = ({
         className={'video-player__player-tab'}
         active={preview ? !showPreview : true}
       >
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=${autoPlay}&rel=0`}
-          width={width}
-          height={height}
-          allowFullScreen={allowFullScreen}
-          allow="autoplay"
-          title="article video content"
-        />
+        {!showPreview && (
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=${autoPlay}&rel=0`}
+            width={width}
+            height={height}
+            allowFullScreen={allowFullScreen}
+            allow="autoplay"
+            title="article video content"
+          />
+        )}
       </Tab>
     </div>
   );
