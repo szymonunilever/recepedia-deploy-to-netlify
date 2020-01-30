@@ -28,8 +28,9 @@ exports.sourceNodes = async (
       fetchContent(configOptions),
     ]);
 
-    //temporary add image into images, it should be removed when we will have it on backend.
     productsResponse.data.map(product => {
+      product.productCategory = product.category;
+      //temporary add image into images, it should be removed when we will have it on backend.
       product.images = product.images.filter(image => image);
       !product.images.length && product.images.push({
         "base64": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAASABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAQGAwUH/8QAKRAAAQMDAwIFBQAAAAAAAAAAAQIDBAAFERIhMSJRBhMUQYEVIzJhcf/EABgBAQADAQAAAAAAAAAAAAAAAAMBBAUG/8QAIxEAAgEDAQkAAAAAAAAAAAAAAQIAAxExIRITFDJBgZHh8P/aAAwDAQACEQMRAD8Amy4si6XG2oShDDEuIJDyVqUvyjrUnCR7hWkqH6znipN48HzSpv6TeWm4yNYWDGTnoSDgEE9+DUOyymn58hXqpD851zWQ479x1OnTpQcAZGBgds4q1NwXAhuVNluQ2I7jb0h53IYS2FBSh7YV04IPJxgGsCujvSXh7bRySPOmL9fU6JQEU7xu32s4+q7Npx6l1RdI31dJ7bilJ1xhz7ncJjflNNSZTryEYBwlSyRnbnelKVUG0MOSLzX3zeyPOHdYAIUeR81U490uE9lpqfOlSW0JJSh55Swn+AmlKWjymRWyszs/j80pSllef//Z",
@@ -65,7 +66,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       id: ID!
       productId: ID!
       brand: String!
-      category: String!
+      productCategory: String!
       EANparent: String!
       productName: String!
       productLaunchDate: String

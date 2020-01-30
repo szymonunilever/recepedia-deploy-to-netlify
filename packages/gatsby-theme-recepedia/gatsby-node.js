@@ -139,6 +139,7 @@ exports.onCreateNode = async ({
           path: addTrailingSlash(productPageTemplate.relativePath),
           node,
           createNodeField,
+          prependWithField: 'productId',
         });
       }
       break;

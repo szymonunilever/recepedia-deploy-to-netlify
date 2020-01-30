@@ -7,7 +7,7 @@ declare namespace ProductData {
     id: number | string;
     productId: number | string;
     brand: string;
-    category: string;
+    productCategory: string;
     productName: string;
     longPageDescription: string;
     shortPageDescription: string;

@@ -60,7 +60,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
     page: { components, seo, type },
     product,
     brand,
-    category,
+    productCategory,
   } = pageContext;
   const [showFullList, setShowFullList] = useState();
   const [counter, setCounter] = useState(0);
@@ -420,39 +420,16 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
 export default BrandProductDetailsPage;
 
 export const query = graphql`
-  query($brand: String, $category: String) {
+  query($brand: String, $productCategory: String) {
     allProduct(
       filter: {
         brand: { eq: $brand }
-        category: { eq: $category }
+        productCategory: { eq: $productCategory }
         EANparent: { eq: "" }
       }
     ) {
       nodes {
-        brand
-        id
-        productId
-        productName
-        productLaunchDate
-        shortPageDescription
-        productTags
-        category
-        fields {
-          slug
-        }
-        images {
-          childImageSharp {
-            fluid {
-              base64
-              aspectRatio
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
-        }
+        ...ProductFields
       }
     }
   }
@@ -463,7 +440,7 @@ interface BrandProductDetailsPageProps {
     page: AppContent.Page;
     product: Internal.Product;
     brand: string;
-    category: string;
+    productCategory: string;
   };
   data: {
     allProduct: {
@@ -476,7 +453,7 @@ interface BrandProductDetailsPageProps {
           productLaunchDate: string;
           shortPageDescription: string;
           productTags: Internal.Tag[];
-          category: string;
+          productCategory: string;
           fields: { slug: string };
           images: Internal.LocalImage[];
         }

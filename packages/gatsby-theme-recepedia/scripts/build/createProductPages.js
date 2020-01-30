@@ -3,7 +3,7 @@ const ProductFields = `
     id
     productId
     brand
-    category
+    productCategory
     productName
     longPageDescription
     ingredients
@@ -57,7 +57,7 @@ module.exports = async ({ graphql, createPage, pageTemplates }) => {
         ),
         product: node,
         brand: node.brand,
-        category: node.category,
+        productCategory: node.productCategory,
       },
     });
   });

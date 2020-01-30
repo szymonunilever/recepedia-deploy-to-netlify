@@ -145,7 +145,7 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
       </CardLinkWrapper>
     ));
   const categories = Array.from(
-    new Set(allProduct.nodes.map(product => product.category))
+    new Set(allProduct.nodes.map(product => product.productCategory))
   );
   const categoriesInitial = () => {
     const initial: { [key: string]: boolean } = {};
@@ -176,7 +176,7 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
   categories.forEach(cat => {
     categoryCards[cat] = createProductCards(
       //@ts-ignore
-      productsSorted.filter(product => product.category === cat)
+      productsSorted.filter(product => product.productCategory === cat)
     );
   });
 
@@ -315,30 +315,7 @@ export const query = graphql`
   query($regexpBrand: String) {
     allProduct(filter: { brand: { regex: $regexpBrand } }) {
       nodes {
-        brand
-        id
-        productId
-        productName
-        productLaunchDate
-        shortPageDescription
-        productTags
-        category
-        fields {
-          slug
-        }
-        images {
-          childImageSharp {
-            fluid {
-              base64
-              aspectRatio
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
-        }
+        ...ProductFields
       }
     }
   }
@@ -359,7 +336,7 @@ interface BrandProductsPageProps {
           productLaunchDate: string;
           shortPageDescription: string;
           productTags: Internal.Tag[];
-          category: string;
+          productCategory: string;
           fields: { slug: string };
           images: Internal.LocalImage[];
         }
