@@ -22,7 +22,7 @@ import { findPageComponentContent } from 'src/utils';
 
 import get from 'lodash/get';
 
-import IntroQuiz from '../../components/page/IntroQuiz';
+// import IntroQuiz from '../../components/page/IntroQuiz';
 import { favoriteButtonDefaults } from '../../themeDefaultComponentProps';
 
 import theme from './home.module.scss';
@@ -59,6 +59,7 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
   } = pageContext;
 
   const quizContent = findPageComponentContent(components, 'Wizard');
+  /*
   const introContent = {
     title: findPageComponentContent(components, 'Text', 'IntroQuizTitle')
       .text as string,
@@ -68,6 +69,7 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
       'IntroQuizDescription'
     ).text as string,
   };
+   */
 
   const { updateFavoriteState, favorites } = useFavorite(
     () => getUserProfileByKey(ProfileKey.favorites) as number[],
@@ -141,14 +143,14 @@ const HomePage = ({ data, pageContext, location }: HomePageProps) => {
   return (
     <Layout className="header--bg">
       <SEO {...seo} canonical={location.href} />
-      {!searchAgent && (
+      {/*!searchAgent && (
         <IntroQuiz
           introContent={introContent}
           quizContent={quizContent}
           onClose={isIntroDone}
           imageSizesOptions={IMAGE_SIZES.QUIZ_OPTIONS}
         />
-      )}
+      )*/}
       <DigitalData title={seo.title} type={type} />
       <section className={cx(theme.homeTitle, '_bg--main wrapper')}>
         <Text
