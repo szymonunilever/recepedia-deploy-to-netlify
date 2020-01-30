@@ -76,4 +76,30 @@ export const query = graphql`
       }
     }
   }
+  fragment RecipeCardFields on Recipe {
+    fields {
+      slug
+    }
+    averageRating
+    brand
+    recipeId
+    title
+    localImage {
+      childImageSharp {
+        fluid {
+          base64
+          aspectRatio
+          width
+          height
+          src
+          srcWebp
+          srcSet
+          srcSetWebp
+          sizes
+          url
+          title
+        }
+      }
+    }
+  }
 `;

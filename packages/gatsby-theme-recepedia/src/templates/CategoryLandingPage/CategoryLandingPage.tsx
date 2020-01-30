@@ -171,7 +171,7 @@ export const query = graphql`
       }
     ) {
       nodes {
-        ...RecipeFields
+        ...RecipeCardFields
       }
       totalCount
     }
