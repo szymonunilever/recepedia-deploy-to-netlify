@@ -44,13 +44,10 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
   const {
     page: { seo, components, type },
   } = pageContext;
-  let brandedArticles = allArticle.nodes
+  const brandedArticles = allArticle.nodes
     .filter(art => art.tags && art.tags.some(tag => article.tags.includes(tag)))
-    .filter(art => art.id !== article.id)
-    .slice(0, 4);
-  if (!brandedArticles.length) {
-    brandedArticles = allArticle.nodes.slice(0, 4);
-  }
+    .filter(art => art.id !== article.id);
+
   const mainImageHero = {
     image: {
       localImage: article.localImage,
@@ -59,7 +56,14 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
       url: '/',
     },
   };
-  const next = allArticle.nodes.filter(art => art.brand === article.brand)[0];
+  const next =
+    brandedArticles[0] ||
+    allArticle.nodes.filter(
+      art => art.brand === article.brand && art.id !== article.id
+    )[0];
+  const relatedArticles = brandedArticles.length
+    ? brandedArticles.slice(0, 4)
+    : allArticle.nodes.slice(0, 4);
   const nextContent = next && {
     image: {
       localImage: next.localImage,
@@ -86,31 +90,31 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
     },
   };
   const searchPath = getPagePath('Search');
-  const articleCards = brandedArticles.map(brandedArticle => (
+  const articleCards = relatedArticles.map(relatedArticle => (
     <CardLinkWrapper
-      key={brandedArticle.fields.slug}
-      title={brandedArticle.title}
-      slug={brandedArticle.fields.slug}
-      cardKey={brandedArticle.fields.slug}
+      key={relatedArticle.fields.slug}
+      title={relatedArticle.title}
+      slug={relatedArticle.fields.slug}
+      cardKey={relatedArticle.fields.slug}
     >
       <ProductCardWrapper
-        key={brandedArticle.fields.slug}
+        key={relatedArticle.fields.slug}
         ratingProvider={RatingAndReviewsProvider.none}
-        cardKey={brandedArticle.fields.slug}
+        cardKey={relatedArticle.fields.slug}
       >
         <Card
           showDescription
           idPropertyName="id"
-          key={brandedArticle.fields.slug}
+          key={relatedArticle.fields.slug}
           content={{
-            ...brandedArticle,
-            title: brandedArticle.title,
-            description: brandedArticle.shortDescription,
-            localImage: brandedArticle.localImage,
+            ...relatedArticle,
+            title: relatedArticle.title,
+            description: relatedArticle.shortDescription,
+            localImage: relatedArticle.localImage,
           }}
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
-          cardKey={brandedArticle.fields.slug}
-          brandName={brandedArticle.brand}
+          cardKey={relatedArticle.fields.slug}
+          brandName={relatedArticle.brand}
           brandLink={searchPath}
         />
       </ProductCardWrapper>
@@ -198,7 +202,7 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
           imageSizes={IMAGE_SIZES.HERO}
         />
       </section>
-      {brandedArticles.length ? (
+      {relatedArticles.length ? (
         <section className={cx(theme.articleRecent, 'wrapper _pb--40 _pt--40')}>
           <Listing
             content={findPageComponentContent(components, 'RelatedArticles')}
