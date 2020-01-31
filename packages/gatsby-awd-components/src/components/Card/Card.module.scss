@@ -12,6 +12,10 @@
   &__info {
     display: flex;
 
+    &-text {
+      flex: 1 1 auto;
+    }
+
     &-brand {
       text-align: right;
       padding: 15px 5px 15px 15px;
