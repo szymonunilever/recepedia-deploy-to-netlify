@@ -217,10 +217,10 @@
                       "id": 90001569,
                       "value": "1;12914",
                       "label": {
-                        "text": "Sem leite",
+                        "text": "Sem leite e derivados",
                         "image": {
                           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/quiz-content/quiz-images/3/12.png",
-                          "alt": "Sem leite"
+                          "alt": "Sem leite e derivados"
                         }
                       }
                     },
@@ -716,9 +716,8 @@
             "name": "PageListing",
             "content": {
               "view": "RelatedCategories",
-              "title": "All {categoryTitle}",
               "cta": {
-                "label": "Load more"
+                "label": "Ver mais categorias"
               }
             }
           },
@@ -733,7 +732,7 @@
             "name": "Carousel",
             "content": {
               "view": "RecipePromotions",
-              "title": "Seasonal /Promotional Recipes"
+              "title": "Receitas de Verão"
             }
           },
           {

@@ -128,7 +128,7 @@
     "freeFormTags": "Tags de formulário grátis",
     "cookingMethod": "Método de cozimento",
     "courses": "Cursos",
-    "occasions": "Ocasiões",
+    "occasions": "Datas Comemorativas",
     "seasons": "Temporadas",
     "spiciness": "Tempero",
     "timesOfDay": "Horas do dia",
@@ -157,7 +157,8 @@
     "fat": "Gorduras Totais (g)",
     "saturated_fat": "Gorduras Saturadas (g)",
     "trans_fat": "Gorduras Trans (g)",
-    "sodium": "Sódio (mg)"
+    "sodium": "Sódio (mg)",
+    "norte-americana": "Norte Americana"
   },
   "disclaimer": {
     "11": "Garanta que os ingredientes que você compre para essa receita não contenham carnes ou embutidos",

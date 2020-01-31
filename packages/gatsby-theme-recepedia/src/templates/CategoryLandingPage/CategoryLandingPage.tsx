@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
@@ -18,6 +18,7 @@ import { GenericCarousel } from 'gatsby-awd-components/src/components/GenericCar
 import { Hero } from 'gatsby-awd-components/src/components/Hero';
 import Tags from 'gatsby-awd-components/src/components/Tags';
 import Button from 'gatsby-awd-components/src/components/Button';
+import Text, { TagName } from 'gatsby-awd-components/src/components/Text';
 import { getPagePath } from '../../utils/getPagePath';
 
 const CategoryLandingPage = ({
@@ -25,26 +26,34 @@ const CategoryLandingPage = ({
   data,
   location,
 }: CategoryLandingPage) => {
-  const INITIAL_COUNT = 4;
+  const BASE_CATEGORIES_COUNT = useMedia(undefined, [8, 6]) || 0;
+  const LOAD_CATEGORIES_COUNT = useMedia(undefined, [4, 2]) || 2;
   const initialTagsCount = useMedia(undefined, [9, 5]);
   const {
     page: { components, seo, type },
     category,
   } = pageContext;
 
-  let relatedCategoriesContent = findPageComponentContent(
+  const relatedCategoriesContent = findPageComponentContent(
     components,
     'PageListing',
     'RelatedCategories'
   );
   const brandLogoLink = getPagePath('Search');
-  const { localImage, title, description } = category;
+  const { localImage, title, titlePlural, description } = category;
   const {
     tags: { nodes: categoryTags },
     seasonalPromo: { nodes: recipesPromo },
     searchPageUrl: { relativePath: searchPath },
   } = data;
   const tagsContent = findPageComponentContent(components, 'Tags');
+  const pageTitleContent = findPageComponentContent(
+    components,
+    'PageTitleTemplate'
+  );
+  const pageTitle = pageTitleContent?.text
+    ? pageTitleContent.text.replace('{categoryTitle}', titlePlural)
+    : titlePlural;
   const seasonalPromotionsContent = findPageComponentContent(
     components,
     'Carousel',
@@ -52,22 +61,23 @@ const CategoryLandingPage = ({
   );
   const heroContent = findPageComponentContent(components, 'Hero');
   const relatedCategories = data.allCategory.nodes;
-  relatedCategoriesContent = {
-    ...relatedCategoriesContent,
-    title: relatedCategoriesContent.title.replace(
-      '{categoryTitle}',
-      category.titlePlural
-    ),
-  };
+
   const [relatedCategoriesDisplaing, setRelatedCategoriesDisplaing] = useState(
-    relatedCategories.slice(0, INITIAL_COUNT)
+    relatedCategories.slice(0, BASE_CATEGORIES_COUNT)
   );
+  useEffect(() => {
+    if (BASE_CATEGORIES_COUNT > relatedCategoriesDisplaing.length) {
+      setRelatedCategoriesDisplaing(
+        relatedCategories.slice(0, BASE_CATEGORIES_COUNT)
+      );
+    }
+  }, [BASE_CATEGORIES_COUNT]);
 
   const onLoadMoreCategories = useCallback(() => {
     setRelatedCategoriesDisplaing(
       relatedCategories.slice(
         0,
-        relatedCategoriesDisplaing.length + INITIAL_COUNT
+        relatedCategoriesDisplaing.length + LOAD_CATEGORIES_COUNT
       )
     );
   }, [relatedCategoriesDisplaing]);
@@ -88,18 +98,26 @@ const CategoryLandingPage = ({
         canonical={location.href}
       />
       <DigitalData title={title} type={type} />
+      <section className={cx(theme.pageTitle__wrap, '_pt--40', 'wrapper')}>
+        <Text
+          className={theme.pageTitle}
+          tag={TagName['h1']}
+          text={pageTitle}
+        />
+      </section>
       {relatedCategoriesContent && relatedCategories.length > 0 && (
         <section className={cx(theme.relatedCategories, 'wrapper', '_pt--40')}>
-          <Listing content={relatedCategoriesContent} titleLevel={1}>
+          <Listing content={relatedCategoriesContent}>
             {createCardsFromList(relatedCategoriesDisplaing)}
           </Listing>
-          {relatedCategoriesDisplaing.length < relatedCategories.length && (
-            <Button
-              content={relatedCategoriesContent.cta}
-              onClick={onLoadMoreCategories}
-              className="load-more button--medium"
-            />
-          )}
+          {relatedCategoriesDisplaing.length < relatedCategories.length &&
+            BASE_CATEGORIES_COUNT > 0 && (
+              <Button
+                content={relatedCategoriesContent.cta}
+                onClick={onLoadMoreCategories}
+                className="load-more button--medium"
+              />
+            )}
         </section>
       )}
       {tagsContent && categoryTags.length > 0 && (

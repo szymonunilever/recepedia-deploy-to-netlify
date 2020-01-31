@@ -9,26 +9,26 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      top: 180px;
+      top: 95px;
       width: 100%;
       z-index: -1;
       background: $white-gray;
       border-radius: 20px;
+      @include respondTo(medium) {
+        top: 175px;
+      }
       @include respondTo(desktop) {
-        top: 230px;
+        top: 200px;
         border-radius: 0;
       }
     }
     :global {
-      .listing__item {
-        @include respondTo(medium) {
-          width: calc(50% - 16.01px);
-        }
-      }
-      .card__image .adaptive-image__image > div {
-        padding-bottom: 220px !important;
+      .card__title {
+        margin-bottom: 15px;
       }
       .load-more {
+        width: 100%;
+        max-width: 350px;
         display: flex;
         margin: 40px auto 0;
       }

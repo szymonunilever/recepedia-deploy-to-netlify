@@ -1672,7 +1672,7 @@
         ],
         "id": "75279a8f-d661-5e6d-8c29-44d8466ff2bb",
         "name": "occasions",
-        "label": "Ocasiões",
+        "label": "Datas Comemorativas",
         "tags": [
           {
             "id": 1526,
@@ -2044,7 +2044,7 @@
             },
             "id": "0ecf25b4-623a-5905-be15-38f5edb25e3d",
             "name": "sem-leite",
-            "title": "Sem leite",
+            "title": "Sem leite e derivados",
             "tagId": 11341
           },
           {
@@ -2107,7 +2107,7 @@
             },
             "id": "f180cbac-69f3-5c75-a3e4-b0e75199b5aa",
             "name": "sem leite",
-            "title": "Sem leite",
+            "title": "Sem leite e derivados",
             "tagId": 12914
           },
           {

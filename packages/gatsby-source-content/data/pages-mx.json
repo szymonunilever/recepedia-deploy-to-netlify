@@ -643,10 +643,16 @@
       "components": {
         "items": [
           {
+            "name": "Text",
+            "content": {
+              "view": "PageTitleTemplate",
+              "text": "All {categoryTitle}"
+            }
+          },
+          {
             "name": "PageListing",
             "content": {
               "view": "RelatedCategories",
-              "title": "All {categoryTitle}",
               "cta": {
                 "label": "Cargar más"
               }
