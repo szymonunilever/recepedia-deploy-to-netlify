@@ -1,7 +1,7 @@
 import cx from 'classnames';
-import React, { SyntheticEvent } from 'react';
+import React from 'react';
 import { BrandLogoProps } from './models';
-import { Link, navigate } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { getBrandLogo } from './getBrandLogo';
 import theme from './BrandLogo.module.scss';
 
@@ -11,6 +11,16 @@ export const BrandLogo = ({
   linkTo,
   isExternal = false,
 }: BrandLogoProps) => {
+  const locale = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          lang
+        }
+      }
+    }
+  `).site.siteMetadata.lang;
+  brand = locale === 'es-MX' ? brand : undefined;
   const classWrapper = cx(theme.brandLogo, linkTo && theme.brandLogoClickable, className, 'brand-logo');
   const currentBrand = brand && getBrandLogo(brand);
   const LinkComponent: any = isExternal ? 'a' : Link;

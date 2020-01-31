@@ -1,5 +1,5 @@
-import { ReactChild, ReactElement } from 'react';
-import { Icon, RatingAndReviewsProvider, UnileverLibraryComponent } from '../../models';
+import { ReactElement } from 'react';
+import { RatingAndReviewsProvider } from '../../models';
 import { ButtonProps } from '../Button';
 import { RatingProps } from '../Rating';
 
@@ -10,7 +10,6 @@ export interface CardProps {
   ratingWidget?: ReactElement<RatingProps>;
   imageSizes: string;
   className?: string;
-  brand?: ReactChild;
   brandName?: string;
   brandLink?: string;
   children?: ReactElement<ButtonProps> | ReactElement<ButtonProps>[];

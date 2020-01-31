@@ -94,8 +94,10 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
   data: {
     recipeTags,
     dietaryCategories: { nodes: dietaryCats },
+    site,
   },
 }) => {
+  const locale = site.siteMetadata.lang;
   const dietaryLinks: { [key: string]: string } = {};
   dietaryCats.map(category => {
     dietaryLinks[category.primaryTag.id] = category.fields.slug;
@@ -126,7 +128,8 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
     }
   };
   // @ts-ignore
-  const brandThemeContent = getBrandThemeContent(recipe.brand);
+  const brandThemeContent =
+    locale === 'es-MX' && getBrandThemeContent(recipe.brand);
   const brandTheme = brandThemeContent && brandThemeContent.theme;
   const classWrapper = cx(
     theme.recipePage,
@@ -497,6 +500,11 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        lang
+      }
+    }
   }
 `;
 
@@ -512,6 +520,11 @@ interface RecipePageProps {
         };
         primaryTag: RMSData.Tag;
       }[];
+    };
+    site: {
+      siteMetadata: {
+        lang: string;
+      };
     };
   };
   pageContext: {

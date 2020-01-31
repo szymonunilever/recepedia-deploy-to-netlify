@@ -16,7 +16,6 @@ export const Card: FunctionComponent<CardProps> = ({
   className = '',
   imageSizes,
   ratingWidget,
-  brand,
   brandName,
   brandLink,
   showDescription = false,
@@ -80,7 +79,6 @@ export const Card: FunctionComponent<CardProps> = ({
       <div className={cx(theme.card__info, 'card__info')}>
         <div className={cx(theme.card__infoText, 'card__info-text')}>
           {itemTitle}
-          {brand}
           {ratingWidget}
           {descriptionText}
         </div>
