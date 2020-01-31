@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
 import cx from 'classnames';
 import { IMAGE_SIZES } from '../../constants';
@@ -18,6 +18,7 @@ import { GenericCarousel } from 'gatsby-awd-components/src/components/GenericCar
 import { Hero } from 'gatsby-awd-components/src/components/Hero';
 import Tags from 'gatsby-awd-components/src/components/Tags';
 import Button from 'gatsby-awd-components/src/components/Button';
+import { getPagePath } from '../../utils/getPagePath';
 
 const CategoryLandingPage = ({
   pageContext,
@@ -36,6 +37,7 @@ const CategoryLandingPage = ({
     'PageListing',
     'RelatedCategories'
   );
+  const brandLogoLink = getPagePath('Search');
   const { localImage, title, description } = category;
   const {
     tags: { nodes: categoryTags },
@@ -127,7 +129,7 @@ const CategoryLandingPage = ({
               arrowIcon: <ArrowIcon />,
             }}
           >
-            {createRecipeCardsFromList(recipesPromo, searchPath)}
+            {createRecipeCardsFromList(recipesPromo, searchPath, brandLogoLink)}
           </GenericCarousel>
         </section>
       )}
