@@ -1,0 +1,25 @@
+.recipe-rating__wrap {
+  display: flex;
+  .recipe-rating {
+    &--inline {
+      cursor: pointer;
+    }
+    &__cta {
+      display: flex;
+      margin-left: 15px;
+      cursor: pointer;
+      &:after {
+        content: '';
+        display: flex;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.524' height='16.238'%3E%3Cg fill='none' stroke='%23363840' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10'%3E%3Cpath d='M18.024 12.69H8.881l-3.048 3.048V12.69H.5V.5h17.524z'/%3E%3Cpath d='M4.31 4.31h6.857M4.31 6.595h9.9M4.31 8.881h9.9'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        font-size: 1.4rem;
+        width: 19px;
+        height: 16px;
+        margin-left: 10px;
+      }
+    }
+  }
+}

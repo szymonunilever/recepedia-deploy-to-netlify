@@ -44,8 +44,8 @@ function SEO({
 
   return (
     <Helmet
-      onChangeClientState={(newState: any) => {
-        onChangeClientState && onChangeClientState(newState);
+      onChangeClientState={(newState: any, addedTags: any) => {
+        onChangeClientState && onChangeClientState(newState, addedTags);
       }}
       htmlAttributes={{
         lang: site.siteMetadata.lang || lang,
@@ -117,7 +117,7 @@ interface SeoProps {
   title?: string;
   children?: ReactNode | ReactNode[];
   canonical?: string;
-  onChangeClientState?: (newState: any) => void;
+  onChangeClientState?: (newState: any, addedTags: any) => void;
 }
 
 export default SEO;

@@ -507,6 +507,14 @@
       "components": {
         "items": [
           {
+            "name": "RecipeRating",
+            "content": {
+              "cta": {
+                "label": "Adicionar um comentário"
+              }
+            }
+          },
+          {
             "name": "SocialSharing",
             "content": {
               "buttons": [
