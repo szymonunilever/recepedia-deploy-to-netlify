@@ -332,6 +332,7 @@ const SearchListing: FunctionComponent<SearchListingProps> = ({
         <Tabs
           className="search-tabs"
           content={tabs.content}
+          results={recipeResults.count + articleResults.count + productResults.count}
           dataFetched={
             articleResultsFetched &&
             recipeResultsFetched &&

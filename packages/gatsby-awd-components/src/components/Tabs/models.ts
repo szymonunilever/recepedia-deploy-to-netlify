@@ -11,6 +11,7 @@ export interface TabsProps
   data?: TabsData[];
   dataFetched?: boolean;
   titleLevel?: titleLevel;
+  results?: number;
 }
 
 export interface TabsData {
