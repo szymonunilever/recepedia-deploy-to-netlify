@@ -39,7 +39,10 @@ Amplify.configure({
 
 async function signIn() {
   const user = await Auth.signIn(buildUser, buildUserPassword);
-  return user.signInUserSession.idToken.jwtToken;
+  return user
+    .getSignInUserSession()
+    .getIdToken()
+    .getJwtToken();
 }
 
 const tokenPromis = signIn();
