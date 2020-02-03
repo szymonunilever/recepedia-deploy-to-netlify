@@ -6,13 +6,16 @@
     &:before {
       background: $white;
       content: "";
-      height: 26rem;
+      height: 20rem;
       display: block;
       position: absolute;
       width: 100%;
       left: 0;
       top: 8rem;
       z-index: 0;
+      @include respondTo(desktop) {
+        height: 26rem;
+      }
     }
 
     h1 {
