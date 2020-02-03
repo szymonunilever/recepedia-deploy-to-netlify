@@ -19,6 +19,7 @@ export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
   children,
   slug,
   brand = '',
+  brandTheme,
   localImage,
   className = '',
   ratingProvider,
@@ -84,7 +85,7 @@ export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
         </div>
         <BrandLogo
           className={cx(theme.recipeCard__infoBrand, 'recipe-card__info-brand')}
-          brand={brand}
+          brandTheme={brandTheme}
           linkTo={`${searchLink}?searchQuery=${brand}`}
           isExternal={isExternalItemLink}
         />

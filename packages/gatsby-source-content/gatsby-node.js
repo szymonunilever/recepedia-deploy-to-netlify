@@ -16,6 +16,7 @@ const pagesMockMx = require('./data/pages-mx.json');
 const componentsMockMx = require('./data/components-mx.json');
 const categoriesMockMx = require('./data/categories-mx.json');
 const categoriesMockBr = require('./data/categories.json');
+const brandNameUtils = require('./utils/brandNameUtils');
 
 const fetchContent = (configOptions, contentType) => {
   return axios.get(
@@ -115,14 +116,16 @@ exports.sourceNodes = async (
 
   articlesResponse.data.articleEntries.results.forEach(article => {
     const { id, path, brand, section, articleName, articleContent, tags, creationTime } = article;
+    const formattedBrand = brand ? brandNameUtils.brandNameHandler(brand) : '';
     const articleNode = {
       id, path, section, creationTime, tags,
-      brand: brand ? brand.replace(/[^a-zA-Z0-9\s-]+/g, '').toLowerCase() : '',
+      brand: formattedBrand,
       name: articleName,
       title: articleName,
       localImage: getImage(article, imagesData),
       content: JSON.stringify(articleContent),
       assets: [],
+      brandTheme: isMx() ? formattedBrand : '',
     };
     createArticleNodes(
       articleNode,
@@ -199,6 +202,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       id: String!
       title: String
       brand: String
+      brandTheme: String
       section: String
       name: String!
       shortDescription: String

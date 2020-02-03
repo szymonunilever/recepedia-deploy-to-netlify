@@ -57,6 +57,7 @@ const ProductListing = ({
               <ProductListingItem
                 key={item.productId}
                 brand={item.brand}
+                brandTheme={item.brandTheme}
                 title={item.productName}
                 localImage={item.images[0]}
                 fields={item.fields}

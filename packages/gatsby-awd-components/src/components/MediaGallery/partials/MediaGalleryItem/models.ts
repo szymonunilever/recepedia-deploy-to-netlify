@@ -5,4 +5,5 @@ export interface MediaGalleryItemProps {
   assets: Internal.Article['assets'];
   className: string;
   brand?: string;
+  brandTheme?: string;
 }

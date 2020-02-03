@@ -94,10 +94,8 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
   data: {
     recipeTags,
     dietaryCategories: { nodes: dietaryCats },
-    site,
   },
 }) => {
-  const locale = site.siteMetadata.lang;
   const dietaryLinks: { [key: string]: string } = {};
   dietaryCats.map(category => {
     dietaryLinks[category.primaryTag.id] = category.fields.slug;
@@ -109,8 +107,8 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
   } = pageContext;
   const brandLogoLink = getPagePath('Search');
   const LinkToBrandProducts = getPagePath('BrandProductsPage', recipe.brand);
-  const getBrandThemeContent = (brand: string | undefined) => {
-    switch (brand) {
+  const getBrandThemeContent = (brandTheme: string | undefined) => {
+    switch (brandTheme) {
       case 'knorr':
         return {
           theme: themeKnorr,
@@ -128,8 +126,7 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
     }
   };
   // @ts-ignore
-  const brandThemeContent =
-    locale === 'es-MX' && getBrandThemeContent(recipe.brand);
+  const brandThemeContent = getBrandThemeContent(recipe.brandTheme);
   const brandTheme = brandThemeContent && brandThemeContent.theme;
   const classWrapper = cx(
     theme.recipePage,
@@ -254,7 +251,7 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
             <div className={theme.recipeHeroMobile}>{recipeHero}</div>
             <div className={theme.recipeBlockTitle}>
               <BrandLogo
-                brand={recipe.brand}
+                brandTheme={recipe.brandTheme}
                 linkTo={LinkToBrandProducts}
                 className={cx(
                   theme.recipeTopBlockLogo,

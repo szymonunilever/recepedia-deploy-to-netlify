@@ -48,7 +48,7 @@ const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
     page: { components, seo, type },
     name,
   } = pageContext;
-  const { tag, allArticle, allCategory } = data;
+  const { tag, allCategory } = data;
   const { updateFavoriteState, favorites } = useFavorite(
     () => getUserProfileByKey(ProfileKey.favorites) as number[],
     updateFavorites
@@ -137,21 +137,6 @@ const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
             : []}
         </RecipeListing>
       </section>
-      {/* {!!allArticle && allArticle.nodes.length > 0 && (
-        <section className="_pb--40 _pt--40 wrapper">
-          <MediaGallery
-            // content={findPageComponentContent(
-            //   components,
-            //   'MediaGallery',
-            //   'RelatedArticles'
-            // )}
-            content={relatedArticlesComponent.content}
-            list={allArticle.nodes}
-            allCount={allArticle.nodes.length}
-            onLoadMore={() => {}}
-          />
-        </section>
-      )} */}
       <section className={theme.tagList}>
         <Tags
           list={tagList}
@@ -239,18 +224,6 @@ export const query = graphql`
     }
   }
 `;
-// @todo use when articles are there
-// allArticle(
-//   filter: {
-//     tagGroups: { elemMatch: { tags: { elemMatch: { id: { eq: $id } } } } }
-//   }
-//   limit: 4
-//   sort: { order: DESC, fields: id }
-// ) {
-//   nodes {
-//     ...ArticleFields
-//   }
-// }
 
 interface ContentHubPageProps extends WithRecipeAsyncLoadMore {
   data: {
@@ -260,9 +233,6 @@ interface ContentHubPageProps extends WithRecipeAsyncLoadMore {
     };
     allTag: {
       nodes: Internal.Tag[];
-    };
-    allArticle: {
-      nodes: Internal.Article[];
     };
     allCategory: {
       nodes: Internal.Category[];

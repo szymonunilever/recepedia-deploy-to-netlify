@@ -114,7 +114,8 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
           }}
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
           cardKey={relatedArticle.fields.slug}
-          brandName={relatedArticle.brand}
+          brand={relatedArticle.brand}
+          brandTheme={relatedArticle.brandTheme}
           brandLink={searchPath}
         />
       </ProductCardWrapper>
@@ -140,7 +141,7 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
               viewType="Image"
               content={mainImageHero}
               imageSizes={IMAGE_SIZES.HERO}
-              brand={article.brand}
+              brandTheme={article.brandTheme}
               brandLink={LinkToBrandProducts}
             />
             <SocialSharing
@@ -188,7 +189,7 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
               viewType="Image"
               titleLevel={2}
               imageSizes={IMAGE_SIZES.HERO}
-              brand={next.brand}
+              brandTheme={next.brandTheme}
               className={cx(theme.articleHeroNext, 'article-hero-next')}
             />
           </Link>

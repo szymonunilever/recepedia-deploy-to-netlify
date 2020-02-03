@@ -3,4 +3,5 @@ export interface ProductListingItemProps {
   fields: Internal.Article['fields'];
   localImage: Internal.LocalImage;
   brand?: string;
+  brandTheme?: string;
 }

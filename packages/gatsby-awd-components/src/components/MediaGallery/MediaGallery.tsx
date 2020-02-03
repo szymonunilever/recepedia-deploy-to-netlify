@@ -60,6 +60,7 @@ const MediaGallery = ({
               <MediaGalleryItem
                 key={item.id}
                 brand={item.brand}
+                brandTheme={item.brandTheme}
                 title={item.title}
                 localImage={item.localImage}
                 fields={item.fields}

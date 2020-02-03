@@ -9,6 +9,7 @@ export const query = graphql`
     id
     averageRating
     brand
+    brandTheme
     ingredients {
       title
       list {
@@ -82,6 +83,7 @@ export const query = graphql`
     }
     averageRating
     brand
+    brandTheme
     recipeId
     title
     localImage {

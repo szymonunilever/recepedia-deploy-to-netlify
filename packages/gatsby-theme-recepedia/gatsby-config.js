@@ -66,6 +66,7 @@ const plugins = [
     options: {
       endpoint: appConfig.getByKey('middleware_contentEndpoint'),
       key: appConfig.getByKey('middleware_key'),
+      locale: appConfig.getByKey('locale'),
     },
   },
   {

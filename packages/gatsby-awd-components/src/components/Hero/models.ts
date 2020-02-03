@@ -8,7 +8,7 @@ export interface HeroProps extends UnileverLibraryComponent<HeroContent> {
   titleLevel?: titleLevel;
   imageIsLink?: boolean;
   imageSizes?: string;
-  brand?: string;
+  brandTheme?: string;
   brandLink?: string;
 }
 

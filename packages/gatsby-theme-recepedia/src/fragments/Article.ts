@@ -5,6 +5,7 @@ export const query = graphql`
     id
     title
     brand
+    brandTheme
     section
     localImage {
       childImageSharp {

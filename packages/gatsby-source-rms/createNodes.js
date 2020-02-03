@@ -1,4 +1,6 @@
 const trim = require('lodash/trim');
+const brandNameUtils = require('./utils/brandNameUtils');
+
 exports.createRecipeNodes = (
   recipe,
   { createNodeId, createContentDigest, createNode }
@@ -23,7 +25,7 @@ exports.createRecipeNodes = (
     : [];
 
   recipe.brand = recipe.featuredBrand
-    ? recipe.featuredBrand.replace(/[^a-zA-Z0-9\s-]+/g, '').toLowerCase()
+    ? brandNameUtils.brandNameHandler(recipe.featuredBrand)
     : '';
 
   delete recipe.assets;

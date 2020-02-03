@@ -16,7 +16,8 @@ export const Card: FunctionComponent<CardProps> = ({
   className = '',
   imageSizes,
   ratingWidget,
-  brandName,
+  brand,
+  brandTheme,
   brandLink,
   showDescription = false,
   maxDescriptionLength = 0,
@@ -82,7 +83,7 @@ export const Card: FunctionComponent<CardProps> = ({
           {ratingWidget}
           {descriptionText}
         </div>
-        <BrandLogo brand={brandName} linkTo={`${brandLink}?searchQuery=${brandName}`} />
+        <BrandLogo brandTheme={brandTheme} linkTo={`${brandLink}?searchQuery=${brand}`} />
       </div>
     </div>
   );
