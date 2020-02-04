@@ -53,6 +53,7 @@ const formatUrlPartial = (partial = '') =>
     })
     .replace(/[_-]/, ' ')
     .toLowerCase()
+    .trim()
     .split(' ')
     .join('-')
     .replace(/(-)(?=\1)/g, ''); // replace same concurrent - with single one
