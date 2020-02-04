@@ -708,6 +708,14 @@
       "components": {
         "items": [
           {
+            "name": "RecipeRating",
+            "content": {
+              "cta": {
+                "label": "Add a review"
+              }
+            }
+          },
+          {
             "name": "Text",
             "content": {
               "view": "PageTitle",

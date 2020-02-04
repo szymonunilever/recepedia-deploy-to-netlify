@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
 import { graphql } from 'gatsby';
 import SEO from 'src/components/Seo';
@@ -7,9 +7,9 @@ import { ReactComponent as RecipeDifficulty } from 'src/svgs/inline/recipe-diffi
 import { ReactComponent as RecipePeople } from 'src/svgs/inline/recipe-people.svg';
 import { ReactComponent as ArrowIcon } from 'src/svgs/inline/arrow-down.svg';
 import {
+  dietaryAttributesIcons,
   dietaryEqual,
   favoriteButtonDefaults,
-  dietaryAttributesIcons,
 } from '../../themeDefaultComponentProps';
 import theme from './RecipePage.module.scss';
 import cx from 'classnames';
@@ -52,7 +52,7 @@ import Button from 'gatsby-awd-components/src/components/Button';
 import RecipeCopy, {
   RecipeCopyViewType,
 } from 'gatsby-awd-components/src/components/RecipeCopy';
-import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
+import { TagName, Text } from 'gatsby-awd-components/src/components/Text';
 import { RecipeMicrodata } from 'gatsby-awd-components/src/components/RecipeMicrodata';
 import Rating from 'gatsby-awd-components/src/components/Rating';
 import RecipeListing, {
@@ -78,6 +78,14 @@ import Tabs, { Tab } from 'gatsby-awd-components/src/components/Tabs';
 import { Hero } from 'gatsby-awd-components/src/components/Hero';
 import RecipeCookingMethod from 'gatsby-awd-components/src/components/RecipeCookingMethod';
 import RecipeDietaryAttributes from 'gatsby-awd-components/src/components/RecipeDietaryAttributes';
+import {
+  getOnChangeClientStateCallback,
+  isKritiqueLoaded,
+  kritiqueWidgetSrc,
+  openReviewModal,
+} from '../../utils/kritique';
+import Loader from 'gatsby-awd-components/src/components/Loader';
+import { ReactComponent as Spinner } from 'src/svgs/inline/spinner.svg';
 
 const infoIcon = <InfoIcon />;
 const socialIcons: SocialIcons = {
@@ -234,6 +242,62 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
       </div>
     ));
 
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [initKritique, setInitKritique] = useState(false);
+  const [showKritiquePreloader, setShowKritiquePreloader] = useState(false);
+  const openReviewModalWithPreloader = () => {
+    setShowKritiquePreloader(false);
+    openReviewModal();
+  };
+  const writeReviewInit = () => {
+    const intervalId = setInterval(() => {
+      if (isKritiqueLoaded('recipe')) {
+        openReviewModalWithPreloader();
+        clearInterval(intervalId);
+      }
+    }, 400);
+
+    setTimeout(() => clearInterval(intervalId), 30000);
+  };
+
+  const addReviewCallback = () => {
+    !scriptLoaded && setShowKritiquePreloader(true);
+    return isKritiqueLoaded('recipe')
+      ? openReviewModalWithPreloader()
+      : setInitKritique(true);
+  };
+  useEffect(() => {
+    isBrowser() && scriptLoaded && !recipe.averageRating && writeReviewInit();
+  }, [scriptLoaded]);
+
+  const RatingComponent = isRecipeValid ? (
+    recipe.averageRating && recipe.averageRating > 0 ? (
+      <Rating
+        id={recipe.recipeId}
+        entityType={RatingAndReviewsEntityType.recipe}
+        provider={RatingAndReviewsProvider.kritique}
+        averageRating={recipe.averageRating}
+        linkTo={recipe.fields.slug}
+      />
+    ) : (
+      <div className={'recipe-rating__wrap'}>
+        <Loader isLoading={showKritiquePreloader}>
+          <Spinner />
+        </Loader>
+        <Rating
+          id={recipe.recipeId}
+          entityType={RatingAndReviewsEntityType.recipe}
+          provider={RatingAndReviewsProvider.inline}
+          averageRating={recipe.averageRating}
+          linkTo={recipe.fields.slug}
+        />
+        <div onClick={addReviewCallback} className="recipe-rating__cta">
+          {findPageComponentContent(components, 'RecipeRating')?.cta?.label}
+        </div>
+      </div>
+    )
+  ) : null;
+
   return (
     <Layout className={classWrapper}>
       <SEO
@@ -241,7 +305,19 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
         title={recipe.title}
         description={recipe.description}
         canonical={location.href}
-      />
+        onChangeClientState={getOnChangeClientStateCallback(
+          kritiqueWidgetSrc,
+          () => setScriptLoaded(true)
+        )}
+      >
+        {isBrowser() && (initKritique || !!recipe.averageRating) && (
+          <script
+            id={`rr-widget-recipe-${recipe.recipeId}`}
+            src={kritiqueWidgetSrc}
+            async
+          />
+        )}
+      </SEO>
       <DigitalData title={recipe.title} type={type} />
       <RecipeMicrodata recipe={recipe} />
 
@@ -267,15 +343,7 @@ const RecipePage: React.FunctionComponent<RecipePageProps> = ({
                 content={{}}
                 className="recipe-copy__title"
               />
-              {isRecipeValid ? (
-                <Rating
-                  id={recipe.recipeId}
-                  entityType={RatingAndReviewsEntityType.recipe}
-                  provider={RatingAndReviewsProvider.kritique}
-                  averageRating={recipe.averageRating}
-                  linkTo={recipe.fields.slug}
-                />
-              ) : null}
+              {RatingComponent}
             </div>
             <div className={theme.recipeBlockDescription}>
               <RecipeCopy
