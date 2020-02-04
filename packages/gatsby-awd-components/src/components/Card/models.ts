@@ -10,7 +10,8 @@ export interface CardProps {
   ratingWidget?: ReactElement<RatingProps>;
   imageSizes: string;
   className?: string;
-  brandName?: string;
+  brand?: string;
+  brandTheme?: string;
   brandLink?: string;
   children?: ReactElement<ButtonProps> | ReactElement<ButtonProps>[];
   showDescription?: boolean;

@@ -3,6 +3,7 @@ declare namespace Internal {
     inFavorite?: boolean;
     averageRating?: number;
     brand?: string;
+    brandTheme?: string;
     localImage: Internal.LocalImage;
     fields: {
       slug: string;

@@ -122,7 +122,8 @@ const RecipeCategoryPage = ({
           }}
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
           cardKey={relatedArticle.fields.slug}
-          brandName={relatedArticle.brand}
+          brand={relatedArticle.brand}
+          brandTheme={relatedArticle.brandTheme}
           brandLink={searchPath}
         />
       </RecipeCardWrapper>

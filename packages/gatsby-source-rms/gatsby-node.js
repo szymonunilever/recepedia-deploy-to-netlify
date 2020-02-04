@@ -1,6 +1,8 @@
 const createNodes = require('./createNodes');
 const { createRecipeNodes, createTagGroupingsNodes } = createNodes;
 const { getCategoryTags, getRecipesByPage } = require('./apiService');
+const brandNameUtils = require('./utils/brandNameUtils');
+
 // todo pass as options?
 const constants = {
   NODE_TYPES: {
@@ -27,6 +29,7 @@ exports.sourceNodes = async (
   configOptions
 ) => {
   const { createNode } = actions;
+  const isMx = () => configOptions.locale === 'es-mx';
 
   let [dictionary] = getNodesByType(constants.NODE_TYPES.DICTIONARY);
   let [disclaimer] = getNodesByType(constants.NODE_TYPES.DISCLAIMER);
@@ -45,15 +48,20 @@ exports.sourceNodes = async (
     const recipePromise = async () =>
       getRecipesByPage(configOptions, RECIPE_PAGE_SIZE, recipePage).then(
         result =>
-          result.data.recipes.forEach(
-            item =>
-              item &&
+          result.data.recipes.forEach(item => {
+            if (item) {
+              item.brandTheme = item.featuredBrand
+                ? isMx()
+                  ? brandNameUtils.brandNameHandler(item.featuredBrand)
+                  : ''
+                : '';
               createRecipeNodes(item, {
                 createNodeId,
                 createContentDigest,
                 createNode,
-              })
-          )
+              });
+            }
+          })
       );
 
     promises.push(recipePromise());

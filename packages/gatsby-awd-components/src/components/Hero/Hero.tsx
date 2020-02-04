@@ -15,7 +15,7 @@ const Hero = ({
   imageIsLink = true,
   imageSizes,
   content,
-  brand,
+  brandTheme,
   titleLevel = 2,
   className,
   brandLink,
@@ -61,7 +61,7 @@ const Hero = ({
             sizes={imageSizes}
             alt={image.alt}
           />
-          <BrandLogo brand={brand} linkTo={brandLink} className={brandLogoClass} />
+          <BrandLogo brandTheme={brandTheme} linkTo={brandLink} className={brandLogoClass} />
         </div>
       )}
       <div className={copyStyles}>

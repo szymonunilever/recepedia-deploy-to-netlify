@@ -6,23 +6,21 @@ import { MediaGalleryItemProps } from './models';
 import { AppContext } from '../../../../context/appContext';
 import BrandLogo from '../../../BrandLogo';
 
-const MediaGalleryItem = ({ title, localImage, fields, assets, className, brand }: MediaGalleryItemProps) => {
+const MediaGalleryItem = ({ title, localImage, fields, assets, className, brand, brandTheme }: MediaGalleryItemProps) => {
   //TODO switch back to normal state after localImage wil be fixed in articles
   const searchLink = useContext(AppContext).brandLogoLink;
 
   return (
     <li className={cx(className, brand, 'media-gallery__item')}>
       <Link to={fields.slug} className="media-gallery__item-link">
-        {/*{asset && asset.localImage && (*/}
-          <AdaptiveImage
-            className="media-gallery__item-image"
-            localImage={localImage}
-            alt={title}
-          />
-        {/*)}*/}
+        <AdaptiveImage
+          className="media-gallery__item-image"
+          localImage={localImage}
+          alt={title}
+        />
         <div className="media-gallery__item-info">
           <div className="media-gallery__item-info-title">{title}</div>
-          <BrandLogo brand={brand} linkTo={`${searchLink}?searchQuery=${brand}`} />
+          <BrandLogo brandTheme={brandTheme} linkTo={`${searchLink}?searchQuery=${brand}`} />
         </div>
       </Link>
     </li>

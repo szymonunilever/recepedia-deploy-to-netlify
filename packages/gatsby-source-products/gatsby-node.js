@@ -1,5 +1,6 @@
 const axios = require('axios');
 const createNodes = require('./createNodes');
+const brandNameUtils = require('./utils/brandNameUtils');
 const {
   createPagesNodes
 } = createNodes;
@@ -21,7 +22,7 @@ exports.sourceNodes = async (
 ) => {
   if (configOptions.key && configOptions.endpoint) {
     const { createNode } = actions;
-
+    const isMx = () => configOptions.locale === 'es-mx';
     const [
       productsResponse,
     ] = await Promise.all([
@@ -30,6 +31,11 @@ exports.sourceNodes = async (
 
     productsResponse.data.map(product => {
       product.productCategory = product.category;
+      product.brandTheme = product.brand
+        ? isMx()
+          ? brandNameUtils.brandNameHandler(product.brand)
+          : ''
+        : '';
       //temporary add image into images, it should be removed when we will have it on backend.
       product.images = product.images.filter(image => image);
       !product.images.length && product.images.push({
@@ -66,6 +72,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       id: ID!
       productId: ID!
       brand: String!
+      brandTheme: String!
       productCategory: String!
       EANparent: String!
       productName: String!

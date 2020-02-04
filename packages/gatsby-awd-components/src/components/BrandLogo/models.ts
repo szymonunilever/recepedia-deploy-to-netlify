@@ -1,6 +1,6 @@
 export interface BrandLogoProps {
   className?: string;
-  brand?: string;
+  brandTheme?: string;
   linkTo?: string;
   isExternal?: boolean;
 }

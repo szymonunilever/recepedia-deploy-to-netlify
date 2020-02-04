@@ -8,6 +8,7 @@ declare namespace AppContent.Article {
     assets: Asset<ImageContent | VideoPlayer.Content>[];
     tagGroups: RMSData.TagGroupings[];
     brand?: string;
+    brandTheme?: string;
     tags: number[];
   }
 }

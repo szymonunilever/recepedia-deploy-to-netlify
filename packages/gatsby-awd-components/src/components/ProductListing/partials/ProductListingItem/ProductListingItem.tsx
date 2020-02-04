@@ -11,7 +11,8 @@ const ProductListingItem = ({
   title,
   localImage,
   fields,
-  brand
+  brand,
+  brandTheme,
 }: ProductListingItemProps) => {
   const searchLink = useContext(AppContext).brandLogoLink;
 
@@ -25,7 +26,7 @@ const ProductListingItem = ({
         />
         <div className={cx(theme.productListing__itemInfo, 'product-listing__item-info')}>
           <div className={cx(theme.productListing__itemInfoTitle, 'product-listing__item-info-title')}>{title}</div>
-          <BrandLogo brand={brand} linkTo={`${searchLink}?searchQuery=${brand}`} />
+          <BrandLogo brandTheme={brandTheme} linkTo={`${searchLink}?searchQuery=${brand}`} />
         </div>
       </Link>
     </li>

@@ -7,6 +7,7 @@ export interface RecipeCardProps
   id: string;
   recipeId: number;
   brand?: string;
+  brandTheme?: string;
   averageRating?: number;
   slug: string;
   localImage?: Internal.LocalImage;

@@ -3,6 +3,7 @@ const ProductFields = `
     id
     productId
     brand
+    brandTheme
     productCategory
     productName
     longPageDescription

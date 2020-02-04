@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 export const query = graphql`
   fragment ProductFields on Product {
     brand
+    brandTheme
     id
     productId
     productName

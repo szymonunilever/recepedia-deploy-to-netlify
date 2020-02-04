@@ -1,3 +1,5 @@
+const brandNameUtils = require('./utils/brandNameUtils');
+
 exports.createPagesNodes = (
   page,
   { createNodeId, createContentDigest, createNode }
@@ -7,7 +9,7 @@ exports.createPagesNodes = (
   const nodeContent = JSON.stringify(page);
   const nodeData = Object.assign({}, page, {
     id: nodeId,
-    brand: page.brand.replace(/[^a-zA-Z0-9\s-]+/g, '').toLowerCase(),
+    brand: brandNameUtils.brandNameHandler(page.brand),
     productId: page.id,
     parent: null,
     EANparent: page.EANparent || '',
