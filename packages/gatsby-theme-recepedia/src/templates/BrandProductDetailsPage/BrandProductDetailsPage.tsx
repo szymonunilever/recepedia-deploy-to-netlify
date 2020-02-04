@@ -50,6 +50,14 @@ import { Hero } from 'gatsby-awd-components/src/components/Hero';
 import ProductNutrients from 'gatsby-awd-components/src/components/ProductNutrients';
 import Button from 'gatsby-awd-components/src/components/Button';
 import ProductCopy from 'gatsby-awd-components/src/components/ProductCopy/ProductCopy';
+import {
+  getOnChangeClientStateCallback,
+  isKritiqueLoaded,
+  kritiqueWidgetSrc,
+  openReviewModal,
+} from '../../utils/kritique';
+import Loader from 'gatsby-awd-components/src/components/Loader';
+import { ReactComponent as Spinner } from 'src/svgs/inline/spinner.svg';
 
 const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPageProps> = ({
   pageContext,
@@ -264,6 +272,64 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
     />
   );
 
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [initKritique, setInitKritique] = useState(false);
+  const [showKritiquePreloader, setShowKritiquePreloader] = useState(false);
+  const openReviewModalWithPreloader = () => {
+    setShowKritiquePreloader(false);
+    openReviewModal();
+  };
+  const writeReviewInit = () => {
+    const intervalId = setInterval(() => {
+      if (isKritiqueLoaded('product')) {
+        openReviewModalWithPreloader();
+        clearInterval(intervalId);
+      }
+    }, 400);
+
+    setTimeout(() => {
+      setShowKritiquePreloader(false);
+      clearInterval(intervalId);
+    }, 30000);
+  };
+
+  const addReviewCallback = () => {
+    !scriptLoaded && setShowKritiquePreloader(true);
+    return isKritiqueLoaded('product')
+      ? openReviewModalWithPreloader()
+      : setInitKritique(true);
+  };
+  useEffect(() => {
+    isBrowser() && scriptLoaded && !product.averageRating && writeReviewInit();
+  }, [scriptLoaded]);
+
+  const RatingComponent =
+    product.averageRating && product.averageRating > 0 ? (
+      <Rating
+        id={product.productId}
+        entityType={RatingAndReviewsEntityType.product}
+        provider={RatingAndReviewsProvider.kritique}
+        averageRating={product.averageRating}
+        linkTo={product.fields.slug}
+      />
+    ) : (
+      <div className={'recipe-rating__wrap'}>
+        <Loader isLoading={showKritiquePreloader}>
+          <Spinner />
+        </Loader>
+        <Rating
+          id={product.productId}
+          entityType={RatingAndReviewsEntityType.product}
+          provider={RatingAndReviewsProvider.inline}
+          averageRating={product.averageRating}
+          linkTo={product.fields.slug}
+        />
+        <div onClick={addReviewCallback} className="recipe-rating__cta">
+          {findPageComponentContent(components, 'ProductRating')?.cta?.label}
+        </div>
+      </div>
+    );
+
   const productHeader = (
     <section className={cx(theme.product__heading, 'bg-secondary wrapper')}>
       <div
@@ -288,13 +354,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
             titleLevel={1}
             className="product-copy__title"
           />
-          <Rating
-            id={product.productId}
-            entityType={RatingAndReviewsEntityType.product}
-            provider={RatingAndReviewsProvider.kritique}
-            linkTo={product.fields.slug}
-            className="product__rating"
-          />
+          {RatingComponent}
           <div
             className={cx(
               theme.product__headingHeroWrapper,
@@ -406,7 +466,19 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
         canonical={location.href}
         title={product.productName}
         description={product.longPageDescription}
-      />
+        onChangeClientState={getOnChangeClientStateCallback(
+          kritiqueWidgetSrc,
+          () => setScriptLoaded(true)
+        )}
+      >
+        {isBrowser() && (initKritique || !!product.averageRating) && (
+          <script
+            id={`rr-widget-product-${product.productId}`}
+            src={kritiqueWidgetSrc}
+            async
+          />
+        )}
+      </SEO>
       <DigitalData title={seo.title} type={type} />
       {productHeader}
       {brandHero}

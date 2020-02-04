@@ -1,9 +1,10 @@
 @import '../../scss/vars';
 @import '../../scss/mixins';
-
+:global {
+  @import '../../scss/components/Rating/_index';
+}
 .product-page {
   .product {
-
     &-brand-hero {
       order: -1;
     }

@@ -371,19 +371,19 @@
                       "type": "checkbox",
                       "fieldset": "consentsFieldset",
                       "name": "optIn.brand",
-                      "label": "Sí, deseo recibir más información, lanzamientos y promociones de Recepedia y las marcas con las que colabora."
+                      "label": "¡Nos tomamos en serio su privacidad! Para obtener más información sobre cómo Unilever usa y protege sus datos personales, visite la <a href=\"https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>Política de Privacidad</a> de Unilever."
                     },
                     {
                       "type": "checkbox",
                       "fieldset": "consentsFieldset",
                       "name": "optIn.corporate",
-                      "label": "Sí, deseo recibir información, lanzamientos y promociones de otras marcas de <a href=\"https://www.unilevernotices.com/mexico/spanish/cookie-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Marcas Unilever. El enlace se abre en una nueva ventana'>Unilever</a>."
+                      "label": "¡Sí! Quiero recibir noticias, campañas promocionales y ofertas personalizadas sobre otras marcas de <a href=\"https://www.unilevernotices.com/mexico/spanish/cookie-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Marcas Unilever. El enlace se abre en una nueva ventana'>Unilever</a> y sus acciones para hacer el bien."
                     },
                     {
                       "type": "checkbox",
                       "fieldset": "consentsFieldset",
                       "name": "preferences.ageConsentGranted.isConsentGranted",
-                      "label": "Tengo más de 18 años o tengo premiso de mis padres/tutor lega y acepto el <a href='https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html' target='_blank' rel='noopener noreferrer' tile='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>aviso de privacidad</a>.*",
+                      "label": "Sí, tengo 18 años o más y acepto la <a href='https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html' target='_blank' rel='noopener noreferrer' tile='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>Política de Privacidad</a> y los <a href='/termos-e-condicoes' target='_blank' tile='Términos de uso. El enlace se abre en una nueva ventana'>Términos de uso</a>. *",
                       "validationRules": [
                         {
                           "type": "required",
@@ -426,6 +426,14 @@
       "relativePath": "/receta",
       "components": {
         "items": [
+          {
+            "name": "RecipeRating",
+            "content": {
+              "cta": {
+                "label": "Agrega una reseña"
+              }
+            }
+          },
           {
             "name": "SocialSharing",
             "content": {
@@ -707,14 +715,6 @@
       "relativePath": "/recetas",
       "components": {
         "items": [
-          {
-            "name": "RecipeRating",
-            "content": {
-              "cta": {
-                "label": "Add a review"
-              }
-            }
-          },
           {
             "name": "Text",
             "content": {
@@ -1300,21 +1300,21 @@
                   "type": "checkbox",
                   "defaultValue": "",
                   "fieldset": "consentsFieldset",
-                  "label": "Sí, deseo recibir más información, lanzamientos y promociones de Recepedia y las marcas con las que colabora."
+                  "label": "¡Nos tomamos en serio su privacidad! Para obtener más información sobre cómo Unilever usa y protege sus datos personales, visite la <a href=\"https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Aviso de privacidad. El enlace se abre en una nueva ventana'>Política de Privacidad de Unilever</a>."
                 },
                 {
                   "name": "consent2",
                   "type": "checkbox",
                   "defaultValue": "",
                   "fieldset": "consentsFieldset",
-                  "label": "Sí, deseo recibir información, lanzamientos y promociones de otras marcas de <a href=\"https://www.unilevernotices.com/mexico/spanish/cookie-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Marcas Unilever. El enlace se abre en una nueva ventana'>Unilever</a>."
+                  "label": "¡Sí! Quiero recibir noticias, campañas promocionales y ofertas personalizadas sobre otras marcas de <a href=\"https://www.unilevernotices.com/mexico/spanish/cookie-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Marcas Unilever. El enlace se abre en una nueva ventana'>Unilever</a> y sus acciones para hacer el bien."
                 },
                 {
                   "name": "consent3",
                   "type": "checkbox",
                   "defaultValue": "",
                   "fieldset": "consentsFieldset",
-                  "label": "Tengo más de 18 años o tengo premiso de mis padres/tutor lega y acepto el <a href='https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html' target='_blank' rel='noopener noreferrer' tile='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>aviso de privacidad</a>.*",
+                  "label": "Sí, tengo 18 años o más y acepto la <a href='https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html' target='_blank' rel='noopener noreferrer' tile='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>Política de Privacidad</a> y los <a href='/termos-e-condicoes' target='_blank' tile='Términos de uso. El enlace se abre en una nueva ventana'>Términos de uso</a>. *",
                   "validationRules": [
                     {
                       "type": "required",
@@ -1974,19 +1974,19 @@
                       "type": "checkbox",
                       "fieldset": "consentsFieldset",
                       "name": "optIn.brand",
-                      "label": "Sí, deseo recibir más información, lanzamientos y promociones de Recepedia y las marcas con las que colabora."
+                      "label": "¡Nos tomamos en serio su privacidad! Para obtener más información sobre cómo Unilever usa y protege sus datos personales, visite la <a href=\"https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>Política de Privacidad</a> de Unilever."
                     },
                     {
                       "type": "checkbox",
                       "fieldset": "consentsFieldset",
                       "name": "optIn.corporate",
-                      "label": "Sí, deseo recibir información, lanzamientos y promociones de otras marcas de <a href=\"https://www.unilevernotices.com/mexico/spanish/cookie-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Marcas Unilever. El enlace se abre en una nueva ventana'>Unilever</a>."
+                      "label": "¡Sí! Quiero recibir noticias, campañas promocionales y ofertas personalizadas sobre otras marcas de <a href=\"https://www.unilevernotices.com/mexico/spanish/cookie-notice/notice.html\" target=\"_blank\" rel='noopener noreferrer' title='Marcas Unilever. El enlace se abre en una nueva ventana'>Unilever</a> y sus acciones para hacer el bien."
                     },
                     {
                       "type": "checkbox",
                       "fieldset": "consentsFieldset",
                       "name": "preferences.ageConsentGranted.isConsentGranted",
-                      "label": "Tengo más de 18 años o tengo premiso de mis padres/tutor lega y acepto el <a href='https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html' target='_blank' rel='noopener noreferrer' tile='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>aviso de privacidad</a>.*",
+                      "label": "Sí, tengo 18 años o más y acepto la <a href='https://www.unilevernotices.com/mexico/spanish/privacy-notice/notice.html' target='_blank' rel='noopener noreferrer' tile='Política de privacidad de Unilever. El enlace se abre en una nueva ventana'>Política de Privacidad</a> y los <a href='/termos-e-condicoes' target='_blank' tile='Términos de uso. El enlace se abre en una nueva ventana'>Términos de uso</a>. *",
                       "validationRules": [
                         {
                           "type": "required",
@@ -3330,6 +3330,14 @@
             }
           },
           {
+            "name": "ProductRating",
+            "content": {
+              "cta": {
+                "label": "Agrega una reseña"
+              }
+            }
+          },
+          {
             "name": "SocialSharing",
             "content": {
               "buttons": [
@@ -3490,6 +3498,14 @@
             }
           },
           {
+            "name": "ProductRating",
+            "content": {
+              "cta": {
+                "label": "Agrega una reseña"
+              }
+            }
+          },
+          {
             "name": "SocialSharing",
             "content": {
               "buttons": [
@@ -3643,6 +3659,14 @@
                   "path": "/maizena/products"
                 }
               ]
+            }
+          },
+          {
+            "name": "ProductRating",
+            "content": {
+              "cta": {
+                "label": "Agrega una reseña"
+              }
             }
           },
           {
