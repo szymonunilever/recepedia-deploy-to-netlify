@@ -1,6 +1,6 @@
 declare namespace Internal {
   interface Product extends ProductData.Product {
-    averageRating?: string | number;
+    averageRating?: number;
     fields: {
       slug: string;
     };

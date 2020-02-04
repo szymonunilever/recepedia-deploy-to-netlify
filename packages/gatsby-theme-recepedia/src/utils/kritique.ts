@@ -15,7 +15,6 @@ export const openReviewModal = () =>
 
 export const getOnChangeClientStateCallback = (scriptSrc, callback) => {
   return (newState: any, addedTags: any) => {
-    console.log('newState=', newState);
     if (addedTags && addedTags.scriptTags) {
       const foundScript = addedTags.scriptTags.find(
         ({ src }) => src === scriptSrc
