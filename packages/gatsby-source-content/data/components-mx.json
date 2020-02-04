@@ -8,7 +8,7 @@
           "content": {
             "list": [
               {
-                "name": "Receitas",
+                "name": "Recetas",
                 "navId": "categories",
                 "children": [
                   {
@@ -172,11 +172,11 @@
     "timesOfDay": "Hora del día",
     "annualEvents": "Fiestas y Celebraciones",
     "suitability": "Sustentabilidad",
-    "dairy_free": "Sin Lacteos",
+    "dairy_free": "Sin leche",
     "egg_free": "Sin Huevo",
     "gluten_free": "Sin Gluten",
-    "lactose_free": "Sin Lacteos",
-    "nut_free": "Sin Bueces",
+    "lactose_free": "Sin Láctosa",
+    "nut_free": "Sin Nueces",
     "paleo_diet": "Dieta Paleo",
     "pregnancy_safe": "Aptas Para El Embarazo",
     "raw_food": "Dieta Cruda",
@@ -184,7 +184,7 @@
     "no seafood": "Sin Mariscos",
     "no soy": "Sin Soya",
     "zero açúcar": "Sin Azucar",
-    "vegan": "Vegana",
+    "vegan": "Veganas",
     "vegetarian": "Vegetarianas",
     "energy_kcal": "Valor Energético (kcal)",
     "energy_kj": "Valor Energético (kJ)",

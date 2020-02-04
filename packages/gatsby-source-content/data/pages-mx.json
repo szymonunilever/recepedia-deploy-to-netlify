@@ -889,7 +889,7 @@
           {
             "name": "Text",
             "content": {
-              "text": "Próximo artigo",
+              "text": "Prócimo artículo",
               "view": "NextTitle"
             }
           },
@@ -1828,7 +1828,7 @@
                         "id": 90001653,
                         "value": "1371",
                         "label": {
-                          "text": "Premium"
+                          "text": "Prémium"
                         }
                       }
                     ]
@@ -1837,7 +1837,7 @@
                     "orderIndex": 3,
                     "id": 90001341,
                     "key": "mealPlannerQuestion3",
-                    "label": "¿Cuánto tiempo dispones para preparar tus receta?",
+                    "label": "¿Cuánto tiempo dispones para preparar tus recetas?",
                     "type": {
                       "control": "radio",
                       "labelPosition": "inside"
@@ -1871,7 +1871,7 @@
                     "orderIndex": 4,
                     "id": 90001342,
                     "key": "mealPlannerQuestion4",
-                    "label": "¿Qué tan complicada buscas una receta?",
+                    "label": "¿Qué nivel de dificultad buscas en tus recetas?",
                     "type": {
                       "control": "radio",
                       "labelPosition": "inside"
@@ -1912,7 +1912,7 @@
                 "name": "GeneratedForm",
                 "content": {
                   "title": "¿Listo para disfrutar de nuevas recetas y empezar a cocinar?",
-                  "subtitle": "¡Guarda tus preferencias y crea tu perfil!",
+                  "subtitle": "¡Estás a un sólo paso! Guarda tus preferencias y crea tu perfil",
                   "fields": [
                     {
                       "type": "text",
@@ -2000,7 +2000,7 @@
                     }
                   ],
                   "submitButton": {
-                    "label": "Crear mi perfil"
+                    "label": "Revisa tu menú"
                   }
                 }
               },
@@ -2019,13 +2019,13 @@
                     ]
                   },
                   "noResult": {
-                    "title": "=/ Busquei por toda cozinha mas não encontrei o que você procurava!",
-                    "subheading": "Minha chance de encontrar aumenta quando você não usa muitos filtros de uma vez.\nGostaria de tentar novamente?",
+                    "title": "=/ Ya busque por toda la cocina y no puedo encontrar lo que estás buscando",
+                    "subheading": "Posibilidades de encontrar lo que buscas aumentan cuándo",
                     "ctas": [
                       {
                         "type": "back",
                         "content": {
-                          "label": "Tentar novamente"
+                          "label": "Intenta de nuevo"
                         }
                       }
                     ]
@@ -2038,7 +2038,7 @@
             "name": "GeneratedForm",
             "content": {
               "view": "MealPlanerRename",
-              "title": "Rename Meal Planer",
+              "title": "Nombra tu Planificador de Menús",
               "submitButton": {
                 "label": "Terminar"
               },
@@ -2047,8 +2047,8 @@
                   "name": "mealPlannerTitle",
                   "type": "text",
                   "maxlength": 30,
-                  "label": "Weekly menu name",
-                  "placeholder": "EX. Doe"
+                  "label": "Nombre de tu menú semanal",
+                  "placeholder": "Ex Semana Santa"
                 }
               ]
             }
@@ -2078,12 +2078,12 @@
             "name": "Confirmation",
             "content": {
               "view": "RemoveFromMPConfirmation",
-              "text": "Já separei uma nova receita para você! Prefere escolher você mesmo?",
+              "text": "Estás por salvar una menú incompleto. ¿Quieres añadir las recetas faltantes?",
               "yesButtonText": {
-                "label": "Sim"
+                "label": "Si"
               },
               "noButtonText": {
-                "label": "Não"
+                "label": "No"
               }
             }
           },
@@ -2600,10 +2600,10 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "Hellmann’s®, descubre el auténtico sabo",
+              "title": "Hellmann’s®, descubre el auténtico sabor",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/hellmanns/images/hero/3/1436703.jpg",
-                "alt": "Hellmann’s®, descubre el auténtico sabo"
+                "alt": "Hellmann’s®, descubre el auténtico sabor"
               },
               "links": [
                 {
@@ -2654,7 +2654,7 @@
                     "alt": "El problema del plásitco"
                   },
                   "richText": {
-                    "text": "<p>Los nuevos envases 100% de plástico recuperado cuentan con grado alimenticio para que puedas seguir disfrutando del gran sabor de Hellmann's sin generar más residuos plásticos al medio abiente.</p>"
+                    "text": "<p>Los nuevos envases 100% de plástico recuperado cuentan con grado alimenticio para que puedas seguir disfrutando del gran sabor de Hellmann's sin generar más residuos plásticos al medio ambiente.</p>"
                   }
                 }
               ],
@@ -2802,7 +2802,7 @@
           {
             "name": "AboutFuture",
             "content": {
-              "title": "La pequeña gran diferencia",
+              "title": "La pequeña gran diferencia...",
               "subtitle": "Descubre cómo pequeñas acciones pueden generar grandes cambios para ti y para el medio ambiente.",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/promise/future.jpg",
@@ -2979,7 +2979,7 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "What we make",
+              "title": "Lo que hacemos",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/hellmanns/images/hero/3/1436703.jpg",
                 "alt": "Prueba nuestro Planificador de Menús"
@@ -3312,7 +3312,7 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "Hellmann’s®, descubre el auténtico sabo",
+              "title": "Hellmann’s®, descubre el auténtico sabor",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/hellmanns/images/hero/3/1436703.jpg",
                 "alt": "Prueba nuestro Planificador de Menús"
@@ -3787,9 +3787,9 @@
           {
             "name": "Tags",
             "content": {
-              "title": "Procurar por categorias",
+              "title": "Revisar por categorías",
               "loadMoreButton": {
-                "label": "+ Ver mais categorias"
+                "label": "+ Ver más categorías"
               }
             }
           },
