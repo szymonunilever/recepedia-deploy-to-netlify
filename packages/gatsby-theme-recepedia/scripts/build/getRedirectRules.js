@@ -9,7 +9,7 @@ const directUrlsMap = {
   '/tipos-de-receita/sopa': '/categoria/sopas/',
   // '/cozinha/portuguesa': '/categoria/portugues/',
   '/cozinha/taiwanesa': '/categoria/asiatica/',
-  '/cozinha/norte-americana': '/categoria/americana/',
+  // '/cozinha/norte-americana': '/categoria/americana/',
   '/tipos-de-prato/lanche': '/categoria/lanches/',
   '/fale-conosco': '/fale-comigo/',
 };

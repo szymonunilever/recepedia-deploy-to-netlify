@@ -97,7 +97,126 @@
     "inFooter": false,
     "showOnHomepage": 0,
     "categoryOrder": 230,
-    "tags": [],
+    "seasonalPromo": [
+      {
+        "id": 1544,
+        "name": "verão"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1295,
+        "name": "MISSING"
+      },
+      {
+        "id": 1296,
+        "name": "franco-canadense"
+      },
+      {
+        "id": 1415,
+        "name": "alemã"
+      },
+      {
+        "id": 1298,
+        "name": "MISSING"
+      },
+      {
+        "id": 1419,
+        "name": "indiana"
+      },
+      {
+        "id": 1299,
+        "name": "chilena"
+      },
+      {
+        "id": 1300,
+        "name": "colombiana"
+      },
+      {
+        "id": 1304,
+        "name": "egípcia"
+      },
+      {
+        "id": 1306,
+        "name": "húngara"
+      },
+      {
+        "id": 1307,
+        "name": "MISSING"
+      },
+      {
+        "id": 1405,
+        "name": "MISSING"
+      },
+      {
+        "id": 1409,
+        "name": "britânica"
+      },
+      {
+        "id": 1412,
+        "name": "holandesa"
+      },
+      {
+        "id": 1413,
+        "name": "MISSING"
+      },
+      {
+        "id": 1449,
+        "name": "espanhola"
+      },
+      {
+        "id": 1416,
+        "name": "grega"
+      },
+      {
+        "id": 1417,
+        "name": "Havaiano"
+      },
+      {
+        "id": 1425,
+        "name": "coreana"
+      },
+      {
+        "id": 1428,
+        "name": "árabe"
+      },
+      {
+        "id": 1430,
+        "name": "norte-africana"
+      },
+      {
+        "id": 1434,
+        "name": "europeia"
+      },
+      {
+        "id": 1435,
+        "name": "mediterrânea"
+      },
+      {
+        "id": 1438,
+        "name": "peruana"
+      },
+      {
+        "id": 1443,
+        "name": "russa"
+      },
+      {
+        "id": 1445,
+        "name": "sul-africana"
+      },
+      {
+        "id": 1446,
+        "name": "MISSING"
+      },
+      {
+        "id": 1287,
+        "name": "argentina"
+      },
+      {
+        "id": 1451,
+        "name": "MISSING"
+      }
+    ],
     "categories": [
       {
         "id": 44,
@@ -133,9 +252,9 @@
       {
         "id": 50,
         "parentId": 42,
-        "name": "português",
+        "name": "portuguesa",
         "description": "<p>A gastronomia portuguesa é rica em peixes, frutos do mar, azeites e legumes. Surpreenda-se com a variedade e o sabor marcante dos pratos criados pelos nossos irmãos portugueses.</p>\n",
-        "title": "Português",
+        "title": "Portuguesa",
         "image": {
           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/portugues.jpg",
           "alt": "Category Image reference",
@@ -167,19 +286,7 @@
         "name": "asiático",
         "description": "<p>Ácidos, amargos, doces, salgados e picantes são sabores que ajudam a traduzir como a cozinha asiática pode ser surpreendente. Descubra aqui receitas da região fáceis e gostosas.</p>\n",
         "title": "Asiática",
-        "image": {
-          "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico.jpg",
-          "alt": "Category Image reference",
-          "base64": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAYBAgP/xAAlEAACAQMDBAIDAAAAAAAAAAABAgMEBREABhIHEzFBFiEjYbH/xAAWAQEBAQAAAAAAAAAAAAAAAAAEBQb/xAAfEQEAAgEDBQAAAAAAAAAAAAABAAIDESExEhMiUYH/2gAMAwEAAhEDEQA/AKWKWrv9ur4dxXwhIACrSDisJDYHLkBktnABGfOmncF3O3NpWu222pSZ5U5d9WBUoTgAEEeSfWNadVgPh01RxTvrMriTiMkgNjJ94yfOlKSnil6ZWarkUmpVmKuCRjkTnH6+z9aD2b0Xod/ceWx2qCeOvHzmTTXivrog8qLI6fjPaqDGBj1gE6NKNwqpaWVIKdgkSIAq8QceT/To1XxlioWd5n8hVutTQn//2Q==",
-          "aspectRatio": 1.78,
-          "width": 600,
-          "height": 337.07865168539325,
-          "src": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-600.jpg",
-          "srcWebp": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-600.webp",
-          "srcSet": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-200.jpg 200w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-300.jpg 300w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-500.jpg 500w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-600.jpg 600w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-800.jpg 800w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-900.jpg 900w",
-          "srcSetWebp": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-200.webp 200w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-300.webp 300w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-500.webp 500w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-600.webp 600w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-800.webp 800w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/asiatico-900.webp 900w",
-          "sizes": "(max-width: 500px) 90vw, 500px"
-        },
+        "imageKey": "static/pt/br/categories/asiatica.jpg",
         "recipeDetails": {},
         "inNavigation": true,
         "inFooter": false,
@@ -295,19 +402,7 @@
         "name": "mexicano",
         "description": "<p>De sabor forte, os pratos mexicanos hoje estão presentes em muitas partes do mundo. Saiba como fazer burritos, fajitas, nachos e outras deliciosas combinações mexicanas.</p>\n",
         "title": "Mexicana",
-        "image": {
-          "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image.png",
-          "alt": "Category Image reference",
-          "base64": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAB2UlEQVQY0x3M20uTcQCA4R/hhSSzA0pdrK08RghuF2mZlmiuNYIt06ElXURtri10sFxk0MxUELclHlozECTJdE7WcFirQBg5oZVRdpmRh5YaDLz/3sDnD3jEfplMOqlW4fIMSBZbLX0OBVFvGl9eKFmevUJsvA6vXYn5wh4q1JmUn5Jj0FZQrzuPb3iImupzZMkPU3pRi97SisiXZzM0FpIWEhOEvXKmOlWshc+y862LxGwj7ldtdI+bGBzRMNquwFiVhbYynwaDjsBkAFPzbYQQKI8qOHhAhqi/XCvFl7+zOV8sbYcEm68FK1PZbC12sZroxPncwiVXDTfvlRHsOE645wQNGgXXjVpsZjP9/YMcyyncTdPT9yJsrQ+l5K9JtsNCSobSWA8I1t6VMedvYqzHwPBTI/6ZBwR9Lcy4yvkdOY2vvRq9pnQ3UeUeoq/XjaHuGjLZPoTJ7GDl82NpJyrYCgs25orYWLTzZqQJj62ApfdPWI+a+Ptjhj+fXPxb6uXDeAtnStTkKY9QUpSHvrKEqekIHa5uREGhWupyNpKaz5VSEcHPt1XEJ7Sk4jq+Bpv5GLjD9KMcFl7Wsxq7QTJ2C4f1KpkZGdy1O/C4B7jf5sRuteJ/Nsp/4MQZXXYldZsAAAAASUVORK5CYII=",
-          "aspectRatio": 3.11,
-          "width": 600,
-          "height": 192.92604501607718,
-          "src": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-600.png",
-          "srcWebp": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-600.webp",
-          "srcSet": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-200.png 200w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-300.png 300w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-500.png 500w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-600.png 600w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-800.png 800w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-900.png 900w",
-          "srcSetWebp": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-200.webp 200w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-300.webp 300w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-500.webp 500w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-600.webp 600w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-800.webp 800w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/category-page-content/images/category-image-900.webp 900w",
-          "sizes": "(max-width: 500px) 90vw, 500px"
-        },
+        "imageKey": "static/pt/br/categories/mexicana.jpg",
         "recipeDetails": {},
         "inNavigation": true,
         "inFooter": false,
@@ -323,9 +418,9 @@
       {
         "id": 51,
         "parentId": 42,
-        "name": "cozinha-internacional",
+        "name": "internacional",
         "description": "<p>A culinária internacional traz práticas, tradições e ingredientes de diferentes cantos do mundo. Confira receitas e viaje pelos sabores do planeta sem sair de sua!</p>\n",
-        "title": "Culinária internacional",
+        "title": "Internacional",
         "image": {
           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/internacional.jpg",
           "alt": "Category Image reference",
@@ -462,9 +557,9 @@
       {
         "id": 48,
         "parentId": 42,
-        "name": "americano",
+        "name": "norte-americana",
         "description": "<p>Hambúrguer, costelas de porco regadas ao molho barbecue, cachorro-quente e doces como o brownie estão entre as delícias americanas que conquistaram o mundo. Veja como preparar cada uma delas!</p>\n",
-        "title": "Americana",
+        "title": "Norte Americana",
         "image": {
           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/americano.jpg",
           "alt": "Category Image reference",
@@ -789,7 +884,50 @@
     "inFooter": false,
     "showOnHomepage": 0,
     "categoryOrder": 320,
-    "tags": [],
+    "seasonalPromo": [
+      {
+        "id": 1544,
+        "name": "verão"
+      }
+    ],
+    "tags": [
+      {
+        "id": 11,
+        "name": "vegetarian"
+      },
+      {
+        "id": 2,
+        "name": "egg_free"
+      },
+      {
+        "id": 3,
+        "name": "gluten_free"
+      },
+      {
+        "id": 12628,
+        "name": "no soy"
+      },
+      {
+        "id": 12913,
+        "name": "zero açucar"
+      },
+      {
+        "id": 10,
+        "name": "vegan"
+      },
+      {
+        "id": 12595,
+        "name": "no seafood"
+      },
+      {
+        "id": 1,
+        "name": "dairy_free"
+      },
+      {
+        "id": 4,
+        "name": "lactose_free"
+      }
+    ],
     "categories": [
       {
         "id": 59,
@@ -866,7 +1004,7 @@
         "parentId": 52,
         "name": "glúten-free",
         "description": "<p>É importante entender como a substituição ao glúten pode ser feita de uma maneira saudável e saborosa. Confira receitas que facilitam essa tarefa!</p>\n",
-        "title": "Sem Glúten",
+        "title": "Sem glúten",
         "image": {
           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/gluten-free.jpg",
           "alt": "Category Image reference",
@@ -1037,7 +1175,7 @@
         "parentId": 52,
         "name": "sem-fruto-do-mar",
         "description": "<p>Frutos do mar estão entre os alimentos que não te caem bem? Se eles não são a sua praia, aqui você encontra as melhores receitas sem frutos do mar.</p>\n",
-        "title": "Sem fruto do mar",
+        "title": "Sem frutos do mar",
         "image": {
           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/sem-fruto-do-mar.jpg",
           "alt": "Category Image reference",
@@ -1072,7 +1210,7 @@
         "parentId": 52,
         "name": "sem-leite",
         "description": "<p>Tirar os laticínios da alimentação não é o fim do mundo. Aqui você encontra opções nutritivas e gostosas sem derivados do leite.</p>\n",
-        "title": "Sem leite",
+        "title": "Sem leite e derivados",
         "image": {
           "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/sem-leite.jpg",
           "alt": "Category Image reference",
@@ -1280,16 +1418,12 @@
     "parentId": 0,
     "name": "occasions",
     "description": "<p>Datas Comemorativas</p>\n",
-    "title": "Ocasião",
-    "titlePlural": "Ocasiões",
+    "title": "Datas Comemorativas",
+    "titlePlural": "Datas Comemorativas",
     "seasonalPromo": [
       {
-        "id": 1527,
-        "name": "dia a dia"
-      },
-      {
-        "id": 1520,
-        "name": "churrasco"
+        "id": 1544,
+        "name": "verão"
       }
     ],
     "image": {
@@ -1472,19 +1606,7 @@
         "name": "festa-junina",
         "description": "<p>Bolo de milho, arroz doce e curau ... chegou a melhor época do ano! Pegue seu chapéu caipira, pendure as bandeirinhas e delicie-se com essas receitas que vão deixar o seu arraiá cheio de sabor.</p>\n",
         "title": "Festa Junina",
-        "image": {
-          "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina.jpg",
-          "alt": "Category Image reference",
-          "base64": "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABgABBP/EACUQAAIBAwMEAgMAAAAAAAAAAAECAwAEEQUSMQYTIUEigTJRwf/EABYBAQEBAAAAAAAAAAAAAAAAAAMEBf/EAB8RAAIBAgcAAAAAAAAAAAAAAAABAgMEERITIUFRUv/aAAwDAQACEQMRAD8AOz9TXq9+ZZYTCW2Rv2W7a+PyyVBb3+hnxXW0sjX6QaXry6o8yNLtCxMIUVcsx24OPWPP1Wza1h7mxurcTwXCvu+W04xxwePX9oi+nW3TLLdaaZjLdK0Q7rghAwwT4AycVmKEcu5fUuJqeK4FZfUojtuVtpJOSypsz9YNVFtNv7x7VSlzKi8AbicVUWiuxFfPyf/Z",
-          "aspectRatio": 1.54,
-          "width": 600,
-          "height": 389.6103896103896,
-          "src": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-600.jpg",
-          "srcWebp": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-600.webp",
-          "srcSet": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-200.jpg 200w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-300.jpg 300w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-500.jpg 500w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-600.jpg 600w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-800.jpg 800w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-900.jpg 900w",
-          "srcSetWebp": "https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-200.webp 200w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-300.webp 300w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-500.webp 500w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-600.webp 600w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-800.webp 800w, https://d37k6lxrz24y4c.cloudfront.net/v2/aem/api/assets/aem-headless-cms/recepedia/br/pt/site-wide-content/recipe-categories/category-images/festa-junina-900.webp 900w",
-          "sizes": "(max-width: 500px) 90vw, 500px"
-        },
+        "imageKey": "static/pt/br/categories/festa-junina.jpg",
         "recipeDetails": {},
         "inNavigation": true,
         "inFooter": false,
