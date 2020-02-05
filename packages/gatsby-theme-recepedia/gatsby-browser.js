@@ -11,7 +11,7 @@ import { pageViewTracking } from './src/tracking/page-view-tracking';
 import Helmet from 'react-helmet';
 
 // uncomment if WPT FPL need to be improved
-// export const disableCorePrefetching = () => true;
+export const disableCorePrefetching = () => true;
 
 export const onClientEntry = startTracking;
 
