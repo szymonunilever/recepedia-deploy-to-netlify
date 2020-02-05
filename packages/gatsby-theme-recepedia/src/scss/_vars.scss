@@ -48,15 +48,15 @@ $filsonSoftBold: 'Filson Soft W03 Bold', sans-serif;
 
 //Hellmanns
 $brandonGrotesqueBlack: 'brandon-grotesque', sans-serif; //font-weight: 900;
-$brandonGrotesqueBold: 'brandon-grotesque', sans-serif; //font-weight: 700;
-$trebuchetMsBold: 'Trebuchet W01 Bold', sans-serif; //font-weight: 700;
-$trebuchetMsNormal: 'Trebuchet W01 Regular', sans-serif; //font-weight: 400;
+$brandonGrotesqueBold: $brandonGrotesqueBlack;
+$trebuchetMsBold: $arial;
+$trebuchetMsNormal: $arial;
 $timesNewRoman: 'Times New Roman', Times, serif;
 
 //Maizena
 $vivaStdBold: 'viva-std', sans-serif; //font-weight: 700;
-$proximaNovaBold: 'proxima-nova', sans-serif; //font-weight: 700;
-$proximaNovaNormal: 'proxima-nova', sans-serif; //font-weight: 400;
+$proximaNovaBold: $arial;
+$proximaNovaNormal: $arial;
 
 /* ----------------------------------------------------------------------------- *\
    LAYOUT

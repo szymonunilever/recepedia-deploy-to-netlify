@@ -58,6 +58,7 @@ import {
 } from '../../utils/kritique';
 import Loader from 'gatsby-awd-components/src/components/Loader';
 import { ReactComponent as Spinner } from 'src/svgs/inline/spinner.svg';
+import { getBrandFontUrls } from 'src/utils/getBrandFontUrls';
 
 const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPageProps> = ({
   pageContext,
@@ -478,6 +479,16 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
             async
           />
         )}
+        {getBrandFontUrls(brand).map(fontUrl => (
+          <link
+            rel="preload"
+            as="font"
+            href={fontUrl}
+            key={fontUrl}
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
       </SEO>
       <DigitalData title={seo.title} type={type} />
       {productHeader}

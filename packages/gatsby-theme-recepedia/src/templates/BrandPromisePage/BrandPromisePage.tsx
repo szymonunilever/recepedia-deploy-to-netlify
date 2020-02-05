@@ -25,6 +25,7 @@ import BrandPromiseMaizena from 'src/components/BrandPromise/BrandPromiseMaizena
 import BrandSocialChannels from 'gatsby-awd-components/src/components/BrandSocialChannels';
 import { Text, TagName } from 'gatsby-awd-components/src/components/Text';
 import { Hero } from 'gatsby-awd-components/src/components/Hero';
+import { getBrandFontUrls } from 'src/utils/getBrandFontUrls';
 
 const BrandPromisePage: React.FunctionComponent<BrandPromisePageProps> = ({
   data: {
@@ -76,7 +77,18 @@ const BrandPromisePage: React.FunctionComponent<BrandPromisePageProps> = ({
 
   return (
     <Layout className={classWrapper}>
-      <SEO {...seo} canonical={location.href} />
+      <SEO {...seo} canonical={location.href}>
+        {getBrandFontUrls(brand).map(fontUrl => (
+          <link
+            rel="preload"
+            as="font"
+            href={fontUrl}
+            key={fontUrl}
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
+      </SEO>
       <DigitalData title={seo.title} type={type} />
       <section>
         <BrandHero
