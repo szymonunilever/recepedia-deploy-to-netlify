@@ -103,7 +103,6 @@ const RecipeMicrodata: FunctionComponent<RecipeMicrodataProps> = ({
       {}
     ).name,
     recipeCategory: getCategoryByTags(recipe.tagGroups),
-    aggregateRating: recipe.averageRating,
   };
 
   return showAsText ? (
