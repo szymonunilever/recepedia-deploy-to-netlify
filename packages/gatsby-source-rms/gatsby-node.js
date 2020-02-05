@@ -5,6 +5,7 @@ const brandNameUtils = require('./utils/brandNameUtils');
 
 // todo pass as options?
 const constants = {
+  RECIPE_PAGE_SIZE: 250,
   NODE_TYPES: {
     RECIPE: 'Recipe',
     ARTICLE: 'Article',
@@ -22,14 +23,16 @@ const constants = {
   },
 };
 
-const RECIPE_PAGE_SIZE = 250;
+const omitDietaryTags = {
+  'pt-br': [5, 6, 7, 8, 9],
+};
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, getNodesByType },
   configOptions
 ) => {
   const { createNode } = actions;
-  const isMx = () => configOptions.locale === 'es-mx';
+  const isMx = configOptions.locale === 'es-mx';
 
   let [dictionary] = getNodesByType(constants.NODE_TYPES.DICTIONARY);
   let [disclaimer] = getNodesByType(constants.NODE_TYPES.DISCLAIMER);
@@ -44,24 +47,36 @@ exports.sourceNodes = async (
   const recipeCount = result.data.recipeCount;
 
   let recipePage = 0;
-  while (recipePage * RECIPE_PAGE_SIZE < recipeCount) {
+  while (recipePage * constants.RECIPE_PAGE_SIZE < recipeCount) {
     const recipePromise = async () =>
-      getRecipesByPage(configOptions, RECIPE_PAGE_SIZE, recipePage).then(
-        result =>
-          result.data.recipes.forEach(item => {
-            if (item) {
-              item.brandTheme = item.featuredBrand
-                ? isMx()
-                  ? brandNameUtils.brandNameHandler(item.featuredBrand)
-                  : ''
-                : '';
-              createRecipeNodes(item, {
-                createNodeId,
-                createContentDigest,
-                createNode,
+      getRecipesByPage(
+        configOptions,
+        constants.RECIPE_PAGE_SIZE,
+        recipePage
+      ).then(result =>
+        result.data.recipes.forEach(item => {
+          const omitTags = omitDietaryTags[configOptions.locale] || [];
+          if (item) {
+            item.brandTheme = item.featuredBrand
+              ? isMx
+                ? brandNameUtils.brandNameHandler(item.featuredBrand)
+                : ''
+              : '';
+            omitTags.length &&
+              item.tagGroups.forEach(tagGroup => {
+                if (tagGroup.label === 'dietary') {
+                  tagGroup.tags = tagGroup.tags.filter(
+                    tag => !omitTags.includes(tag.id)
+                  );
+                }
               });
-            }
-          })
+            createRecipeNodes(item, {
+              createNodeId,
+              createContentDigest,
+              createNode,
+            });
+          }
+        })
       );
 
     promises.push(recipePromise());
