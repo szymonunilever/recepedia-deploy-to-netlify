@@ -20,12 +20,12 @@ module.exports = async (graphql, getNodesByType) => {
     title: brandName,
   } = siteMetadata.data.site.siteMetadata;
 
-  const buildFullUrl = (domain, url) => `${domain}${url}`;
+  const buildFullUrl = (domain, url) => `${domain.replace(/\/?$/, '/')}${url}`;
 
   const imgMock =
     'https://d3pch6cetztgjq.cloudfront.net/static/es/mx/categories/1851385-600.jpg';
 
-  var feedObj = {
+  const feedObj = {
     Feed: {
       Brand: brandName,
       incremental: false,
@@ -38,13 +38,13 @@ module.exports = async (graphql, getNodesByType) => {
     },
   };
 
-  let category = {
+  const category = {
     SourceId: 'root-category',
     Names: {
       Name: [
         {
           locale,
-          text: 'Recepedia Mexico',
+          text: brandName,
         },
       ],
     },
