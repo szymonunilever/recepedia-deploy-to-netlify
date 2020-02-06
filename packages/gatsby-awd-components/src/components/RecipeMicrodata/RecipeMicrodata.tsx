@@ -101,8 +101,11 @@ const RecipeMicrodata: FunctionComponent<RecipeMicrodataProps> = ({
       get(recipe, 'tagGroups', []).find(group => group.name === 'cuisines'),
       'tags[0]',
       {}
-    ).name,
-    recipeCategory: getCategoryByTags(recipe.tagGroups),
+    ).name || 'null',
+    recipeCategory: getCategoryByTags(recipe.tagGroups) || 'null',
+    author:{ "@type": "Organization", "name": "Recepedia Team" },
+    video: { "@type": "CreativeWork", "name": "null" },
+    keywords: recipe.title,
   };
 
   return showAsText ? (
