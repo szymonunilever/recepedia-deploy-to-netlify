@@ -1688,17 +1688,6 @@
                         }
                       },
                       {
-                        "id": 90001640,
-                        "value": "7",
-                        "label": {
-                          "text": "Aptas para el embarazo",
-                          "image": {
-                            "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/meal-planner-content/meal-planner-images/question-1/1/pregnancy_safe.png",
-                            "alt": "Aptas para el embarazo"
-                          }
-                        }
-                      },
-                      {
                         "id": 90001641,
                         "value": "8",
                         "label": {
@@ -1706,17 +1695,6 @@
                           "image": {
                             "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/meal-planner-content/meal-planner-images/question-1/1/raw_diet.png",
                             "alt": "Dieta cruda"
-                          }
-                        }
-                      },
-                      {
-                        "id": 90001642,
-                        "value": "6",
-                        "label": {
-                          "text": "Dieta Paleo",
-                          "image": {
-                            "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/meal-planner-content/meal-planner-images/question-1/1/paleo_diet.png",
-                            "alt": "Dieta Paleo"
                           }
                         }
                       },
