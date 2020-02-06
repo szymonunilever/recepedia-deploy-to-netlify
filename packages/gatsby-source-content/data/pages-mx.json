@@ -606,7 +606,7 @@
           {
             "name": "RelatedArticles",
             "content": {
-              "title": "Articulos relacionadas"
+              "title": "Artículos relacionados"
             }
           },
           {
@@ -802,9 +802,9 @@
             "name": "RecipeListing",
             "content": {
               "view": "RecipesByCategory",
-              "title": "Encontrei {numRes} receitas com: {categoryName}",
+              "title": "Encontramos {numRes} recetas relacionadas a {categoryName}",
               "cta": {
-                "label": "Ver mais receitas"
+                "label": "Más recetas"
               }
             }
           },
@@ -889,7 +889,7 @@
           {
             "name": "Text",
             "content": {
-              "text": "Prócimo artículo",
+              "text": "Próximo artículo",
               "view": "NextTitle"
             }
           },
@@ -904,7 +904,7 @@
           {
             "name": "RelatedArticles",
             "content": {
-              "title": "Articulos relacionadas"
+              "title": "Artículos relacionados"
             }
           },
           {
@@ -1912,7 +1912,7 @@
                 "name": "GeneratedForm",
                 "content": {
                   "title": "¿Listo para disfrutar de nuevas recetas y empezar a cocinar?",
-                  "subtitle": "¡Estás a un sólo paso! Guarda tus preferencias y crea tu perfil",
+                  "subtitle": "¡Estás a un sólo paso! Guarda tus preferencias y crea tu perfil...",
                   "fields": [
                     {
                       "type": "text",
@@ -2745,10 +2745,10 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "La pequeña gran diferencia",
+              "title": "La pequeña gran diferencia...",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/hero/1709353.jpg",
-                "alt": "Knorr. La pequeña gran diferencia"
+                "alt": "Knorr. La pequeña gran diferencia..."
               },
               "links": [
                 {
@@ -2864,7 +2864,7 @@
         ]
       },
       "seo": {
-        "title": "Knorr. La pequeña gran diferencia",
+        "title": "Knorr. La pequeña gran diferencia...",
         "description": "Brand Promise page",
         "meta": [
           {
@@ -3201,7 +3201,7 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "La pequeña gran diferencia",
+              "title": "La pequeña gran diferencia...",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/hero/1709353.jpg",
                 "alt": "Prueba nuestro Planificador de Menús"
@@ -3292,7 +3292,7 @@
         ]
       },
       "seo": {
-        "title": "Knorr. La pequeña gran diferencia",
+        "title": "Knorr. La pequeña gran diferencia...",
         "description": "Brand Products page",
         "meta": [
           {
@@ -3480,7 +3480,7 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "La pequeña gran diferencia",
+              "title": "La pequeña gran diferencia...",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/hero/1709353.jpg",
                 "alt": "Prueba nuestro Planificador de Menús"
@@ -3811,7 +3811,7 @@
           {
             "name": "Tags",
             "content": {
-              "title": "Revisar por categorías",
+              "title": "Buscar por categorías",
               "loadMoreButton": {
                 "label": "+ Ver más categorías"
               }

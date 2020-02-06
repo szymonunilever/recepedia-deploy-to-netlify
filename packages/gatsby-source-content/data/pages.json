@@ -865,7 +865,7 @@
             "name": "RecipeListing",
             "content": {
               "view": "RecipesByCategory",
-              "title": "Encontrei {numRes} receitas com: {categoryName}",
+              "title": "Encontrei {numRes} receitas com: \n{categoryName}",
               "cta": {
                 "label": "Ver mais receitas"
               }
