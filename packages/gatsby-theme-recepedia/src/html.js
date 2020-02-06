@@ -49,7 +49,7 @@ export default function HTML(props) {
 
             {/* START NewRelic */}
             {/* Having script inline improves FCP/FMP. Loading newRelic script async is not allowed*/}
-            {process.env.CONTEXT === 'production' && (
+            {process.env['newRelic_enabled'] === 'true' && (
               <script
                 type="text/javascript"
                 dangerouslySetInnerHTML={newRelic}
