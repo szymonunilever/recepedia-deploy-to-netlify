@@ -818,9 +818,9 @@
           {
             "name": "Tags",
             "content": {
-              "title": "Procurar por categorias",
+              "title": "Buscar por categorías",
               "loadMoreButton": {
-                "label": "+ Ver mais categorias"
+                "label": "+ Ver más categorías"
               }
             }
           },
@@ -1890,7 +1890,7 @@
                 "name": "GeneratedForm",
                 "content": {
                   "title": "¿Listo para disfrutar de nuevas recetas y empezar a cocinar?",
-                  "subtitle": "¡Estás a un sólo paso! Guarda tus preferencias y crea tu perfil...",
+                  "subtitle": "¡Estás a un sólo paso! Guarda tus preferencias y crea tu perfil.",
                   "fields": [
                     {
                       "type": "text",
@@ -2723,10 +2723,10 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "La pequeña gran diferencia...",
+              "title": "La pequeña gran diferencia.",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/hero/1709353.jpg",
-                "alt": "Knorr. La pequeña gran diferencia..."
+                "alt": "Knorr. La pequeña gran diferencia."
               },
               "links": [
                 {
@@ -2780,11 +2780,11 @@
           {
             "name": "AboutFuture",
             "content": {
-              "title": "La pequeña gran diferencia...",
+              "title": "La pequeña gran diferencia.",
               "subtitle": "Descubre cómo pequeñas acciones pueden generar grandes cambios para ti y para el medio ambiente.",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/promise/future.jpg",
-                "alt": "Los 50 alimentos del Futuro"
+                "alt": "Los 50 alimentos del Futuro."
               }
             }
           },
@@ -2842,7 +2842,7 @@
         ]
       },
       "seo": {
-        "title": "Knorr. La pequeña gran diferencia...",
+        "title": "Knorr. La pequeña gran diferencia.",
         "description": "Brand Promise page",
         "meta": [
           {
@@ -3179,7 +3179,7 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "La pequeña gran diferencia...",
+              "title": "La pequeña gran diferencia.",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/hero/1709353.jpg",
                 "alt": "Prueba nuestro Planificador de Menús"
@@ -3270,7 +3270,7 @@
         ]
       },
       "seo": {
-        "title": "Knorr. La pequeña gran diferencia...",
+        "title": "Knorr. La pequeña gran diferencia.",
         "description": "Brand Products page",
         "meta": [
           {
@@ -3458,7 +3458,7 @@
           {
             "name": "BrandHero",
             "content": {
-              "title": "La pequeña gran diferencia...",
+              "title": "La pequeña gran diferencia.",
               "image": {
                 "url": "https://prod-headless.unileversolutions.com/api/assets/aem-headless-cms/recepedia/mx/es/brands-content/knorr/images/hero/1709353.jpg",
                 "alt": "Prueba nuestro Planificador de Menús"
