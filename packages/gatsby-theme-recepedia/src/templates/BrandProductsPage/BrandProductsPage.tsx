@@ -36,6 +36,7 @@ import { BrandSocialChannels } from 'gatsby-awd-components/src/components/BrandS
 import { RatingAndReviewsProvider } from 'gatsby-awd-components/src';
 import { Card } from 'gatsby-awd-components/src/components/Card';
 import Button from 'gatsby-awd-components/src/components/Button';
+import { getBrandFontUrls } from 'src/utils/getBrandFontUrls';
 
 const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
   pageContext,
@@ -229,7 +230,18 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
 
   return (
     <Layout className={classWrapper}>
-      <SEO {...seo} canonical={location.href} />
+      <SEO {...seo} canonical={location.href}>
+        {getBrandFontUrls(brand).map(fontUrl => (
+          <link
+            rel="preload"
+            as="font"
+            href={fontUrl}
+            key={fontUrl}
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
+      </SEO>
       <DigitalData title={seo.title} type={type} />
       {headerContent && (
         <section className="">
