@@ -493,6 +493,18 @@ exports.onPostBuild = async ({ getNodes, graphql, getNodesByType }) => {
     console.info('Execution time (hr): %ds %dms', trend[0], trend[1] / 1000000);
   }
 
+  if (checkParam(args, 'addRedirects')) {
+    const locale = utils.parseArg('locale').toLowerCase();
+    const redirectSrc = `./redirects/_redirects-${locale}`;
+    const redirectDest = `./public/_redirects`;
+    try {
+      fs.copyFileSync(redirectSrc, redirectDest);
+      console.log('Redirect file has been copied');
+    } catch (e) {
+      console.error('An error occurred during redirect copying', e);
+    }
+  }
+
   if (checkParam(args, 'updateES')) {
     // eslint-disable-next-line no-console
     console.log('updating ES');
