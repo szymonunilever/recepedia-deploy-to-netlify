@@ -16,6 +16,7 @@ export interface CardProps {
   children?: ReactElement<ButtonProps> | ReactElement<ButtonProps>[];
   showDescription?: boolean;
   maxDescriptionLength?: number;
+  imgTitle?: string;
 }
 
 export interface CardContentProps {

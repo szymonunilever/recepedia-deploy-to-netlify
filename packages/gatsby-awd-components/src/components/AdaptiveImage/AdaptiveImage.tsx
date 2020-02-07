@@ -36,6 +36,7 @@ const AdaptiveImage: FunctionComponent<AdaptiveImageProps> = ({
   sizes,
   view,
   critical,
+  title = alt,
 }) => {
   const isSvg =
     localImage &&
@@ -59,6 +60,7 @@ const AdaptiveImage: FunctionComponent<AdaptiveImageProps> = ({
           className="adaptive-image__image"
           src={localImage.fields && localImage.fields.publicURL}
           alt={alt}
+          title={title}
         />
       </ImageContainer>
     );
@@ -96,7 +98,7 @@ const AdaptiveImage: FunctionComponent<AdaptiveImageProps> = ({
       <Img
         className="adaptive-image__image"
         fluid={docLoaded ? fluid : baseFluid}
-        {...{ alt, critical }}
+        {...{ alt, critical, title }}
       />
     </ImageContainer>
   );

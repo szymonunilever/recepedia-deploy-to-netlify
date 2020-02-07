@@ -12,9 +12,9 @@ const getImageAlt = (title: string, slug: string) =>
           if (matchedWord !== null) {
             word = capitalize(matchedWord.join(' '));
           }
-
-          reducer.push(index === array.length - 1 ? `- ${word}` : word);
-
+          if (word.trim().length) {
+            reducer.push(index === array.length - 1 ? `- ${word}` : word);
+          }
           return reducer;
         }, [])
         .join(' ')

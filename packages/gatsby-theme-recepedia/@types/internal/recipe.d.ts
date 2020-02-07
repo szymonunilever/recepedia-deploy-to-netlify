@@ -10,5 +10,6 @@ declare namespace Internal {
     };
     recipeId: number;
     videos?: Internal.Video[];
+    imgTitle?: string;
   }
 }

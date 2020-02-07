@@ -57,6 +57,9 @@ exports.sourceNodes = async (
         result.data.recipes.forEach(item => {
           const omitTags = omitDietaryTags[configOptions.locale] || [];
           if (item) {
+            item.imgTitle = configOptions.imgTitle
+              ? configOptions.imgTitle.replace('{title}', item.title)
+              : item.title;
             item.brandTheme = item.featuredBrand
               ? isMx
                 ? brandNameUtils.brandNameHandler(item.featuredBrand)
