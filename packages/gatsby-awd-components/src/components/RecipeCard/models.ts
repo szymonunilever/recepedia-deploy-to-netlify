@@ -14,6 +14,5 @@ export interface RecipeCardProps
   ratingProvider: RatingAndReviewsProvider;
   imageSizes: string;
   children?: ReactElement<ButtonProps> | ReactElement<ButtonProps>[];
+  imgTitle?: string;
 }
-
-

@@ -21,6 +21,7 @@ export const Card: FunctionComponent<CardProps> = ({
   brandLink,
   showDescription = false,
   maxDescriptionLength = 0,
+  imgTitle,
 }) => {
   const {
     title,
@@ -64,12 +65,14 @@ export const Card: FunctionComponent<CardProps> = ({
       );
     });
   const wrapClasses = cx(theme.card, 'card', className);
+  const imgAlt = title ? getImageAlt(title, slug) : 'image';
   const Image = localImage && (
     <AdaptiveImage
       className={cx(theme.card__image, 'card__image')}
       localImage={localImage}
-      alt={title ? getImageAlt(title, slug) : 'image'}
+      alt={imgAlt}
       sizes={imageSizes}
+      title={imgTitle || imgAlt}
     />
   );
 

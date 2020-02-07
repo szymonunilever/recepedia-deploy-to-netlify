@@ -14,6 +14,7 @@ const RecipeFields = `
     averageRating
     brand
     brandTheme
+    imgTitle
     ingredients {
       title
       list {

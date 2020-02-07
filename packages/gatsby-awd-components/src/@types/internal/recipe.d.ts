@@ -7,5 +7,6 @@ declare namespace Internal {
       slug: string;
     };
     recipeId: number;
+    imgTitle?: string;
   }
 }

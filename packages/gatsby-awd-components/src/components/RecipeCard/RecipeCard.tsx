@@ -24,30 +24,31 @@ export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
   className = '',
   ratingProvider,
   imageSizes,
+  imgTitle,
 }) => {
-   const itemTitle = content.title ? (
+  const itemTitle = content.title ? (
     <Text
-      tag={TagName[ `div` ]}
+      tag={TagName[`div`]}
       text={content.title}
       className={cx(theme.recipeCard__title, 'recipe-card__title')}
     />
   ) : null;
   const searchLink = useContext(AppContext).brandLogoLink;
   const isExternalItemLink = useContext(AppContext).isExternalItemLink;
-  const modifiedChildren = children && React.Children.map(children, child =>{
-    return React.isValidElement<ButtonProps>(child) && React.cloneElement<ButtonProps>(
-    child,
-    {
-      onClick : (val: boolean) => {
-        child
-        && child.props.onClick
-        && child.props.onClick.apply(
-          child.props.onClick,
-          [ val, recipeId ],
-        );
-      }
-    })
-  });
+  const modifiedChildren =
+    children &&
+    React.Children.map(children, child => {
+      return (
+        React.isValidElement<ButtonProps>(child) &&
+        React.cloneElement<ButtonProps>(child, {
+          onClick: (val: boolean) => {
+            child &&
+              child.props.onClick &&
+              child.props.onClick.apply(child.props.onClick, [val, recipeId]);
+          },
+        })
+      );
+    });
   const wrapClasses = cx(theme.recipeCard, brand, 'recipe-card', className);
   const RatingWidget =
     ratingProvider !== RatingAndReviewsProvider.none ? (
@@ -60,26 +61,30 @@ export const RecipeCard: FunctionComponent<RecipeCardProps> = ({
         entityType={RatingAndReviewsEntityType.recipe}
       />
     ) : null;
-
+  const imgAlt = content.title
+    ? getImageAlt(content.title, slug)
+    : 'Recipe image';
   const Image = localImage && (
     <AdaptiveImage
       className={cx(theme.recipeCard__image, 'recipe-card__image')}
       localImage={localImage}
-      alt={content.title ? getImageAlt(content.title, slug) : 'Recipe image'}
+      alt={imgAlt}
       sizes={imageSizes}
+      title={imgTitle || imgAlt}
     />
   );
   return (
     // @ts-ignore
-    <div className={wrapClasses}
+    <div
+      className={wrapClasses}
       {...getComponentDataAttrs('recipeCard', content)}
     >
-      <div className="recipe-card__buttons">
-        {modifiedChildren}
-      </div>
+      <div className="recipe-card__buttons">{modifiedChildren}</div>
       {Image}
       <div className={cx(theme.recipeCard__info, 'recipe-card__info')}>
-        <div className={cx(theme.recipeCard__infoText, 'recipe-card__info-text')}>
+        <div
+          className={cx(theme.recipeCard__infoText, 'recipe-card__info-text')}
+        >
           {itemTitle}
           {RatingWidget}
         </div>
