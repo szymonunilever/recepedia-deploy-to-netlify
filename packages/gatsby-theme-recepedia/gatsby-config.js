@@ -3,6 +3,7 @@
 const path = require('path');
 const utils = require('./scripts/utils');
 const appConfig = require('./app-config')({ locale: utils.parseArg('locale') });
+const { get } = require(`lodash`);
 
 const siteMetadata = {
   title: appConfig.getByKey('meta_title'),
@@ -11,6 +12,52 @@ const siteMetadata = {
   siteUrl: appConfig.getByKey('meta_host'),
   lang: appConfig.getByKey('meta_lang'),
 };
+
+const productsQuery =
+  appConfig.getByKey('locale').toLowerCase() === 'es-mx'
+    ? `product {
+  images {
+    childImageSharp {
+      fluid {
+        src
+      }
+    }
+  }
+  productName
+}`
+    : '';
+
+const sitemapQuery = `
+{
+  site {
+    siteMetadata {
+      siteUrl
+    }
+  }
+  allSitePage {
+    edges {
+      node {
+        path
+        context {
+          page {
+            type
+          }
+          recipe {
+            localImage {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
+            title
+          }
+          ${productsQuery}
+        }
+      }
+    }
+  }
+}`;
 
 const plugins = [
   'gatsby-transformer-sharp',
@@ -99,7 +146,48 @@ const plugins = [
       },
     },
   },
-  `gatsby-plugin-sitemap`,
+  {
+    resolve: `gatsby-plugin-sitemap`,
+    options: {
+      query: sitemapQuery,
+      serialize: ({ site, allSitePage }) =>
+        allSitePage.edges.map(edge => {
+          const pageData = {
+            url: site.siteMetadata.siteUrl + edge.node.path,
+            changefreq: `daily`,
+            priority: 0.7,
+            test: 'testvalue',
+            testOption: 'fadfgsghsfhh',
+          };
+          const context = edge.node.context;
+          let img;
+          switch (context.page.type) {
+            case 'RecipeDetail': //need to be updated if a recipe has an array of images instead of 1 image
+              img = get(context, 'recipe.localImage.childImageSharp.fluid.src');
+              if (img) {
+                pageData.img = [
+                  {
+                    url: img,
+                    title: context.recipe.title,
+                  },
+                ];
+              }
+              break;
+            case 'ProductDetails':
+              imgs = get(context, 'product.images');
+              if (imgs && imgs.length) {
+                pageData.img = imgs.map(img => ({
+                  url: get(img, 'childImageSharp.fluid.src'),
+                  title: context.product.productName,
+                }));
+              }
+              break;
+            default:
+          }
+          return pageData;
+        }),
+    },
+  },
 ];
 
 plugins.push({
