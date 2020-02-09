@@ -750,7 +750,7 @@
               "optionLabels": {
                 "newest": "Más nuevas",
                 "preparationTime": "Tiempo de preparación",
-                "cookingTime": "Tiempo de cocción",
+                "readyTime": "Tiempo de cocción",
                 "averageRating": "Popularidad",
                 "title": "Nombre de receta"
               }
@@ -2118,9 +2118,8 @@
             "content": {
               "view": "SearchCustomRecipeResult",
               "textList": [
-                "Use short keywords in your search",
-                "Try not to use too long phrases",
-                "Try to use autosuggestion"
+                "Utilizas palabras claves cortas",
+                "Cuando no usas frases complicadas"
               ]
             }
           },

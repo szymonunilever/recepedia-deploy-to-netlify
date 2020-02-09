@@ -16,7 +16,7 @@ export { ReactComponent as GlutenFreeInactive } from './inline/nutrition-gluten-
 export { ReactComponent as LactoseFreeActive } from './inline/nutrition-lactose-free-yes.svg';
 export { ReactComponent as LactoseFreeInactive } from './inline/nutrition-lactose-free-no.svg';
 
-export { ReactComponent as RawFoodActive } from './inline/nutrition-lactose-free-yes.svg';
+export { ReactComponent as RawFoodActive } from './inline/nutrition-raw-food-yes.svg';
 export { ReactComponent as RawFoodInactive } from './inline/nutrition-raw-food-no.svg';
 
 export { ReactComponent as EggFreeActive } from './inline/nutrition-egg-free-yes.svg';
