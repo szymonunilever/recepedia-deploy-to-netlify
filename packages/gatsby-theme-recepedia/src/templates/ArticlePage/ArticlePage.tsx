@@ -83,7 +83,12 @@ const ArticlePage: React.FunctionComponent<ArticlePageProps> = ({
     marks: {
       // eslint-disable-next-line react/display-name
       link: (props: any) => (
-        <a href={props.mark.href} target="_blank" rel="noopener noreferrer">
+        <a
+          href={props.mark.href}
+          className={theme.articleLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {props.children}
         </a>
       ),
