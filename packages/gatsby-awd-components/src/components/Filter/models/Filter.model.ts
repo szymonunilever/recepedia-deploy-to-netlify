@@ -3,7 +3,7 @@ import { Icon, UnileverLibraryComponent } from '../../../models';
 export enum SortingOptions {
   newest,
   preparationTime,
-  cookingTime,
+  readyTime,
   averageRating,
   title,
 }
@@ -11,7 +11,7 @@ export enum SortingOptions {
 export const RecipeSortingOptionsFieldsMappings = {
   [ SortingOptions.newest ] : [ { creationTime : { order : 'desc' } } ],
   [ SortingOptions.preparationTime ] : 'recipeDetails.preperationTime',
-  [ SortingOptions.cookingTime ] : 'recipeDetails.cookTime',
+  [ SortingOptions.readyTime ] : 'recipeDetails.readyTime',
   [ SortingOptions.averageRating ] : [ { averageRating : { order : 'desc' } } ],
   [ SortingOptions.title ] : 'title.keyword',
 };
