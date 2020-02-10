@@ -11,6 +11,8 @@ const ProductFields = `
     allergy
     nutritionFacts
     productTags
+    averageRating
+    ratingCount
     images {
       childImageSharp {
         fluid {
