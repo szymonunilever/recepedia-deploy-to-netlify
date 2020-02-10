@@ -174,7 +174,7 @@ const SearchPage = ({ data, pageContext, searchQuery }: SearchPageProps) => {
             recipeResultsFetched,
             productResultsFetched,
           }}
-          searchResultTitleLevel={3}
+          searchResultTitleLevel={2}
           config={{
             searchInputConfig: {
               searchPagePath: relativePath,
