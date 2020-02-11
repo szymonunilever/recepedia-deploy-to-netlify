@@ -2094,15 +2094,9 @@
                 ]
               },
               "noResult": {
-                "title": "Resultados",
-                "subheading": "Encontrámos {numRes} resultados con: {searchInputValue}",
+                "title": "Ya busque por toda la cocina y no puedo encontrar lo que estás buscando",
+                "subheading": "Posibilidades de encontrar lo que buscas aumentan cuándo",
                 "ctas": [
-                  {
-                    "type": "back",
-                    "content": {
-                      "label": "Use relevant to meal planer"
-                    }
-                  },
                   {
                     "type": "next",
                     "content": {
