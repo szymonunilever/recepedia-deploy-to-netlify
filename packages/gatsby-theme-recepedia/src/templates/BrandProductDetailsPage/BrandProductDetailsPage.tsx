@@ -134,7 +134,7 @@ const BrandProductDetailsPage: React.FunctionComponent<BrandProductDetailsPagePr
                 ...product,
                 localImage: product.images[0],
                 title: product.productName,
-                description: product.shortPageDescription,
+                description: product.shortProductDescription,
               }}
               imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
               cardKey={product.fields.slug}
@@ -534,7 +534,7 @@ interface BrandProductDetailsPageProps {
           productId: number;
           productName: string;
           productLaunchDate: string;
-          shortPageDescription: string;
+          shortProductDescription: string;
           productTags: Internal.Tag[];
           productCategory: string;
           fields: { slug: string };

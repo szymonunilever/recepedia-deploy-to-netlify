@@ -11,6 +11,7 @@ declare namespace ProductData {
     productName: string;
     longPageDescription: string;
     shortPageDescription: string;
+    shortProductDescription: string;
     ingredients: string;
     allergy: string;
     nutritionFacts: string;

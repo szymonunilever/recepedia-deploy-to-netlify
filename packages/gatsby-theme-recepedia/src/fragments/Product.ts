@@ -8,7 +8,7 @@ export const query = graphql`
     productId
     productName
     productLaunchDate
-    shortPageDescription
+    shortProductDescription
     productTags
     productCategory
     fields {

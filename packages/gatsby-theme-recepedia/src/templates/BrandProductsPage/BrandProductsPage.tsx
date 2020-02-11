@@ -161,7 +161,7 @@ const BrandProductsPage: React.FunctionComponent<BrandProductsPageProps> = ({
   productsSorted = productsSorted.map(product => {
     return {
       ...product,
-      description: product.shortPageDescription,
+      description: product.shortProductDescription,
     };
   });
   const featuredProducts = createProductCards(
@@ -346,7 +346,7 @@ interface BrandProductsPageProps {
           productId: number;
           productName: string;
           productLaunchDate: string;
-          shortPageDescription: string;
+          shortProductDescription: string;
           productTags: Internal.Tag[];
           productCategory: string;
           fields: { slug: string };
