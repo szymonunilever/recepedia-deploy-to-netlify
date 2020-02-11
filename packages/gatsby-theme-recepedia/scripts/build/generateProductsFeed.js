@@ -8,7 +8,7 @@ module.exports = async (graphql, getNodesByType) => {
         siteMetadata {
           siteUrl
           lang
-          title
+          brandName
         }
       }
     }
@@ -17,7 +17,7 @@ module.exports = async (graphql, getNodesByType) => {
   const {
     siteUrl: domain,
     lang: locale,
-    title: brandName,
+    brandName,
   } = siteMetadata.data.site.siteMetadata;
 
   const buildFullUrl = (domain, url) => `${domain.replace(/\/?$/, '/')}${url}`;
@@ -78,7 +78,9 @@ module.exports = async (graphql, getNodesByType) => {
       Descriptions: {
         Description: {
           locale,
-          text: productNode.shortPageDescription,
+          text: {
+            '#cdata': productNode.shortProductDescription,
+          },
         },
       },
       ImageUrls: {
@@ -98,7 +100,9 @@ module.exports = async (graphql, getNodesByType) => {
       Names: {
         Name: {
           locale,
-          text: productNode.productName,
+          text: {
+            '#cdata': productNode.productName,
+          },
         },
       },
     })

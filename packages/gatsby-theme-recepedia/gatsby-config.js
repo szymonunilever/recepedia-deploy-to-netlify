@@ -7,6 +7,7 @@ const { get } = require(`lodash`);
 
 const siteMetadata = {
   title: appConfig.getByKey('meta_title'),
+  brandName: appConfig.getByKey('meta_brandName'),
   author: appConfig.getByKey('meta_author'),
   description: appConfig.getByKey('meta_description'),
   siteUrl: appConfig.getByKey('meta_host'),
