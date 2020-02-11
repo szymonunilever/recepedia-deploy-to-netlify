@@ -76,6 +76,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       productName: String!
       productLaunchDate: String
       shortPageDescription: String
+      shortProductDescription: String
       longPageDescription: String
       ingredients: String
       allergy: String
