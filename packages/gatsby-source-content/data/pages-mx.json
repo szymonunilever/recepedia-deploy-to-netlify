@@ -1991,7 +1991,7 @@
                       {
                         "type": "next",
                         "content": {
-                          "label": "Enviar a mi correo "
+                          "label": "Salvar"
                         }
                       }
                     ]
