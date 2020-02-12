@@ -1,8 +1,8 @@
-import capitalize from 'lodash/capitalize';
+import capitalize from 'lodash-es/capitalize';
 
 const getImageAlt = (title: string, slug: string) =>
   title.split(' ').length > 1
-    ? title
+    ? title.replace(/"/g, '&quot;')
     : slug
         .split('/')
         .reduce((reducer: string[], fieldWord, index, array) => {
@@ -10,11 +10,11 @@ const getImageAlt = (title: string, slug: string) =>
           let word = '';
 
           if (matchedWord !== null) {
-            word = '123';
+            word = capitalize(matchedWord.join(' '));
           }
-
-          reducer.push(index === array.length - 1 ? `- ${word}` : word);
-
+          if (word.trim().length) {
+            reducer.push(index === array.length - 1 ? `- ${word}` : word);
+          }
           return reducer;
         }, [])
         .join(' ')

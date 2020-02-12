@@ -64,6 +64,7 @@ export const createRecipeCardsFromList = (
           imageSizes={IMAGE_SIZES.RECIPE_LISTINGS.STANDARD}
           brand={recipe.brand}
           brandTheme={recipe.brandTheme}
+          imgTitle={recipe.imgTitle}
         >
           <Button
             {...favoriteButtonDefaults}
