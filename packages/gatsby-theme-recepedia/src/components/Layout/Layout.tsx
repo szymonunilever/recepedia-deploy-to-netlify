@@ -35,11 +35,13 @@ const Layout = ({
       }
       allCategory(
         filter: { inFooter: { eq: true } }
-        sort: { fields: categoryOrder, order: DESC }
+        sort: { fields: footerOrder, order: ASC }
       ) {
         nodes {
           title
+          titleFooter
           inFooter
+          footerOrder
           fields {
             slug
           }
@@ -64,7 +66,7 @@ const Layout = ({
   const footerCategoryLinks: AppContent.GlobalFooter.MenuItem[] = allCategory.nodes.map(
     (category: Partial<Internal.Category>) => ({
       path: category.fields && category.fields.slug,
-      name: category.title,
+      name: category.titleFooter || category.title,
     })
   );
 

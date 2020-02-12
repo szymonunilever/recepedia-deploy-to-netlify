@@ -167,11 +167,13 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
       description: String
       title: String
       titlePlural: String
+      titleFooter: String
       seasonalPromo: [CategoryTag]
       image: CategoryImage
       recipeDetails: CategoryRecipeDetails
       inNavigation: Boolean
       inFooter: Boolean
+      footerOrder: Int
       showOnHomePage: Int
       categoryOrder: Int
       tags: [CategoryTag]
