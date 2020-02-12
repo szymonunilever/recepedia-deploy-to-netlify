@@ -19,6 +19,7 @@ import withRecipeAsyncLoadMore from 'src/components/withRecipeAsyncLoadMore';
 import { WithRecipeAsyncLoadMore } from 'src/components/withRecipeAsyncLoadMore/models';
 import useFavorite from 'src/utils/useFavorite';
 import { IMAGE_SIZES } from 'src/constants';
+import noindexTagsList from 'src/tags-noindex';
 import { getPagePath } from '../../utils/getPagePath';
 import {
   PageListing,
@@ -47,8 +48,15 @@ const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
   const {
     page: { components, seo, type },
     name,
+    slug: tagSlug,
   } = pageContext;
-  const { tag, allCategory } = data;
+  const {
+    tag,
+    allCategory,
+    site: {
+      siteMetadata: { lang: locale },
+    },
+  } = data;
   const { updateFavoriteState, favorites } = useFavorite(
     () => getUserProfileByKey(ProfileKey.favorites) as number[],
     updateFavorites
@@ -78,6 +86,7 @@ const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
     });
   }, [recipeResultsList]);
 
+  const noindexLocalTags = noindexTagsList[locale.toLowerCase()];
   return (
     <Layout className={classWrapper}>
       <SEO
@@ -85,7 +94,12 @@ const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
         title={tag.title}
         description={`Receitas - ${tag.title}`}
         canonical={location.href}
-      />
+      >
+        {noindexLocalTags &&
+          noindexLocalTags.indexOf(tagSlug.replace(/\//g, '')) > -1 && (
+            <meta name="robots" content="noindex" />
+          )}
+      </SEO>
       <DigitalData title={tag.title} type={type} />
 
       <section className={cx(theme.contentHubRecipes, 'bg--half wrapper')}>
@@ -222,6 +236,12 @@ export const query = graphql`
         ...CategoryFields
       }
     }
+
+    site {
+      siteMetadata {
+        lang
+      }
+    }
   }
 `;
 
@@ -237,10 +257,16 @@ interface ContentHubPageProps extends WithRecipeAsyncLoadMore {
     allCategory: {
       nodes: Internal.Category[];
     };
+    site: {
+      siteMetadata: {
+        lang: string;
+      };
+    };
   };
   pageContext: {
     page: AppContent.Page;
     name: string;
+    slug: string;
   };
   location: WindowLocation;
 }
