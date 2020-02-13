@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
+import { getImageAlt } from '../../../../utils';
 import { PageProps } from './models';
 import AdaptiveImage from '../../../AdaptiveImage';
 import theme from './PageListingItem.module.scss';
@@ -13,6 +13,8 @@ const PageListingItem = ({ page, imageSizes }: PageProps) => {
     image: { alt },
     localImage,
   } = page;
+
+  const imgAlt = title ? getImageAlt(title, path) : 'image';
 
   return (
     <div className={cx(theme.pageListingItem, 'page-listing-item')}>
@@ -29,6 +31,7 @@ const PageListingItem = ({ page, imageSizes }: PageProps) => {
           localImage={localImage}
           alt={alt}
           sizes={imageSizes}
+          title={imgAlt}
         />
         <div
           className={cx(
