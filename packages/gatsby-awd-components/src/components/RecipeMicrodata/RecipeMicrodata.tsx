@@ -36,6 +36,18 @@ const getCategoryByTags = (tagGroups: RMSData.TagGroupings[]) => {
   return category;
 };
 
+const getTagsInStringFormat = (tagGroups: RMSData.TagGroupings[]) => {
+  let count = 0;
+  return tagGroups.map(tagGroup => {
+      return tagGroup.tags.map(tag => {
+        if (tag.name === '' || count === 9) return;
+        count++;
+        return tag.name;
+      });
+    })
+    .toString().trim().replace(/,{1,}^,|,$|,(?=,)/g, '');
+};
+
 const RecipeMicrodata: FunctionComponent<RecipeMicrodataProps> = ({
   recipe,
   showAsText = false,
@@ -105,7 +117,7 @@ const RecipeMicrodata: FunctionComponent<RecipeMicrodataProps> = ({
     recipeCategory: getCategoryByTags(recipe.tagGroups) || 'null',
     author:{ "@type": "Organization", "name": "Recepedia Team" },
     video: { "@type": "CreativeWork", "name": "null" },
-    keywords: recipe.title,
+    keywords: recipe.title + "," + getTagsInStringFormat(recipe.tagGroups),
   };
 
   return showAsText ? (
