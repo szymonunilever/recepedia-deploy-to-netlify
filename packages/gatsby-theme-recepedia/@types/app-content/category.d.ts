@@ -5,6 +5,7 @@ declare namespace AppContent.Category {
     image: AppContent.ImageContent;
     title: string;
     titlePlural: string;
+    titleFooter: string;
     seasonalPromo?: RMSData.Tag[];
     description: string;
     tags?: RMSData.Tag[];
@@ -13,6 +14,7 @@ declare namespace AppContent.Category {
     recipeDetails?: RecipeDetails;
     inNavigation?: boolean;
     inFooter?: boolean;
+    footerOrder?: number;
     showOnHomepage: number;
     categoryOrder: number;
   }

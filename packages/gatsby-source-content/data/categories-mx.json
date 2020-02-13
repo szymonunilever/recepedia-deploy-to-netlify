@@ -1990,7 +1990,8 @@
         "imageKey": "static/es/mx/categories/1851385.jpg",
         "recipeDetails": {},
         "inNavigation": true,
-        "inFooter": false,
+        "inFooter": true,
+        "footerOrder": 30,
         "showOnHomepage": 0,
         "categoryOrder": 800,
         "primaryTag": {
@@ -2446,12 +2447,14 @@
         "name": "asiática",
         "description": "<p> Asiática. </p>\n",
         "title": "Asiática",
+        "titleFooter": "Delicias Asiáticas",
         "imageKey": "static/es/mx/categories/924918.jpg",
         "recipeDetails": {},
         "inNavigation": true,
-        "inFooter": false,
+        "inFooter": true,
         "showOnHomepage": 0,
         "categoryOrder": 800,
+        "footerOrder": 20,
         "primaryTag": {
           "id": 1411,
           "name": ""
@@ -2508,12 +2511,14 @@
         "name": "mexicana",
         "description": "<p> Mexicana. </p>\n",
         "title": "Mexicana",
+        "titleFooter": "Recetas Mexicanas",
         "imageKey": "static/es/mx/categories/926346.jpg",
         "recipeDetails": {},
         "inNavigation": true,
-        "inFooter": false,
+        "inFooter": true,
+        "footerOrder": 10,
         "showOnHomepage": 0,
-        "categoryOrder": 800,
+        "categoryOrder": 140,
         "primaryTag": {
           "id": 1427,
           "name": ""
@@ -3148,63 +3153,6 @@
     ]
   },
   {
-    "id": 7000,
-    "parentId": 0,
-    "name": "mexicana",
-    "description": "<p> Recetas Mexicanas. </p>\n",
-    "title": "Recetas Mexicanas",
-    "imageKey": "static/es/mx/categories/926346.jpg",
-    "recipeDetails": {},
-    "inNavigation": false,
-    "inFooter": true,
-    "showOnHomepage": 0,
-    "categoryOrder": 140,
-    "tags": [
-      {
-        "id": 1427,
-        "name": ""
-      }
-    ]
-  },
-  {
-    "id": 7001,
-    "parentId": 0,
-    "name": "asiática",
-    "description": "<p> Delicias Asiáticas. </p>\n",
-    "title": "Delicias Asiáticas",
-    "imageKey": "static/es/mx/categories/924918.jpg",
-    "recipeDetails": {},
-    "inNavigation": false,
-    "inFooter": true,
-    "showOnHomepage": 0,
-    "categoryOrder": 130,
-    "tags": [
-      {
-        "id": 1433,
-        "name": ""
-      }
-    ]
-  },
-  {
-    "id": 7002,
-    "parentId": 0,
-    "name": "parrillada",
-    "description": "<p> Parrillada.</p>\n",
-    "title": "Parrillada",
-    "imageKey": "static/es/mx/categories/1851385.jpg",
-    "recipeDetails": {},
-    "inNavigation": false,
-    "inFooter": true,
-    "showOnHomepage": 0,
-    "categoryOrder": 120,
-    "tags": [
-      {
-        "id": 1520,
-        "name": "parrillada"
-      }
-    ]
-  },
-  {
     "id": 7003,
     "parentId": 0,
     "name": "thirty-minutos-o-menos",
@@ -3214,6 +3162,7 @@
     "recipeDetails": {},
     "inNavigation": false,
     "inFooter": true,
+    "footerOrder": 40,
     "showOnHomepage": 0,
     "categoryOrder": 110,
     "tags": [
