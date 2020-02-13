@@ -98,7 +98,7 @@ const ContentHubPage: React.FunctionComponent<ContentHubPageProps> = ({
       >
         {noindexLocalTags &&
           noindexLocalTags.indexOf(tagSlug.replace(/\//g, '')) > -1 && (
-            <meta name="robots" content="noindex" />
+            <meta name="robots" content="noindex,follow" />
           )}
       </SEO>
       <DigitalData title={tag.title} type={type} />
